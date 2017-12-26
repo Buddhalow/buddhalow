@@ -1,0 +1,69 @@
+*, .navbar-brand {
+    font-size: 11px !important;
+    font-family: "Tahoma" !important;
+}
+body {
+    background-color: white;
+}
+
+.navbar-black {
+    background-color: #333;
+    color: white;
+}
+.navbar-black a {
+    color: white;
+}
+
+.btn, .btn:active, .btn:hover, .form-control {
+    all: unset;
+}
+.form-control {
+    border: 1px solid #aaa;
+    box-shadow: inset 2pt 2pt 2pt rgba(0, 0, 0, .1);
+    display: inline-block;
+    width: 100%;
+}
+.btn:focus {
+    outline: none;
+}
+.button, .btn {
+    transition: box-shadow 0.5s, background 0.5s;
+    padding-left: 3pt;
+    padding-right: 3pt;
+    display: inline-block;
+    border-radius: 3pt;
+    border: 1px solid #888;
+    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#f7f7f7+1,e5e5e5+100 */
+background: #f7f7f7; /* Old browsers */
+background: -moz-linear-gradient(top, #f7f7f7 1%, #e5e5e5 100%); /* FF3.6-15 */
+background: -webkit-linear-gradient(top, #f7f7f7 1%,#e5e5e5 100%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(to bottom, #f7f7f7 1%,#e5e5e5 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f7f7f7', endColorstr='#e5e5e5',GradientType=0 ); /* IE6-9 */
+box-shadow:inset 0pt 1pt 1px rgba(255, 255, 255, 1), 0pt 1pt 2pt rgba(0, 0, 0, .5) !important;
+text-shadow: 0pt 1pt 1px rgba(255, 255, 255, .5);
+}
+.button:active, .btn:active {
+    margin-top: 1pt;
+    filter: brightness(0.9);
+}
+.button:hover, .btn:hover {
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.button-primary, .btn-primary {
+    border: 1px solid #383;
+    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#d7ffad+0,96c56f+100 */
+background: #d7ffad; /* Old browsers */
+background: -moz-linear-gradient(top, #d7ffad 0%, #96c56f 100%); /* FF3.6-15 */
+background: -webkit-linear-gradient(top, #d7ffad 0%,#96c56f 100%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(to bottom, #d7ffad 0%,#96c56f 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#d7ffad', endColorstr='#96c56f',GradientType=0 ); /* IE6-9 */
+box-shadow:inset 0pt 1pt 1px rgba(244, 255, 244, 1), 0pt 1pt 2pt rgba(0, 127, 0, .5) !important;
+text-shadow: 0pt 1pt 1px rgba(255, 255, 255, .5);
+color: #383;
+}
+
+.panel-default {
+    padding: 12pt;
+}

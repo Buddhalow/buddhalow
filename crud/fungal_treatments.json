@@ -1,0 +1,23 @@
+{
+    "fields": [
+        {
+            "name": "terbinafine_gel_applied",
+            "type": "boolean"
+        },
+        {
+            "name": "loceryl_applied",
+            "type": "boolean"
+        },
+        {
+            "name": "vaseline_gel_applied",
+            "type": "boolean"
+        }
+    ],
+    "relationships": [
+        {
+            "name": "user",
+            "type": "belongsTo",
+            "class": "App\\User"
+        }
+    ]
+}

@@ -1,0 +1,23 @@
+{
+    "fields": [
+        {
+            "name": "name",
+            "type": "string"
+        },
+        {
+            "name": "description",
+            "type": "text"
+        },
+        {
+            "name": "amount",
+            "type": "decimal"
+        }
+    ],
+    "relationships": [
+        {
+            "name": "user",
+            "type": "belongsTo",
+            "class": "App\\User"
+        }
+    ]
+}

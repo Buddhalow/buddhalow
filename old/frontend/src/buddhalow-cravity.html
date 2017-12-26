@@ -1,0 +1,121 @@
+<!--
+@license
+Copyright (c) 2016 The Polymer Project Authors. All rights reserved.
+This code may only be used under the BSD style license found at http://polymer.github.io/LICENSE.txt
+The complete set of authors may be found at http://polymer.github.io/AUTHORS.txt
+The complete set of contributors may be found at http://polymer.github.io/CONTRIBUTORS.txt
+Code distributed by Google as part of the polymer project is also
+subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt
+-->
+
+<link rel="import" href="../bower_components/polymer/polymer-element.html">
+<link rel="import" href="../bower_components/paper-datatable/paper-datatable.html">
+<link rel="import" href="components/polymer/src/elements/dom-repeat.html">
+<link rel="import" href="shared-styles.html">
+<dom-module id="cravity-item">
+  <template>
+    <style include="shared-styles">
+      :host {
+        display: block;
+    
+        padding: 10px;
+      }
+    </style>
+    <tr>
+      <td>{{status}}</td>
+      <td>{{ago}}</td>
+      <td>{{food}}</td>
+    </tr>
+  </template>
+  <script>
+    class CravityItem extends Polymer.Element {
+      static get is() { return 'cravity-item'; }
+      static get properties() {
+        return {
+          time: {
+            type: Date,
+            notify: true
+          },
+          ago: {
+            type: String,
+            computed: 'format(time)'
+          },
+          status: {
+            type: Object,
+            notify: true
+          },
+          food: {
+            type: String,
+            notify: true
+          }
+        }
+      }
+      async ready() {
+        super.ready();
+      }
+      format(time) {
+        return moment(time).fromNow(  );
+      }
+    }
+    customElements.define(CravityItem.is, CravityItem)
+  </script>
+</dom-module>
+<dom-module id="buddhalow-cravity">
+  <template>
+    <style include="shared-styles">
+      :host {
+        display: block;
+
+        padding: 10px;
+      }
+    </style>
+    <div class="card">
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Date</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+        <tbody>
+           <template is="dom-repeat" items="[[items]]">
+            <cravity-item time="{{item.time}}" status="{{item.status}}" food="{{item.food}}">
+            </cravity-item>
+          </template>
+        </tbody>
+      </table>
+       
+    </div>
+  
+  </template>
+
+  <script>
+  
+    class CravityView extends Polymer.Element {
+      static get is() { return 'buddhalow-cravity'; }
+      static get properties() {
+        return {
+          items: {
+            type: Array,
+            notify: true
+          }
+        }
+      }
+      async ready() {
+        super.ready();
+        this.items = (await new Parse.Query("Craving").descending("time").find()).map((o) => {
+          return {
+            time: o.get('time'),
+            status: o.get('status')
+          }
+        });
+        
+      }
+      _formatTime(time) {
+        return moment(time).from('now');
+      }
+    }
+
+    window.customElements.define(CravityView.is, CravityView);
+  </script>
+</dom-module>

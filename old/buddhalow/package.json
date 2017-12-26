@@ -1,0 +1,20 @@
+{
+  "private": true,
+  "scripts": {
+    "prod": "gulp --production",
+    "dev": "gulp watch"
+  },
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "laravel-elixir": "^5.0.0",
+    "bootstrap-sass": "^3.0.0"
+  },
+  "dependencies": {
+    "@angular/cdk": "^5.0.2",
+    "@angular/common": "^5.1.2",
+    "@angular/core": "^5.1.2",
+    "@angular/material": "^5.0.2",
+    "rxjs": "^5.5.6",
+    "zone.js": "^0.8.18"
+  }
+}
