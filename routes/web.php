@@ -19,24 +19,14 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::get('/cravings', 'CravingsController@index');
-Route::get('/treatments/fungal', 'FungalTreatmentsController@index');
+Route::resource('/cravings', 'CravingsController');
+Route::resource('/treatments/fungal', 'FungalTreatmentsController');
 
-Route::post('/cravings/upload', 'CravingsController@upload')->name('upload_craving');
+Route::resource('/cravings/upload', 'CravingsController@upload')->name('upload_craving');
 
 Route::group(['prefix' => 'admin'], function () {
     Voyager::routes();
 });
 
-Route::resource('fungal-treatments', 'FungalTreatmentsController');
-Route::resource('fungal-treatments', 'FungalTreatmentsController');
-Route::resource('fungal-treatments', 'FungalTreatmentsController');
-Route::resource('fungal-treatments', 'FungalTreatmentsController');
-Route::resource('dashboard/fungal-treatments', 'dashboard\\FungalTreatmentsController');
-Route::resource('dashboard/fungal-treatments', 'dashboard\\FungalTreatmentsController');
-Route::resource('dashboard/fungal-treatments', 'dashboard\\FungalTreatmentsController');
-Route::resource('dashboard/fungal-treatments', 'dashboard\\FungalTreatmentsController');
-Route::resource('dashboard/fungal-treatments', 'dashboard\\FungalTreatmentsController');
-Route::resource('dashboard/savings', 'dashboard\\SavingsController');
-Route::resource('dashboard/savings', 'dashboard\\SavingsController');
-Route::resource('dashboard/savings', 'dashboard\\SavingsController');
+Route::resource('/treatments/fungal', 'dashboard\\FungalTreatmentsController');
+Route::resource('/savings', 'dashboard\\SavingsController');
