@@ -21,5 +21,4 @@
         </div>
     </div>
 </div>-->
-<buddha-app></buddha-app>
 @endsection

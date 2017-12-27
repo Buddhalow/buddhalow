@@ -12,16 +12,15 @@
     <base href="https://buddhalow-buddhalow.c9users.io/">
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-    <link href="{{ asset('css/buddhalow.css') }}" rel="stylesheet">
     <link href="{{ asset('css/font-awesome.min.css') }}" rel="stylesheet">
-    <script src="{{ asset('js/app.js') }}" type="text/javascript"></script>
-    <script src="{{ asset('js/main.js') }}" type="text/javascript"></script>
 </head>
 <body>
     <div id="app" class="body" style="display: none">
     </div>
 
     <!-- Scripts -->
-    <script src="{{ asset('js/app.js') }}"></script>
+    
+    <script defer src="{{ asset('js/app.js') }}"></script>
+    
 </body>
 </html>

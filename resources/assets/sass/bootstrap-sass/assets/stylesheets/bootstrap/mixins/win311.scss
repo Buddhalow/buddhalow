@@ -1,0 +1,15 @@
+@mixin win311_button ($background, $border) {
+    font-size: 11pt;
+    background: #ddd;
+    color: black;
+    background-color: #ccc;
+    border: 1pt solid black;
+
+    border-radius: 1px;
+
+    box-shadow: 0pt 0pt 1pt rgba(0, 0, 0, 1), inset -2px -2px 0px #9a9a9a, inset 2px 2px 0px white;
+
+    box-sizing: padding-box;
+    overflow: hidden;
+
+}

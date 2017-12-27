@@ -1,6 +1,6 @@
 <template>
     <div>
-        <nav class="navbar navbar-black navbar-static-top">
+        <nav class="navbar navbar-inverse navbar-static-top">
             <div class="container">
                 <div class="navbar-header">
     
@@ -38,6 +38,7 @@
                             </a>
     
                             <ul class="dropdown-menu">
+                                <router-link tag="li" to="/cravings"></router-link>
                                 <router-link tag="li" to="/login">
                                     <a>Logout</a>
                                 </router-link>
@@ -60,7 +61,6 @@
 </template>
 
 <script>
-    import routes from '../routes';
     export default {
         components: {},
 

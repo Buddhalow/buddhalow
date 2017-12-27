@@ -2,6 +2,9 @@
 
 use Illuminate\Http\Request;
 
+use App\Craving;
+use App\Http\Resources\CravingsResourceCollection;
+
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -16,3 +19,9 @@ use Illuminate\Http\Request;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+Route::middleware('auth:api')->get('/cravings', function (Request $request) {
+    return new CravingResourceCollection(Craving::all());
+});
+
+Route::resource('cravings', 'Api\\cravingsController', ['except' => ['create', 'edit']]);

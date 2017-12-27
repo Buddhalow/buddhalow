@@ -1,0 +1,47 @@
+{
+    "fields": [
+        {
+            "name": "id",
+            "type": "string"
+        },
+        {
+            "name": "name",
+            "type": "string"
+        },
+        {
+            "name": "description",
+            "type": "text"
+        },
+        {
+            "name": "type",
+            "type": "string"
+        },
+        {
+            "name": "release_date",
+            "type": "datetime"
+        },
+        {
+            "name": "language",
+            "type": "string"
+        },
+        {
+            "name": "book_type_id",
+            "type": "string"
+        }
+    ],
+    "foreign_keys": [
+        {
+            "column": "book_type_id",
+            "references": "id",
+            "on": "book_types",
+            "onDelete": "cascade"
+        }
+    ],
+    "relationships": [
+        {
+            "name": "book_type",
+            "type": "belongsTo",
+            "class": "App\\BookType"
+        }
+    ],
+}

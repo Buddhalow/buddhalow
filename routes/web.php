@@ -11,6 +11,9 @@
 |
 */
 
+use App\Craving;
+use App\Http\Resources\CravingResourceCollection;
+
 Route::get('/', function () {
     return view('welcome');
 });
@@ -18,15 +21,8 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
-
-Route::resource('/cravings', 'CravingsController');
-Route::resource('/treatments/fungal', 'FungalTreatmentsController');
-
-Route::resource('/cravings/upload', 'CravingsController@upload')->name('upload_craving');
+Route::get('/dashboard/cravings', 'CravingsController@index')->name('cravings');
 
 Route::group(['prefix' => 'admin'], function () {
     Voyager::routes();
 });
-
-Route::resource('/treatments/fungal', 'dashboard\\FungalTreatmentsController');
-Route::resource('/savings', 'dashboard\\SavingsController');
