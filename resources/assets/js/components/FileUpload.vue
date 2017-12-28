@@ -2,7 +2,7 @@
     <div class="row">
         <div v-if="progress < 100">
             <input type="file" v-on:change="onFileChange" class="form-control">
-            <progress min="0" max="0" value="{{progress}}"></progress>
+            <progress min="0" max="0" :value="progress"></progress>
         </div>
         <div v-if="progress < 0">
             <p>An error occured</p>

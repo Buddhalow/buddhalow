@@ -5,16 +5,9 @@ namespace App\Http\Controllers\Api;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
-use App\BookSale;
-use App\Store;
-use App\Author;
-use App\Book;
-use App\BookType;
-use App\SaleType;
-use Illuminate\Http\Request;
-use App\Importers\ElibBookSalesImporter;
+use App\Saving;
 
-class BookSalesController extends Controller
+class AccountsController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -23,6 +16,9 @@ class BookSalesController extends Controller
      */
     public function index(Request $request)
     {
+        $savings = Saving::where('accountId', $request->query('accountId', ''))->orderBy('time', 'DESC')->paginate(25);
+        
+        return $savings;
         
     }
 

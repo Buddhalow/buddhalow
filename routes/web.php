@@ -22,6 +22,7 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/dashboard/cravings', 'CravingsController@index')->name('cravings');
+Route::get('/dashboard/savings', 'Dashboard\SavingsController@index')->name('cravings');
 
 Route::group(['prefix' => 'admin'], function () {
     Voyager::routes();

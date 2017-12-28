@@ -12,12 +12,8 @@ import routes from './routes';
 import VueRouter from 'vue-router'
 
 import App from './components/App.vue'
-import FileUpload from './components/FileUpload.vue'
-
 window.Vue = require('vue');
 window.Vue.use(VueRouter)
-
-window.Vue.component('buddhalow-fileupload', FileUpload)
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to

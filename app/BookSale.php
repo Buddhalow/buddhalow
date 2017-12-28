@@ -31,5 +31,13 @@ class BookSale extends Model
     {
         return $this->belongsTo('App\SaleType');
     }
-    public $fillable = ['book_id', 'store_id'];
+    
+    /**
+     * Get the post that owns the comment.
+     */
+    public function bookType()
+    {
+        return $this->belongsTo('App\BookType');
+    }
+    public $fillable = ['book_id', 'store_id', 'isbn', 'sale_type_id', 'time', 'amount', 'external_order_id'];
 }

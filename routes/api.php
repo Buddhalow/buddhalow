@@ -25,3 +25,6 @@ Route::middleware('auth:api')->get('/cravings', function (Request $request) {
 });
 
 Route::resource('cravings', 'Api\\cravingsController', ['except' => ['create', 'edit']]);
+Route::resource('savings', 'Api\\SavingsController', ['except' => ['create', 'edit']]);
+Route::get('/sales/upload', 'Api\\BookSalesController@upload');
+Route::resource('sales', 'Api\\BookSalesController', ['except' => ['create', 'edit']]);
