@@ -63294,7 +63294,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
     methods: {
         formatNumber: function formatNumber(number) {
-            return __WEBPACK_IMPORTED_MODULE_0_numeral___default()(number).format('0,0.00').replace(',', ' ').replace('.', ',');
+            return __WEBPACK_IMPORTED_MODULE_0_numeral___default()(number).format('0,0.00').replace(/,/g, ' ').replace(/\./g, ',');
         },
         formatDate: function formatDate(date) {
             return __WEBPACK_IMPORTED_MODULE_1_moment___default()(date).fromNow();
@@ -64629,7 +64629,8 @@ var render = function() {
                         },
                         [
                           _vm._v(
-                            "~" + _vm._s(_vm.formatNumber(_vm.escalation_point))
+                            "~ " +
+                              _vm._s(_vm.formatNumber(_vm.escalation_point))
                           )
                         ]
                       )
@@ -64639,7 +64640,7 @@ var render = function() {
                       _c("td", [_vm._v("Lost savings")]),
                       _c("td", { staticStyle: { "text-align": "right" } }, [
                         _vm._v(
-                          "-" +
+                          "- " +
                             _vm._s(
                               _vm.formatNumber(
                                 _vm.escalation_point -
@@ -64666,7 +64667,7 @@ var render = function() {
                           _c("td", [_vm._v("Not yet deposited to savings")]),
                           _c("td", { staticStyle: { "text-align": "right" } }, [
                             _vm._v(
-                              "-" +
+                              "- " +
                                 _vm._s(
                                   _vm
                                     .formatNumber(_vm.reserved + 1000000)
@@ -64679,26 +64680,15 @@ var render = function() {
                     _vm._v(" "),
                     _c("tr", { staticStyle: { "font-weight": "bold" } }, [
                       _c("td", [_vm._v("Balance")]),
-                      _c(
-                        "td",
-                        {
-                          staticStyle: {
-                            "text-align": "right",
-                            "font-size": "9.8px !important"
-                          }
-                        },
-                        [
-                          _vm._v(
-                            _vm._s(
-                              _vm
-                                .formatNumber(
-                                  _vm.total - _vm.reserved + 1000000
-                                )
-                                .substr(1)
-                            )
+                      _c("td", { staticStyle: { "text-align": "right" } }, [
+                        _vm._v(
+                          _vm._s(
+                            _vm
+                              .formatNumber(_vm.total - _vm.reserved + 1000000)
+                              .substr(1)
                           )
-                        ]
-                      )
+                        )
+                      ])
                     ])
                   ])
                 ])

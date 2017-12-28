@@ -16,16 +16,16 @@
                                     <thead>
                                     </thead>
                                     <tbody>
-                                        <tr><td>Planned acumulated savings</td><td style="text-align: right; opacity: 0.5">~{{ formatNumber(escalation_point)}}</td></tr>
-                                        <tr><td>Lost savings</td><td style="text-align: right">-{{ formatNumber(escalation_point - (total + reserved))}}</td></tr>
+                                        <tr><td>Planned acumulated savings</td><td style="text-align: right; opacity: 0.5">~ {{ formatNumber(escalation_point)}}</td></tr>
+                                        <tr><td>Lost savings</td><td style="text-align: right">- {{ formatNumber(escalation_point - (total + reserved))}}</td></tr>
                                     <tr>
                                         <td>Saved</td><td style="text-align: right">{{ formatNumber(total + 1000000).substr(1)}}</td>
                                     </tr>
                                     <tr v-if="reserved > 0">
-                                        <td>Not yet deposited to savings</td><td style="text-align: right">-{{ formatNumber(reserved + 1000000).substr(1)}}</td></tr>
+                                        <td>Not yet deposited to savings</td><td style="text-align: right">- {{ formatNumber(reserved + 1000000).substr(1)}}</td></tr>
                                     
                                     <tr style="font-weight: bold; ">
-                                        <td>Balance</td><td style="text-align: right; font-size: 9.8px !important;">{{ formatNumber((total - reserved) + 1000000).substr(1)}}</td></tr>
+                                        <td>Balance</td><td style="text-align: right; ">{{ formatNumber((total - reserved) + 1000000).substr(1)}}</td></tr>
                                    
                                     </tbody>
                                 </table>
@@ -104,7 +104,7 @@
         },
         methods: {
             formatNumber(number) {
-                return numeral(number).format('0,0.00').replace(',', ' ').replace('.', ',')
+                return numeral(number).format('0,0.00').replace(/,/g, ' ').replace(/\./g, ',')
             },
             formatDate(date) {
                 return moment(date).fromNow()
