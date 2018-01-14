@@ -43,7 +43,7 @@ class CravingStatsController extends Controller
                     $select[] = "DAYOFWEEK(time) AS `day_of_week`";
                 }
                 if ($group == 'weekday') {
-                    $select[] = "WEEKDAY(time) AS `weekday`";
+                    $select[] = "DAYNAME(time) AS `weekday`";
                 }
                 if ($group == 'week') {
                     $select[] = "WEEKOFYEAR(time) AS `week`";

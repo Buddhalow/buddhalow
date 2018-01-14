@@ -1,53 +1,13 @@
 <template>
-    <div>
-        <nav class="navbar navbar-inverse navbar-static-top">
-            <div class="container">
-                <div class="navbar-header">
-    
-                    <!-- Collapsed Hamburger -->
-                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#app-navbar-collapse" aria-expanded="false">
-                        <span class="sr-only">Toggle Navigation</span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-    
-                    <!-- Branding Image -->
-                    <router-link class="navbar-brand" to="/">
-                       <a>Buddhalow</a>
-                    </router-link>
-                </div>
-    
-                <div class="collapse navbar-collapse" id="app-navbar-collapse">
-                    <!-- Left Side Of Navbar -->
-                    <ul class="nav navbar-nav">
-                        &nbsp;
-                    </ul>
-    
-                    <!-- Right Side Of Navbar -->
-                    <ul class="nav navbar-nav navbar-right" v-if="!user.authenticated">
-                        <!-- Authentication Links -->
-                        <router-link tag="li" to="/login">Login</a></router-link>
-                        <router-link tag="li"to="/register"><a>Register</a></router-link>
-                    </ul>
-                    <ul class="nav navbar-nav navbar-right" v-if="user.authenticated">
-                    
-                        <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" aria-haspopup="true">
-                                Account <span class="caret"></span>
-                            </a>
-    
-                            <ul class="dropdown-menu">
-                                <router-link tag="li" to="/cravings"></router-link>
-                                <router-link tag="li" to="/login">
-                                    <a>Logout</a>
-                                </router-link>
-                            </ul>
-                        </li>
-                    </ul>
-                </div>
+    <div class="page">
+        <aside>
+            <div class="aside-content">
+                <h3>Start</h3>
+                
+                 <router-link to="/dashboard/stats/cravings">Cravings</router-link></li>
+               
             </div>
-        </nav>
+        </aside>
     
         <main>
             <router-view

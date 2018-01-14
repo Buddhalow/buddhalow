@@ -7,3 +7,40 @@
 
 // Bootstrap
 @import "./bootstrap-sass/assets/stylesheets/bootstrap";
+
+
+.section-white {
+    background: white;
+}
+.section {
+    padding-bottom: 52pt;
+    padding-top: 52pt;
+}
+.section-alternative {
+    background-color: rgba(255, 255, 255, .5);
+}
+
+.page {
+    display: flex;
+    flex-direction: row;
+    
+}
+main {
+    display: block;
+}
+aside {
+    width: 25%;
+    background: #444;
+    color: white;
+    
+}
+.aside-content {
+    padding: 52pt;
+}
+.router-link-active {
+    color: $brand-primary;
+}
+aside a {
+    color: white;
+}
+

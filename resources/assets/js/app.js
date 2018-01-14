@@ -18,8 +18,10 @@ import FileUpload from 'v-file-upload'
 import VueCharts from 'hchs-vue-charts'
 import Chartkick from 'chartkick'
 import VueChartkick from 'vue-chartkick'
+import VueCircle from 'vue2-circle-progress'
 
-import VueIntercom from 'vue-intercom';
+import VueIntercom from 'vue-intercom'; 
+  import VueC3 from 'vue-c3'
 
 
 window.Vue = require('vue');
@@ -31,6 +33,8 @@ window.Vue.use(FileUpload);
 window.Vue.use(VueRouter)
 
 window.Vue.component('buddhalow-fileupload', FileUpload);
+window.Vue.component('vue-circle', VueCircle);
+window.Vue.component('vue-c3', VueC3);
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to
@@ -41,13 +45,16 @@ window.Vue.component('buddhalow-fileupload', FileUpload);
 const app = new Vue({
     el: '#app',
     router: routes,
+    components: {
+      VueC3  
+    },
     mounted() {
-        this.$intercom.boot({
+   /*     this.$intercom.boot({
           user_id: this.userId,
           name: this.name,
           email: this.email,
         });
-        this.$intercom.show();
+        this.$intercom.show();*/
     },
     watch: {
         email(email) {
