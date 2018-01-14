@@ -8,5 +8,5 @@ class Facility extends Model
 {
     public $primaryKey = 'id';
     public $incrementing = false;
-    public $fillable = ['name'];
+    public $fillable = ['name', 'slug'];
 }

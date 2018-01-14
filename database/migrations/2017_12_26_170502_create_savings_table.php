@@ -18,7 +18,6 @@ class CreateSavingsTable extends Migration
             $table->string('name')->nullable();
             $table->text('description')->nullable();
             $table->decimal('amount')->nullable();
-            $table->decimal('amount')->nullable();
             });
     }
 

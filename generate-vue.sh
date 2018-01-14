@@ -1,1 +1,1 @@
-php7.0 artisan crud:vue $1 --fields="time#date; status#integer" --vue-path="/home/ubuntu/workspace/resources/assets/js/components" --form-helper=vue
+php artisan crud:vue $1 --fields="time#date; status#integer" --vue-path="/home/ubuntu/workspace/resources/assets/js/components" --form-helper=vue

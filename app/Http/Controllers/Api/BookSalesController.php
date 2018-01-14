@@ -13,6 +13,7 @@ use App\BookType;
 use App\SaleType;
 use Illuminate\Http\Request;
 use App\Importers\ElibBookSalesImporter;
+use DB;
 
 class BookSalesController extends Controller
 {
@@ -24,6 +25,10 @@ class BookSalesController extends Controller
     public function index(Request $request)
     {
         
+        $sql = "SELECT sum(count) AS total, DATE(time) AS `date` FROM book_sales WHERE (book_sales.time BETWEEN ? AND ?) GROUP BY `date`";
+        
+        $sales = DB::select($sql, array($request->get('start'), $request->get('end'))); 
+        return response()->json(compact('sales'), 200);
     }
 
     /**
@@ -35,7 +40,35 @@ class BookSalesController extends Controller
      */
     public function store(Request $request)
     {
-        
+        try {
+            $file = $request->file('file');
+            $elibSaleImporter = new ElibBookSalesImporter();
+            $rows = $elibSaleImporter->importFile($file);
+       
+         
+            foreach($rows as $row ) {
+                $book_sale = BookSale::firstOrNew(array('external_order_id' => $row['external_order_id']));
+                $store = Store::firstOrNew($row['store']);
+                $store->save();
+                $book = Book::firstOrNew($row['book']);
+                $book->save();
+                $bookType = BookType::firstOrNew($row['book_type']);
+                $bookType->save();
+                
+                $saleType = SaleType::firstOrNew($row['sale_type']);
+                $saleType->save();
+                $book_sale->store()->associate($store);
+                $book_sale->book()->associate($book);
+                $book_sale->sale_type_id = $saleType->slug;
+                $book_sale->time = $row['time'];
+                $book_sale->amount = $row['price'];
+                $book_sale->currency = $row['currency'];
+                $book_sale->save();
+            }
+            return response()->json($rows, 200);
+        } catch (Exception $e) {
+            var_dump($e);
+        }
     }
 
     /**
@@ -84,31 +117,7 @@ class BookSalesController extends Controller
     }
     
     public function upload(Request $request) {
-        $file = '/tmp/sales.xlsx';
-        $elibSaleImporter = new ElibBookSalesImporter();
-        $rows = $elibSaleImporter->importFile($file);
-     
-        foreach($rows as $row ) {
-            $book_sale = BookSale::firstOrNew(array('external_order_id' => $row['external_order_id']));
-            $store = Store::firstOrNew($row['store']);
-            $store->save();
-            $book = Book::firstOrNew($row['book']);
-            $book->save();
-            $bookType = BookType::firstOrNew($row['book_type']);
-            $bookType->save();
-            
-            $saleType = SaleType::firstOrNew($row['sale_type']);
-            $saleType->save();
-            $book_sale->store()->associate($store);
-            $book_sale->book()->associate($book);
-            $book_sale->sale_type_id = $saleType->slug;
-            $book_sale->time = $row['time'];
-            $book_sale->amount = $row['price'];
-            $book_sale->currency = $row['currency'];
-            $book_sale->save();
-            var_dump($row);
-            var_dump($book_sale);
-        }
+        
         
     }
 }

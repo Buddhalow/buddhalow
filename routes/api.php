@@ -20,11 +20,8 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::middleware('auth:api')->get('/cravings', function (Request $request) {
-    return new CravingResourceCollection(Craving::all());
-});
-
-Route::resource('cravings', 'Api\\cravingsController', ['except' => ['create', 'edit']]);
-Route::resource('savings', 'Api\\SavingsController', ['except' => ['create', 'edit']]);
-Route::get('/sales/upload', 'Api\\BookSalesController@upload');
-Route::resource('sales', 'Api\\BookSalesController', ['except' => ['create', 'edit']]);
+Route::resource('cravings', 'Api\\CravingsController');
+Route::resource('savings', 'Api\\SavingsController');
+Route::resource('/sales/books', 'Api\\BookSalesController');
+Route::resource('/roamings', 'Api\\RoamingsController');
+Route::resource('/stats/cravings', 'Api\\CravingStatsController');

@@ -1,14 +1,20 @@
 <?php
 
-namespace App\Http\Controllers\Api;
+namespace App\Http\Controllers\Dashboard;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
-use App\craving;
+use App\BookSale;
+use App\Store;
+use App\Author;
+use App\Book;
+use App\BookType;
+use App\SaleType;
 use Illuminate\Http\Request;
+use App\Importers\ElibBookSalesImporter;
 
-class cravingsController extends Controller
+class BookSalesController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -17,9 +23,7 @@ class cravingsController extends Controller
      */
     public function index(Request $request)
     {
-        $cravings = craving::orderBy('id', 'DESC')->paginate(25);
-
-        return $cravings;
+        return view('dashboard.booksales.index', []);
     }
 
     /**
@@ -32,9 +36,6 @@ class cravingsController extends Controller
     public function store(Request $request)
     {
         
-        $craving = craving::create($request->all());
-
-        return response()->json($craving, 201);
     }
 
     /**

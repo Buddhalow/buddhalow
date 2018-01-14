@@ -10,9 +10,11 @@
 
     <title>{{ config('app.name', 'Laravel') }}</title>
     <base href="https://buddhalow-buddhalow.c9users.io/">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.3.0/Chart.js"></script>
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link href="{{ asset('css/font-awesome.min.css') }}" rel="stylesheet">
+    
 </head>
 <body>
     <div id="app" class="body" style="display: none">

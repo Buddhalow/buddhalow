@@ -3,10 +3,14 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use App\Aqtivity;
 
 class Roaming extends Model
 {
-    public function activites() {
-        return $this->belongsToMany('App\Model\Activity')->withPivot('dimension')->withTimestamps();
+    public function aqtivities() {
+        
+        return $this->hasMany(Aqtivity::class);
     }
+    public $incrementing = false;
+    public $fillable = ['time'];
 }

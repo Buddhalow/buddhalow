@@ -10,10 +10,14 @@
     "require": {
         "php": ">=7.0.0",
         "fideloper/proxy": "~3.3",
+        "illuminate/database": "5.5",
         "laravel/framework": "5.5.*",
         "laravel/tinker": "~1.0",
         "maatwebsite/excel": "~2.1.0",
-        "tcg/voyager": "^1.0"
+        "parse/php-sdk": "^1.4",
+        "predis/predis": "^1.1",
+        "tcg/voyager": "^1.0",
+        "laravel-parse/parse": "dev-master"
     },
     "require-dev": {
         "appzcoder/crud-generator": "^3.0",
@@ -23,6 +27,8 @@
         "mockery/mockery": "0.9.*",
         "phpunit/phpunit": "~6.0"
     },
+    "prefer-stable": true,
+    "minimum-stability": "stable",
     "autoload": {
         "classmap": [
             "database/seeds",
@@ -63,6 +69,10 @@
         "hooks": {
             "type": "composer",
             "url": "https://larapack.io"
+        },
+        "parse": {
+            "type": "vcs",
+            "url": "https://github.com/Buddhalow/Laravel-Parse"
         }
     }
 }

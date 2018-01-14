@@ -176,7 +176,7 @@ return [
         // App\Providers\BroadcastServiceProvider::class,
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
-
+        LaravelParse\Parse\ParseServiceProvider::class
     ],
 
     /*
@@ -226,8 +226,8 @@ return [
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
         'Excel' => Maatwebsite\Excel\Facades\Excel::class,
-        
-
+        'Dingo' => Dingo\Api\Provider\LumenServiceProvider::class,
+        'Parse' => LaravelParse\Parse\ParseServiceProvider::class
     ],
 
 ];

@@ -3,9 +3,10 @@ import VueRouter from 'vue-router';
 import Dashboard from './components/Dashboard'
 import Index from './components/Index'
 import Craving from './components/Craving'
-import SaleData from './components/SaleData'
-import FileUpload from './components/FileUpload.vue'
-import Savings from './components/Savings.vue'
+import BookSales from './components/BookSales'
+import Savings from './components/Savings'
+import Roamings from './components/Roaming'
+import CravingStats from './components/CravingStats'
 
 Vue.use(VueRouter);
 
@@ -23,14 +24,24 @@ export default new VueRouter({
             component: Craving
         },
         {
-            path: '/dashboard/sales',
-            name: 'sales',
-            component: SaleData
+            path: '/dashboard/craving/stats',
+            name: 'cravingStats',
+            component: CravingStats
         },
         {
             path: '/dashboard/savings',
             name: 'savings',
             component: Savings
+        },
+        {
+            path: '/dashboard/aqtivity',
+            name: 'aqtivity',
+            component: Roamings
+        },
+        {
+            path: '/dashboard/sales/books',
+            name: 'booksales',
+            component: BookSales
         }
     ]
 });
