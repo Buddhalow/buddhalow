@@ -8463,12 +8463,11 @@ button.close {
 }
 
 .section {
-  padding-bottom: 52pt;
-  padding-top: 52pt;
+  padding: 122pt;
 }
 
 .section-alternative {
-  background-color: rgba(255, 255, 255, 0.5);
+  background-color: rgba(0, 0, 0, 0.02);
 }
 
 .page {
@@ -8479,24 +8478,42 @@ button.close {
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
+  width: 100%;
+}
+
+body,
+html {
+  width: 100%;
 }
 
 main {
+  -webkit-box-flex: 3;
+      -ms-flex: 3;
+          flex: 3;
   display: block;
 }
 
 aside {
-  width: 25%;
-  background: #444;
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 11pt;
+          flex: 0 0 11pt;
+  background: #000;
   color: white;
 }
 
 .aside-content {
-  padding: 52pt;
+  padding: 28pt;
+  padding-right: 40pt;
+  position: fixed;
+  height: 100%;
 }
 
-.router-link-active {
-  color: #3097D1;
+.aside-content a {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.router-link-active a {
+  color: white;
 }
 
 aside a {

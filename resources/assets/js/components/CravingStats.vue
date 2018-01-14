@@ -1,7 +1,7 @@
 <template>
     <div>
         <div class="section section-white">
-            <div class="container ">
+            <div class="container">
                 <div class="row">
                     <div class="col-md-12">
                         <div class="">
@@ -74,12 +74,24 @@
                             </vue-circle>
                         </div>
                     </div>
-                    <div class="col-md-4">
-                        <div class="">
-                            <div class="panel-heading">
-                                <h3>Top weekdays</h3>
-                                <line-chart :data="weedays"></line-chart>
-                            </div>
+                </div>
+            </div>
+        </div>
+        <div class="section">
+            <div class="container">
+                <div class="col-md-6">
+                    <div class="">
+                        <div class="panel-heading">
+                            <h3>Top weekdays</h3>
+                            <column-chart :data="weekdays"></column-chart>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="">
+                        <div class="panel-heading">
+                            <h3>Top foods</h3>
+                            <column-chart :data="foods"></column-chart>
                         </div>
                     </div>
                 </div>
@@ -97,6 +109,7 @@
                 statuses: {},
                 actions: {},
                 foods: {},
+                
                 character: 2,
                 weekdays: {},
                 progress: 0,
@@ -159,6 +172,17 @@
                     this.weekdays = response.data.result.reduce((r, a) => {
                         
                        res[a['weekday']] = a["qty"];
+                        return res;
+                    });
+                })
+                axios.get(
+                    '/api/stats/cravings?start=' + this.start + '&end=' +this.end + '&group_by=food,date'
+                ).then((response) => {
+                    var res = {};
+                    var keys = this.group_by.split(/,/);
+                    this.foods = response.data.result.reduce((r, a) => {
+                        
+                       res[a['food']] = a["qty"];
                         return res;
                     });
                 })

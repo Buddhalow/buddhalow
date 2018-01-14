@@ -43,8 +43,8 @@ class BookSalesController extends Controller
         try {
             $file = $request->file('file');
             $elibSaleImporter = new ElibBookSalesImporter();
+            die("A");
             $rows = $elibSaleImporter->importFile($file);
-       
          
             foreach($rows as $row ) {
                 $book_sale = BookSale::firstOrNew(array('external_order_id' => $row['external_order_id']));

@@ -25,3 +25,4 @@ Route::resource('savings', 'Api\\SavingsController');
 Route::resource('/sales/books', 'Api\\BookSalesController');
 Route::resource('/roamings', 'Api\\RoamingsController');
 Route::resource('/stats/cravings', 'Api\\CravingStatsController');
+Route::resource('/stats', 'Api\\StatsController');

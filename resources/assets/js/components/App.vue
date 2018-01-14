@@ -3,9 +3,10 @@
         <aside>
             <div class="aside-content">
                 <h3>Start</h3>
-                
-                 <router-link to="/dashboard/stats/cravings">Cravings</router-link></li>
-               
+                <ul>
+                 <li><router-link to="/dashboard/stats/cravings">Cravings</router-link></li>
+                <li><router-link to="/dashboard/sales/books">Book sales</router-link></li>
+               </ul>
             </div>
         </aside>
     

@@ -62891,17 +62891,50 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     data: function data() {
         return {
-            salePeriod: {},
+            sales: {},
             progress: 0
         };
     },
+
+    props: {
+        start: {
+            type: String,
+            required: false,
+            default: function _default() {
+                return this.$route.query.start || __WEBPACK_IMPORTED_MODULE_0_moment___default()(new Date(new Date().getTime() - 28 * 60 * 60 * 23 * 1000)).format('YYYY-MM-DD');
+            }
+        },
+        end: {
+            type: String,
+            required: false,
+            default: function _default() {
+                return this.$route.query.end || __WEBPACK_IMPORTED_MODULE_0_moment___default()().format('YYYY-MM-DD');
+            }
+        },
+        group_by: {
+            type: String,
+            required: false,
+            default: function _default() {
+                return this.$route.query.group_by || 'date';
+            }
+        }
+    },
+    watch: {
+        '$route': function $route(to, from) {
+            // react to route changes...
+            this.retrieveStats(this.start, this.end);
+        }
+    },
     mounted: function mounted() {
-        this.retrieveSales(__WEBPACK_IMPORTED_MODULE_0_moment___default()().subtract(28, 'days').format(), __WEBPACK_IMPORTED_MODULE_0_moment___default()().format());
+        this.retrieveSales(this.start, this.end);
     },
 
     methods: {
@@ -62909,16 +62942,14 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             var _this = this;
 
             console.log(start, end);
-            axios.get('/api/sales/books?start=' + start.split('T')[0] + '&end=' + end.split('T')[0]).then(function (response) {
-                var r = {};
-                _this.salePeriod = response.data.sales.reduce(function (r, a) {
-                    r[a.date] = r[a.date] || 0;
-                    r[a.date] = a.total;
-                    return r;
+            axios.get('/api/stats?start=' + this.start + '&end=' + this.end + '&table=book_sales&group_by=' + this.group_by).then(function (response) {
+                var res = {};
+                var keys = _this.group_by.split(/,/);
+                _this.sales = response.data.result.reduce(function (r, a) {
+
+                    res[a[keys[0]]] = a["qty"];
+                    return res;
                 });
-                delete _this.salePeriod['date'];
-                delete _this.salePeriod['total'];
-                console.log(_this.salePeriod);
             });
         },
         onProgress: function onProgress(p) {
@@ -62939,57 +62970,61 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "container" }, [
-    _c("div", { staticClass: "row" }, [
-      _c("div", { staticClass: "col-md-12" }, [
-        _c("div", { staticClass: "panel panel-default" }, [
-          _c(
-            "div",
-            { staticClass: "panel-heading" },
-            [
-              _c("h3", [_vm._v("Rental of your books last 28 days")]),
-              _vm._v(" "),
-              _c("line-chart", { attrs: { data: _vm.salePeriod } })
-            ],
-            1
-          )
-        ])
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "col-md-4" }, [
-        _c("div", { staticClass: "panel panel-default" }, [
-          _c("div", { staticClass: "panel-heading" }, [
-            _vm._v(
-              "\n                    Upload sales from Elib\n                "
-            )
+  return _c("div", { staticClass: "page" }, [
+    _c("div", { staticClass: "section" }, [
+      _c("div", { staticClass: "container" }, [
+        _c("div", { staticClass: "row" }, [
+          _c("div", { staticClass: "col-md-12" }, [
+            _c("div", {}, [
+              _c(
+                "div",
+                { staticClass: "panel-heading" },
+                [
+                  _c("h3", [_vm._v("Consumption stats for ''")]),
+                  _vm._v(" "),
+                  _c("line-chart", { attrs: { data: _vm.sales } })
+                ],
+                1
+              )
+            ])
           ]),
           _vm._v(" "),
-          _c(
-            "div",
-            { staticClass: "panel-body" },
-            [
-              _c(
-                "file-upload",
-                {
-                  ref: "upload",
-                  attrs: { accept: ".xlsx,.csv", url: "/api/sales/books" },
-                  on: { progress: _vm.onProgress }
-                },
-                [
-                  _vm._v(
-                    "\n                        Upload file from elib\n                    "
-                  )
-                ]
-              ),
+          _c("div", { staticClass: "col-md-4" }, [
+            _c("div", {}, [
+              _c("div", { staticClass: "panel-heading" }, [
+                _vm._v(
+                  "\n                            Upload sales from Elib\n                        "
+                )
+              ]),
               _vm._v(" "),
               _c(
-                "button",
-                { staticClass: "button", on: { click: _vm.startUpload } },
-                [_vm._v("Start upload")]
+                "div",
+                { staticClass: "panel-body" },
+                [
+                  _c(
+                    "file-upload",
+                    {
+                      ref: "upload",
+                      attrs: { accept: ".xlsx,.csv", url: "/api/sales/books" },
+                      on: { progress: _vm.onProgress }
+                    },
+                    [
+                      _vm._v(
+                        "\n                                Upload file from elib\n                            "
+                      )
+                    ]
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "button",
+                    { staticClass: "button", on: { click: _vm.startUpload } },
+                    [_vm._v("Start upload")]
+                  )
+                ],
+                1
               )
-            ],
-            1
-          )
+            ])
+          ])
         ])
       ])
     ])
@@ -65045,6 +65080,18 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -65054,6 +65101,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             statuses: {},
             actions: {},
             foods: {},
+
             character: 2,
             weekdays: {},
             progress: 0,
@@ -65118,6 +65166,15 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                     return res;
                 });
             });
+            axios.get('/api/stats/cravings?start=' + this.start + '&end=' + this.end + '&group_by=food,date').then(function (response) {
+                var res = {};
+                var keys = _this.group_by.split(/,/);
+                _this.foods = response.data.result.reduce(function (r, a) {
+
+                    res[a['food']] = a["qty"];
+                    return res;
+                });
+            });
         },
         onProgress: function onProgress(p) {
             console.log(p);
@@ -65139,7 +65196,7 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c("div", [
     _c("div", { staticClass: "section section-white" }, [
-      _c("div", { staticClass: "container " }, [
+      _c("div", { staticClass: "container" }, [
         _c("div", { staticClass: "row" }, [
           _c("div", { staticClass: "col-md-12" }, [
             _c("div", {}, [
@@ -65247,21 +65304,40 @@ var render = function() {
               ],
               1
             )
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "col-md-4" }, [
-            _c("div", {}, [
-              _c(
-                "div",
-                { staticClass: "panel-heading" },
-                [
-                  _c("h3", [_vm._v("Top weekdays")]),
-                  _vm._v(" "),
-                  _c("line-chart", { attrs: { data: _vm.weedays } })
-                ],
-                1
-              )
-            ])
+          ])
+        ])
+      ])
+    ]),
+    _vm._v(" "),
+    _c("div", { staticClass: "section" }, [
+      _c("div", { staticClass: "container" }, [
+        _c("div", { staticClass: "col-md-6" }, [
+          _c("div", {}, [
+            _c(
+              "div",
+              { staticClass: "panel-heading" },
+              [
+                _c("h3", [_vm._v("Top weekdays")]),
+                _vm._v(" "),
+                _c("column-chart", { attrs: { data: _vm.weekdays } })
+              ],
+              1
+            )
+          ])
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "col-md-6" }, [
+          _c("div", {}, [
+            _c(
+              "div",
+              { staticClass: "panel-heading" },
+              [
+                _c("h3", [_vm._v("Top foods")]),
+                _vm._v(" "),
+                _c("column-chart", { attrs: { data: _vm.foods } })
+              ],
+              1
+            )
           ])
         ])
       ])
@@ -65353,6 +65429,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     components: {},
@@ -65388,18 +65465,33 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "page" }, [
     _c("aside", [
-      _c(
-        "div",
-        { staticClass: "aside-content" },
-        [
-          _c("h3", [_vm._v("Start")]),
+      _c("div", { staticClass: "aside-content" }, [
+        _c("h3", [_vm._v("Start")]),
+        _vm._v(" "),
+        _c("ul", [
+          _c(
+            "li",
+            [
+              _c(
+                "router-link",
+                { attrs: { to: "/dashboard/stats/cravings" } },
+                [_vm._v("Cravings")]
+              )
+            ],
+            1
+          ),
           _vm._v(" "),
-          _c("router-link", { attrs: { to: "/dashboard/stats/cravings" } }, [
-            _vm._v("Cravings")
-          ])
-        ],
-        1
-      )
+          _c(
+            "li",
+            [
+              _c("router-link", { attrs: { to: "/dashboard/sales/books" } }, [
+                _vm._v("Book sales")
+              ])
+            ],
+            1
+          )
+        ])
+      ])
     ]),
     _vm._v(" "),
     _c(

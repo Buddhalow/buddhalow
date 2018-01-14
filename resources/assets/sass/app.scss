@@ -13,32 +13,42 @@
     background: white;
 }
 .section {
-    padding-bottom: 52pt;
-    padding-top: 52pt;
+    padding: 122pt;
 }
 .section-alternative {
-    background-color: rgba(255, 255, 255, .5);
+    background-color: rgba(0, 0, 0, .02);
 }
 
 .page {
     display: flex;
     flex-direction: row;
-    
+    width: 100%;
+}
+body, html {
+    width: 100%;
 }
 main {
+    flex: 3;
+    
     display: block;
 }
 aside {
-    width: 25%;
-    background: #444;
+    flex: 0 0 11pt;
+    background: #000;
     color: white;
     
 }
 .aside-content {
-    padding: 52pt;
+    padding: 28pt;
+    padding-right: 40pt;
+    position: fixed;
+    height: 100%;
 }
-.router-link-active {
-    color: $brand-primary;
+.aside-content a {
+    color: rgba(255, 255, 255, .8);
+}
+.router-link-active a {
+    color:white;
 }
 aside a {
     color: white;
