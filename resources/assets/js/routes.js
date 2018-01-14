@@ -7,6 +7,7 @@ import BookSales from './components/BookSales'
 import Savings from './components/Savings'
 import Roamings from './components/Roaming'
 import CravingStats from './components/CravingStats'
+import Cleaning from './components/Cleaning'
 
 Vue.use(VueRouter);
 
@@ -22,6 +23,11 @@ export default new VueRouter({
             path: '/dashboard/cravings',
             name: 'cravings',
             component: Craving
+        },
+        {
+            path: '/dashboard/cleaning',
+            name: 'cleaning',
+            component: Cleaning
         },
         {
             path: '/dashboard/stats/cravings',

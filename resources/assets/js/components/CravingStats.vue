@@ -7,7 +7,7 @@
                         <div class="">
                             <div class="panel-heading">
                                 <h3>Cravings last 28 days</h3>
-                                <line-chart :data="cravings"></line-chart>
+                                <line-chart :library="{fill: true}" :data="cravings"></line-chart>
                             </div>
                         </div>
                     </div>

@@ -2,7 +2,9 @@
     <div class="page">
         <aside>
             <div class="aside-content">
-                <h3>Start</h3>
+                <div class="round" style="background-image: url('/images/avatar.jpg'); background-size: cover"></div>   
+                
+                <h3>Alecca</h3>
                 <ul>
                  <li><router-link to="/dashboard/stats/cravings">Cravings</router-link></li>
                 <li><router-link to="/dashboard/sales/books">Book sales</router-link></li>

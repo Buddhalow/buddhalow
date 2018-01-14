@@ -19,9 +19,11 @@ import VueCharts from 'hchs-vue-charts'
 import Chartkick from 'chartkick'
 import VueChartkick from 'vue-chartkick'
 import VueCircle from 'vue2-circle-progress'
+import VueChartJs from 'vue-chartjs'
 
 import VueIntercom from 'vue-intercom'; 
   import VueC3 from 'vue-c3'
+
 
 
 window.Vue = require('vue');
@@ -35,6 +37,14 @@ window.Vue.use(VueRouter)
 window.Vue.component('buddhalow-fileupload', FileUpload);
 window.Vue.component('vue-circle', VueCircle);
 window.Vue.component('vue-c3', VueC3);
+
+window.Vue.component('linear-chart', {
+  extends: VueChartJs.Line,
+  props: ['data', 'options'],
+  mounted () {
+    this.renderChart(this.data, this.options)
+  }
+})
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to

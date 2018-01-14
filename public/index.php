@@ -1,5 +1,8 @@
 <?php
-
+error_reporting(E_ALL);
+ini_set('error_reporting', E_ALL);
+ini_set("display_errors", 1);
+try {
 /**
  * Laravel - A PHP Framework For Web Artisans
  *
@@ -37,7 +40,7 @@ require __DIR__.'/../vendor/autoload.php';
 |
 */
 
-$app = require_once __DIR__.'/../bootstrap/app.php';
+$app = require_once __DIR__.'/../bootstrap/app.php';    
 
 /*
 |--------------------------------------------------------------------------
@@ -60,3 +63,9 @@ $response = $kernel->handle(
 $response->send();
 
 $kernel->terminate($request, $response);
+
+} catch(\Exception $e) {
+    echo "<pre>";
+    echo $e;
+    echo "</pre>";
+}

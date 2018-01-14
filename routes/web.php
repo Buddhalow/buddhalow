@@ -26,6 +26,7 @@ Route::get('/dashboard/aqtivity', 'Dashboard\RoamingsController@index')->name('r
 Route::get('/dashboard/stats/cravings', 'Dashboard\RoamingsController@index')->name('roamings');
 Route::get('/dashboard/savings', 'Dashboard\SavingsController@index')->name('savings');
 Route::get('/dashboard/sales/books', 'Dashboard\BookSalesController@index')->name('booksales');
+Route::get('/dashboard/cleaning', 'Dashboard\BookSalesController@index')->name('booksales');
 
 Route::group(['prefix' => 'admin'], function () {
     Voyager::routes();

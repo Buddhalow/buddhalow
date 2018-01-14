@@ -6,10 +6,11 @@ use App\Importers\Importer;
 
 use Excel;
 
-class ElibBookSalesImporter implements SaleImporter {
+class ElibBookSalesImporter {
     
     public function importFile($file) {
         $result = [];
+        die($mimeType);
         $mimeType = mime_content_type($file);
         if ($mimeTye == 'text/csv') {
             $reader = Excel::load($file);

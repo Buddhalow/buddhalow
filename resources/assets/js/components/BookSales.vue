@@ -1,16 +1,8 @@
 <template>
-    <div class="page">
+    <div>
         <div class="section">
             <div class="container">
                 <div class="row">
-                    <div class="col-md-12">
-                        <div class="">
-                            <div class="panel-heading">
-                                <h3>Consumption stats for ''</h3>
-                                <line-chart :data="sales"></line-chart>
-                            </div>
-                        </div>
-                    </div>
                     <div class="col-md-4">
                         <div class="">
                             <div class="panel-heading">
@@ -26,6 +18,15 @@
                             </div>
                         </div>
                     </div>
+                    <div class="col-md-12">
+                        <div class="">
+                            <div class="panel-heading">
+                                <h3>Consumption stats for ''</h3>
+                                <line-chart :data="sales"></line-chart>
+                            </div>
+                        </div>
+                    </div>
+                    
                 </div>
             </div>
         </div>

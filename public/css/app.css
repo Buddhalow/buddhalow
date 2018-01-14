@@ -8484,6 +8484,7 @@ button.close {
 body,
 html {
   width: 100%;
+  height: 100%;
 }
 
 main {
@@ -8491,6 +8492,7 @@ main {
       -ms-flex: 3;
           flex: 3;
   display: block;
+  height: 100%;
 }
 
 aside {
@@ -8504,8 +8506,6 @@ aside {
 .aside-content {
   padding: 28pt;
   padding-right: 40pt;
-  position: fixed;
-  height: 100%;
 }
 
 .aside-content a {
@@ -8518,5 +8518,13 @@ aside {
 
 aside a {
   color: white;
+}
+
+.round {
+  background-color: white;
+  overflow: hidden;
+  border-radius: 150pt;
+  width: 48pt;
+  height: 48pt;
 }
 

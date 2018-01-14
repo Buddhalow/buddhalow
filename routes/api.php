@@ -26,3 +26,5 @@ Route::resource('/sales/books', 'Api\\BookSalesController');
 Route::resource('/roamings', 'Api\\RoamingsController');
 Route::resource('/stats/cravings', 'Api\\CravingStatsController');
 Route::resource('/stats', 'Api\\StatsController');
+Route::resource('/rooms', 'Api\\RoomsController');
+Route::resource('/rooms/{id}/snapshots', 'Api\\RoomSnapshotsController');
