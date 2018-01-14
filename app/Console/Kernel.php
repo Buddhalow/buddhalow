@@ -34,13 +34,14 @@ class Kernel extends ConsoleKernel
         foreach($results as $_craving) {
           
            $craving = Craving::firstOrNew(array('parse_id' => (string)$_craving->getObjectId()));
-       
-           $craving->status = $_craving->get('status');
-           $craving->reason = $_craving->get('reason');
+           $craving->status = $_craving->get('statusCode');
+
+           $craving->reason_id = $_craving->get('reason');
            $craving->time = $_craving->get('time');
            $craving->food_id = $_craving->get('food');
            $craving->action_id = $_craving->get('action');
            $craving->toothbrush = $_craving->get('toothbrush');
+           var_dump($craving);
            $craving->save();
           
         }

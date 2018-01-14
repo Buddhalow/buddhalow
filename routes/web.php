@@ -23,7 +23,7 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/dashboard/cravings', 'Dashboard\CravingsController@index')->name('cravings');
 Route::get('/dashboard/aqtivity', 'Dashboard\RoamingsController@index')->name('roamings');
-Route::get('/dashboard/craving/stats', 'Dashboard\RoamingsController@index')->name('roamings');
+Route::get('/dashboard/stats/cravings', 'Dashboard\RoamingsController@index')->name('roamings');
 Route::get('/dashboard/savings', 'Dashboard\SavingsController@index')->name('savings');
 Route::get('/dashboard/sales/books', 'Dashboard\BookSalesController@index')->name('booksales');
 

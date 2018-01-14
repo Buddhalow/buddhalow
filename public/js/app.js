@@ -61810,7 +61810,7 @@ __WEBPACK_IMPORTED_MODULE_0_vue___default.a.use(__WEBPACK_IMPORTED_MODULE_1_vue_
         name: 'cravings',
         component: __WEBPACK_IMPORTED_MODULE_4__components_Craving___default.a
     }, {
-        path: '/dashboard/craving/stats',
+        path: '/dashboard/stats/cravings',
         name: 'cravingStats',
         component: __WEBPACK_IMPORTED_MODULE_8__components_CravingStats___default.a
     }, {
@@ -65022,8 +65022,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                 var keys = _this.group_by.split(/,/);
                 _this.cravings = response.data.result.reduce(function (r, a) {
 
-                    res[a[keys[0]]] = -a["qty"];
-
+                    res[a[keys[0]]] = a["qty"];
                     return res;
                 });
                 console.log(_this.cravings);

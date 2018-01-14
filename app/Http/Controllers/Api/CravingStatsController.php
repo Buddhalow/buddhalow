@@ -21,12 +21,13 @@ class CravingStatsController extends Controller
         $group_by = array();
         
         $groups = explode(',', $request->query('group_by'));
-        $start_date = $request->get('start_date', 'NOW() - INTERVAL 28 DAY');
-        $end_date = $request->query('end_date', 'NOW()');
-        $allowed_groups = ['date', 'time_of_day', 'food_id', 'action_id', 'status', 'month', 'date', 'week', 'weekday', 'hour'];
+        $start_date = $request->query('start', 'NOW() - INTERVAL 28 DAY');
+
+        $end_date = $request->query('end', 'NOW()');
+        $allowed_groups = ['date', 'time_of_day', 'food', 'reason', 'action', 'status', 'month', 'date', 'week', 'weekday', 'hour'];
         $select = array();
         foreach($groups as $group) {
-            if (in_array($request->query('group_by'), $allowed_groups)) {
+            if (in_array($group, $allowed_groups)) {
                
                 $group_by[] = '`' . $group . '`';
                 if ($group == 'date') {
@@ -36,7 +37,7 @@ class CravingStatsController extends Controller
                     $select[] = "DATE_FORMAT(time, '%Y-%m') AS `month`";
                 }
                 if ($group == 'status') {
-                    $select[] = "FIRST(status_id) AS status";
+                    $select[] = "MIN(status) AS status";
                 }
                 if ($group == 'day_of_week') {
                     $select[] = "DAYOFWEEK(time) AS `day_of_week`";
@@ -53,10 +54,19 @@ class CravingStatsController extends Controller
                 if ($group == 'day_of_month') {
                     $select[] = "MIN(DAYOFMONTH(time)) AS day_of_month";
                 }
+                if ($group == 'food') {
+                    $select[] = "food_id AS food";
+                }
+                if ($group == 'reason') {
+                    $select[] = "reason_id AS reason";
+                }
+                if ($group == 'action') {
+                    $select[] = "action_id AS action";
+                }
             }
         }
-        $sql = "SELECT count(*) AS qty, " . implode(',',$select) . " FROM cravings WHERE time BETWEEN $start_date AND $end_date GROUP BY " . implode(',', $group_by) . "";
-    
+        $sql = "SELECT count(*) AS qty, " . implode(',',$select) . " FROM cravings WHERE time BETWEEN '$start_date' AND '$end_date' GROUP BY " . implode(',', $group_by) . "";
+   
         $result = DB::select($sql); 
         
         return response()->json(compact('result'), 200);

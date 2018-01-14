@@ -24,7 +24,7 @@ export default new VueRouter({
             component: Craving
         },
         {
-            path: '/dashboard/craving/stats',
+            path: '/dashboard/stats/cravings',
             name: 'cravingStats',
             component: CravingStats
         },
