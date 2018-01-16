@@ -18,7 +18,13 @@ class Entity extends Model
             $entity_state->previous_qi = $model->previous_qi;
             $entity_state->entity_id = $model->slug;
             $entity_state->qi = $model->qi;
-            $entity_state->percent_change = (($model->qi - $model->previous_qi) / $model->previous_qi) * 100;
+            $q1 = ($model->qi - $entity_state->previous_qi);
+            if ($q1 != 0 && $model->previous_qi != 0) {
+                $entity_state->percent_change = ($q1 / $model->previous_qi) * 100;
+                
+            } else {
+                $entity_state->percent_change = 100; 
+            }
             $entity_state->time = new \DateTime;
            
             // after save code
