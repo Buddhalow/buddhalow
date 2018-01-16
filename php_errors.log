@@ -104,3 +104,4 @@ Stack trace:
 #4 /home/ubuntu/workspace/buddhalow/vendor/laravel/framework/src/Illuminate/Routing/ControllerDispatcher.php(45): Illuminate\Routing\Controller->callAction('index', Array)
 #5 /home/ubuntu/workspace/buddhalow/vendor/laravel/framework/src/Illuminate/Routing/Route.php(212): in /home/ubuntu/workspace/buddhalow/app/Importers/ElibBookSalesImporter.php on line 29
 [16-Jan-2018 09:13:27 UTC] PHP Fatal error:  Maximum execution time of 30 seconds exceeded in /home/ubuntu/workspace/buddhalow/app/Http/Controllers/Api/StreamsController.php on line 26
+[16-Jan-2018 15:42:31 UTC] PHP Warning:  Failed loading Zend extension 'xdebug.so' (tried: /usr/lib/php/20170718/xdebug.so (/usr/lib/php/20170718/xdebug.so: cannot open shared object file: No such file or directory), /usr/lib/php/20170718/xdebug.so.so (/usr/lib/php/20170718/xdebug.so.so: cannot open shared object file: No such file or directory)) in Unknown on line 0

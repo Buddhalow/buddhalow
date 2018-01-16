@@ -29,8 +29,8 @@ class ModelController extends Controller
                     $craving->food_id = $_craving['food'];
                     if (array_key_exists('action', $_craving))
                         $craving->action_id = $_craving['action'];
-           //     $craving->created_at = $_craving['createdAt'];
-             //   $craving->updated_at = $_craving['updatedAt'];
+                //      $craving->created_at = $_craving['createdAt'];
+                //      $craving->updated_at = $_craving['updatedAt'];
                 if (array_key_exists('time', $_craving))
                     $craving->time = strftime('%Y-%m-%d %H:%M:%S', strtotime($_craving['time']['iso'])); 
                 

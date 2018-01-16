@@ -20,41 +20,8 @@ class RoomsController extends Controller
     public function index(Request $request)
     {
         
-        $_rooms = Room::all();
-        $rooms = array();
-        foreach($_rooms as $room) {
-            $harmony_balance = 0;
-            $now = new \DateTime();
-            $last_updated = $room->last_updated;
-            if ($last_updated == NULL) {
-                $last_updated = new \DateTime();
-            } else {
-                $last_updated = new \DateTime($room->last_updated);
-            }
-            $deterioration = ($now->diff($last_updated)->d * $room->deterioration_speed) + ($now->diff($last_updated)->h * ($room->deterioration_speed / 23));
-            $room->balance -= $deterioration;
-            if ($now->diff($last_updated)->d > 0) {
-                $room_snapshot = new RoomSnapshot();
-                $room_snapshot->time = new \DateTime();
-                $room_snapshot->balance = $room->balance;
-                $room_snapshot->room_id = $room->slug;
-                $room_snapshot->save();
-            }
-            $cleaning = Cleaning::where("room_id", $room->slug)->where('redeemed', false)->first();
-            
-            if ($cleaning != NULL) {
-                $time = new \DateTime($cleaning->time);
-                $relation = $time->diff(new \DateTime());
-                $cleaning->redeemed = true;
-                $cleaning->save();
-                $room->balance += $cleaning->harmony;
-            }
-            $room->last_updated = new \DateTime();
-                $room->save();
-            
-            $rooms[] = $room;
-            
-        }
+        $rooms = Room::all();
+        
         
         return response()->json(compact('rooms'), 200);
     }
