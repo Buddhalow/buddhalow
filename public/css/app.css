@@ -8529,13 +8529,15 @@ aside section {
 }
 
 aside label,
-aside li,
+aside li a,
 .aside-content {
   padding: 1pt 45pt;
+  border-left: 3pt solid transparent;
 }
 
 a.router-link-active {
   color: white;
+  border-left: 3pt solid #fff;
 }
 
 aside label {

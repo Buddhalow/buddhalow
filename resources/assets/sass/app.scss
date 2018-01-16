@@ -62,11 +62,15 @@ aside section {
     margin: 0pt;
     padding: 0pt;
 }
-aside label, aside li, .aside-content {
+aside label, aside li a, .aside-content {
     padding: 1pt 45pt;
+border-left: 3pt solid transparent;
 }
+
 a.router-link-active  {
     color:white;
+border-left: 3pt solid #fff;
+    
 }
 aside label {
     font-family: "Montserrat Light";
