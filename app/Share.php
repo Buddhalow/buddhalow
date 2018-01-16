@@ -20,12 +20,13 @@ class Share extends Model
             $share_state->percent_change = 100; 
           }
           $share_state->share_id = $model->id;
+          $share_state->entity_state_id = $model->entity_state_id;
           $share_state->qi = $model->qi;
           $share_state->quote = $model->quota;
-          $share_state->time = new \DateTime;
+          $share_state->time = $model->time;
           $share_state->entity_id = $model->entity_id;
           $share_state->save();
-          
+       
           // after save code
       });
     }

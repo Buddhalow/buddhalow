@@ -92021,6 +92021,8 @@ module.exports = function(Chart) {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__components_Opportunify___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_11__components_Opportunify__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__components_Threats__ = __webpack_require__(404);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__components_Threats___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_12__components_Threats__);
+throw new Error("Cannot find module \"./components/Entity\"");
+
 
 
 
@@ -92071,6 +92073,10 @@ __WEBPACK_IMPORTED_MODULE_0_vue___default.a.use(__WEBPACK_IMPORTED_MODULE_1_vue_
         path: '/dashboard/savings',
         name: 'savings',
         component: __WEBPACK_IMPORTED_MODULE_6__components_Savings___default.a
+    }, {
+        path: '/entities/:id',
+        name: 'entity',
+        component: __WEBPACK_IMPORTED_MODULE_13__components_Entity___default.a
     }, {
         path: '/dashboard/aqtivity',
         name: 'aqtivity',

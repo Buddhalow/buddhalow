@@ -11,6 +11,7 @@ import Cleaning from './components/Cleaning'
 import MusicStreams from './components/MusicStreams'
 import Opportunify from './components/Opportunify'
 import Threats from './components/Threats'
+import Entity from './components/Entity'
 
 Vue.use(VueRouter);
 
@@ -56,6 +57,11 @@ export default new VueRouter({
             path: '/dashboard/savings',
             name: 'savings',
             component: Savings
+        },
+        {
+            path: '/entities/:id',
+            name: 'entity',
+            component: Entity
         },
         {
             path: '/dashboard/aqtivity',

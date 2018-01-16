@@ -26,16 +26,17 @@ class Entity extends Model
                 $entity_state->percent_change = 100; 
             }
             $entity_state->time = new \DateTime;
+            $entity_state->save();
            
             // after save code
             $shares = Share::where(array('owner_id' => $model->id))->get();
+       
             foreach($shares as $share) {
                 
                 $share->qi = $model->qi * ($share->quota / $model->shares);  
-              
+                $share->entity_state_id = $entity_state->id;
                 $share->save();
             } 
-            $entity_state->save();
         });
     }
 }
