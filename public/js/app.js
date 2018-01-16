@@ -93427,22 +93427,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 
 
 
@@ -93461,6 +93445,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     },
 
     methods: {
+        numeral: function numeral(number) {
+            return __WEBPACK_IMPORTED_MODULE_0_numeral___default()(number);
+        },
         formatNumber: function formatNumber(number) {
             return __WEBPACK_IMPORTED_MODULE_0_numeral___default()(number).format('0,0.00').replace(/,/g, ' ').replace(/\./g, ',');
         },
@@ -94513,162 +94500,174 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "row" }, [
-    _c("div", { staticClass: "container" }, [
-      _c("div", { staticClass: "row" }, [
-        _c("div", { staticClass: "col-md-12" }, [
-          _c("div", { staticClass: "panel panel-default" }, [
-            _c("div", { staticClass: "panel-heading" }, [_vm._v("Savings")]),
-            _vm._v(" "),
-            _c("div", { staticClass: "panel-body" }, [
-              _vm._m(0),
+  return _c("div", [
+    _c("div", { staticClass: "section" }, [
+      _c("div", { staticClass: "container" }, [
+        _c("div", { staticClass: "row" }, [
+          _c("div", { staticClass: "col-md-12" }, [
+            _c("div", [
+              _c("h3", [_vm._v("Savify")]),
               _vm._v(" "),
-              _c("div", { staticClass: "table-responsive" }, [
-                _c("table", { staticClass: "table table-borderless" }, [
-                  _c("thead"),
-                  _vm._v(" "),
-                  _c("tbody", [
-                    _c("tr", [
-                      _c("td", [_vm._v("Planned acumulated savings")]),
-                      _c(
-                        "td",
-                        {
-                          staticStyle: { "text-align": "right", opacity: "0.5" }
-                        },
-                        [
-                          _vm._v(
-                            "~ " +
-                              _vm._s(_vm.formatNumber(_vm.escalation_point))
-                          )
-                        ]
-                      )
-                    ]),
+              _c("div", {}, [
+                _c(
+                  "table",
+                  {
+                    staticClass:
+                      "table table-responsive table-striped table-responsive swedtable "
+                  },
+                  [
+                    _vm._m(0),
                     _vm._v(" "),
-                    _c("tr", [
-                      _c("td", [_vm._v("Lost savings")]),
-                      _c("td", { staticStyle: { "text-align": "right" } }, [
-                        _vm._v(
-                          "- " +
-                            _vm._s(
-                              _vm.formatNumber(
-                                _vm.escalation_point -
-                                  (_vm.total + _vm.reserved)
-                              )
-                            )
-                        )
-                      ])
-                    ]),
-                    _vm._v(" "),
-                    _c("tr", [
-                      _c("td", [_vm._v("Saved")]),
-                      _c("td", { staticStyle: { "text-align": "right" } }, [
-                        _vm._v(
-                          _vm._s(
-                            _vm.formatNumber(_vm.total + 1000000).substr(1)
-                          )
-                        )
-                      ])
-                    ]),
-                    _vm._v(" "),
-                    _vm.reserved > 0
-                      ? _c("tr", [
-                          _c("td", [_vm._v("Not yet deposited to savings")]),
-                          _c("td", { staticStyle: { "text-align": "right" } }, [
+                    _c("tbody", [
+                      _c("tr", [
+                        _c("td", { attrs: { colspan: "2" } }, [
+                          _vm._v("Planned acumulated savings")
+                        ]),
+                        _c(
+                          "td",
+                          {
+                            staticStyle: {
+                              "text-align": "right",
+                              opacity: "0.5"
+                            }
+                          },
+                          [
                             _vm._v(
-                              "- " +
-                                _vm._s(
-                                  _vm
-                                    .formatNumber(_vm.reserved + 1000000)
-                                    .substr(1)
+                              "~ " +
+                                _vm._s(_vm.formatNumber(_vm.escalation_point))
+                            )
+                          ]
+                        )
+                      ]),
+                      _vm._v(" "),
+                      _c("tr", [
+                        _c("td", { attrs: { colspan: "2" } }, [
+                          _vm._v("Lost savings")
+                        ]),
+                        _c("td", { staticStyle: { "text-align": "right" } }, [
+                          _vm._v(
+                            "- " +
+                              _vm._s(
+                                _vm.formatNumber(
+                                  _vm.escalation_point -
+                                    (_vm.total + _vm.reserved)
                                 )
+                              )
+                          )
+                        ])
+                      ]),
+                      _vm._v(" "),
+                      _c("tr", [
+                        _c("td", { attrs: { colspan: "2" } }, [
+                          _vm._v("Saved")
+                        ]),
+                        _c("td", { staticStyle: { "text-align": "right" } }, [
+                          _vm._v(
+                            _vm._s(
+                              _vm.formatNumber(_vm.total + 1000000).substr(1)
+                            )
+                          )
+                        ])
+                      ]),
+                      _vm._v(" "),
+                      _vm.reserved > 0
+                        ? _c("tr", [
+                            _c("td", { attrs: { colspan: "2" } }, [
+                              _vm._v("Not yet deposited to savings")
+                            ]),
+                            _c(
+                              "td",
+                              { staticStyle: { "text-align": "right" } },
+                              [
+                                _vm._v(
+                                  "- " +
+                                    _vm._s(
+                                      _vm
+                                        .formatNumber(_vm.reserved + 1000000)
+                                        .substr(1)
+                                    )
+                                )
+                              ]
                             )
                           ])
-                        ])
+                        : _vm._e(),
+                      _vm._v(" "),
+                      _c("tr", { staticStyle: { "font-weight": "bold" } }, [
+                        _c("td", { attrs: { colspan: "2" } }, [
+                          _vm._v("Balance")
+                        ]),
+                        _c(
+                          "td",
+                          {
+                            staticStyle: {
+                              "text-align": "right",
+                              "font-size": "10px"
+                            }
+                          },
+                          [
+                            _vm._v(
+                              _vm._s(
+                                _vm
+                                  .formatNumber(
+                                    _vm.total - _vm.reserved + 1000000
+                                  )
+                                  .substr(1)
+                              )
+                            )
+                          ]
+                        )
+                      ])
+                    ]),
+                    _vm._v(" "),
+                    _vm.reservations.length > 0
+                      ? _c("thead", [_vm._m(1)])
                       : _vm._e(),
                     _vm._v(" "),
-                    _c("tr", { staticStyle: { "font-weight": "bold" } }, [
-                      _c("td", [_vm._v("Balance")]),
-                      _c("td", { staticStyle: { "text-align": "right" } }, [
-                        _vm._v(
-                          _vm._s(
-                            _vm
-                              .formatNumber(_vm.total - _vm.reserved + 1000000)
-                              .substr(1)
-                          )
-                        )
-                      ])
-                    ])
-                  ])
-                ])
-              ])
-            ])
-          ])
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "col-md-12" }, [
-          _c("div", { staticClass: "panel panel-default" }, [
-            _c("div", { staticClass: "panel-heading" }, [
-              _vm._v("Reservations")
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "panel-body" }, [
-              _c("table", { staticClass: "table table-borderless" }, [
-                _c(
-                  "tbody",
-                  _vm._l(_vm.reservations, function(item, i) {
-                    return _c("tr", [
-                      _c("td", [_vm._v(_vm._s(_vm.formatDate(item.time)))]),
-                      _vm._v(" "),
-                      _c("td", [_vm._v(_vm._s(item.name))]),
-                      _c("td", { staticStyle: { "text-align": "right" } }, [
-                        _vm._v(
-                          "\n                                     " +
-                            _vm._s(_vm.formatNumber(item.amount)) +
-                            "\n                                     "
-                        )
-                      ])
-                    ])
-                  })
-                )
-              ])
-            ])
-          ])
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "col-md-12" }, [
-          _c("div", { staticClass: "panel panel-default" }, [
-            _c("div", { staticClass: "panel-heading" }, [
-              _vm._v("Recent transactions")
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "panel-body" }, [
-              _vm._m(1),
-              _vm._v(" "),
-              _c("div", { staticClass: "table-responsive" }, [
-                _c("table", { staticClass: "table table-borderless" }, [
-                  _c(
-                    "tbody",
-                    [
-                      _vm._m(2),
-                      _vm._v(" "),
-                      _vm._l(_vm.transactions, function(item, i) {
+                    _c(
+                      "tbody",
+                      _vm._l(_vm.reservations, function(item, i) {
                         return _c("tr", [
                           _c("td", [_vm._v(_vm._s(_vm.formatDate(item.time)))]),
                           _vm._v(" "),
                           _c("td", [_vm._v(_vm._s(item.name))]),
                           _c("td", { staticStyle: { "text-align": "right" } }, [
                             _vm._v(
+                              "\n                                         " +
+                                _vm._s(_vm.formatNumber(item.amount)) +
+                                "\n                                         "
+                            )
+                          ])
+                        ])
+                      })
+                    ),
+                    _vm._v(" "),
+                    _vm._m(2),
+                    _vm._v(" "),
+                    _c(
+                      "tbody",
+                      _vm._l(_vm.transactions, function(item, i) {
+                        return _c("tr", [
+                          _c("td", [
+                            _vm._v(
+                              _vm._s(_vm.moment(item.time).format("YY-MM-DD"))
+                            )
+                          ]),
+                          _vm._v(" "),
+                          _c("td", [_vm._v(_vm._s(item.name))]),
+                          _c("td", { staticStyle: { "text-align": "right" } }, [
+                            _vm._v(
                               "\n                                            " +
-                                _vm._s(_vm.numeral(item.amount).format("0,0")) +
+                                _vm._s(
+                                  _vm.formatNumber(item.amount + 1000000)
+                                ) +
                                 "\n                                        "
                             )
                           ])
                         ])
                       })
-                    ],
-                    2
-                  )
-                ])
+                    )
+                  ]
+                )
               ])
             ])
           ])
@@ -94682,48 +94681,30 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c(
-      "a",
-      {
-        staticClass: "btn btn-success btn-sm",
-        attrs: { href: "/dashboard/savings/create", title: "Add New Saving" }
-      },
-      [
-        _c("i", {
-          staticClass: "fa fa-plus",
-          attrs: { "aria-hidden": "true" }
-        }),
-        _vm._v(" Add New\n                        ")
-      ]
-    )
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c(
-      "a",
-      {
-        staticClass: "btn btn-success btn-sm",
-        attrs: { href: "/dashboard/savings/create", title: "Add New Saving" }
-      },
-      [
-        _c("i", {
-          staticClass: "fa fa-plus",
-          attrs: { "aria-hidden": "true" }
-        }),
-        _vm._v(" Add New\n                        ")
-      ]
-    )
+    return _c("thead", [
+      _c("tr", [
+        _c("th", { attrs: { colspan: "5" } }, [
+          _vm._v("Savings account 0000-0 282 252-1")
+        ])
+      ])
+    ])
   },
   function() {
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("tr", [
-      _c("td"),
-      _vm._v(" "),
-      _c("td", { attrs: { colspan: "3" } }, [_vm._v("Latest transactions")])
+      _c("th", { attrs: { colspan: "5" } }, [_vm._v("Reservations")])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("thead", [
+      _c("tr", [
+        _c("th", { attrs: { colspan: "5" } }, [_vm._v("Latest transactions")])
+      ])
     ])
   }
 ]
@@ -118174,6 +118155,8 @@ module.exports = Component.exports
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_moment__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_moment___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_moment__);
 //
 //
 //
@@ -118205,6 +118188,11 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     data: function data() {
@@ -118223,6 +118211,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     },
 
     methods: {
+        moment: function moment(str) {
+            return __WEBPACK_IMPORTED_MODULE_0_moment___default()(str);
+        },
         load: function load() {
             var _this = this;
 
@@ -118252,7 +118243,10 @@ var render = function() {
               _vm.objects.length > 0
                 ? _c(
                     "table",
-                    { staticClass: "table table-striped table-responsive" },
+                    {
+                      staticClass:
+                        "table table-striped table-responsive swedtable"
+                    },
                     [
                       _vm._m(0),
                       _vm._v(" "),
@@ -118260,7 +118254,24 @@ var render = function() {
                         "tbody",
                         _vm._l(_vm.objects, function(o, index) {
                           return _c("tr", [
+                            _c("td", [
+                              _vm._v(
+                                _vm._s(_vm.moment(o.time).format("YY-MM-DD"))
+                              )
+                            ]),
+                            _vm._v(" "),
                             _c("td", [_vm._v(_vm._s(o.name))]),
+                            _vm._v(" "),
+                            _c("td", [
+                              _c(
+                                "progress",
+                                {
+                                  attrs: { min: "0", max: "100" },
+                                  domProps: { value: o.probability }
+                                },
+                                [_vm._v(" " + _vm._s(o.probability) + " %")]
+                              )
+                            ]),
                             _vm._v(" "),
                             _c("td", [_vm._v(_vm._s(o.status.name))])
                           ])
@@ -118283,7 +118294,11 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c("thead", [
       _c("tr", [
+        _c("th", [_vm._v("Date")]),
+        _vm._v(" "),
         _c("th", [_vm._v("Name")]),
+        _vm._v(" "),
+        _c("th"),
         _vm._v(" "),
         _c("th", [_vm._v("Status")])
       ])
@@ -118757,7 +118772,7 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", [
-    _c("div", { staticClass: "section section-white" }, [
+    _c("div", {}, [
       _c("div", { staticClass: "container" }, [
         _c("div", { staticClass: "row" }, [
           _c("div", { staticClass: "col-md-12" }, [
@@ -118971,6 +118986,8 @@ module.exports = Component.exports
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_numeral__ = __webpack_require__(349);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_numeral___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_numeral__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_moment__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_moment___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_moment__);
 //
 //
 //
@@ -119013,6 +119030,18 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -119033,8 +119062,11 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     },
 
     methods: {
+        moment: function moment(a) {
+            return __WEBPACK_IMPORTED_MODULE_1_moment___default()(a);
+        },
         formatNumber: function formatNumber(str) {
-            return __WEBPACK_IMPORTED_MODULE_0_numeral___default()(str).format('0,0.00').replace(/,/g, '•').replace(/\./g, ':');
+            return __WEBPACK_IMPORTED_MODULE_0_numeral___default()(str).format('0,0.00').replace(/,/g, ' • ').replace(/\./g, ' : ');
         },
         load: function load() {
             var _this = this;
@@ -119065,38 +119097,68 @@ var render = function() {
               _vm._v(" "),
               _c(
                 "table",
-                { staticClass: "table table-striped table-responsive" },
+                {
+                  staticClass: "table table-striped table-responsive swedtable"
+                },
                 [
+                  _vm._m(0),
+                  _vm._v(" "),
                   _c("thead", [
                     _c("tr", [
-                      _c("th", { attrs: { colspan: "2" } }, [
-                        _vm._v("Balance")
-                      ]),
+                      _c("td", { attrs: { colspan: "2" } }),
                       _vm._v(" "),
-                      _c("th", { staticStyle: { "text-align": "right" } }, [
-                        _vm._v(
-                          _vm._s(_vm.formatNumber(_vm.infection.balance)) +
-                            " QIH"
-                        )
-                      ]),
+                      _c("td", { staticStyle: { "text-align": "right" } }),
                       _vm._v(" "),
-                      _c("th", { staticStyle: { "text-align": "right" } }, [
-                        _vm._v(
-                          _vm._s(_vm.formatNumber(_vm.infection.balance)) +
-                            " QIH"
+                      _c("td", {}, [
+                        _vm._v("Balance "),
+                        _c("span", { staticStyle: { float: "right" } }, [
+                          _vm._v(
+                            _vm._s(_vm.formatNumber(_vm.infection.balance)) +
+                              " QIH"
+                          )
+                        ])
+                      ])
+                    ]),
+                    _vm._v(" "),
+                    _c("tr", [
+                      _c("td", { attrs: { colspan: "2" } }),
+                      _vm._v(" "),
+                      _c("td", { staticStyle: { "text-align": "right" } }),
+                      _vm._v(" "),
+                      _c("td", {}, [
+                        _vm._v("Debt "),
+                        _c(
+                          "span",
+                          {
+                            staticStyle: {
+                              float: "right",
+                              "font-weight": "bold",
+                              "font-size": "10px"
+                            }
+                          },
+                          [
+                            _vm._v(
+                              _vm._s(_vm.formatNumber(_vm.infection.balance)) +
+                                " QIH"
+                            )
+                          ]
                         )
                       ])
                     ])
                   ]),
                   _vm._v(" "),
-                  _vm._m(0),
+                  _vm._m(1),
                   _vm._v(" "),
                   _vm.transactions.length > 0
                     ? _c(
                         "tbody",
                         _vm._l(_vm.transactions, function(o, index) {
-                          return _c("tr", [
-                            _c("td", [_vm._v(_vm._s(o.time))]),
+                          return _c("tr", { staticStyle: { opacity: "0.8" } }, [
+                            _c("td", [
+                              _vm._v(
+                                _vm._s(_vm.moment(o.time).format("YY-MM-DD"))
+                              )
+                            ]),
                             _vm._v(" "),
                             _c("td", [_vm._v(_vm._s(o.name))]),
                             _vm._v(" "),
@@ -119133,6 +119195,18 @@ var render = function() {
   ])
 }
 var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("thead", [
+      _c("tr", [
+        _c("th", { attrs: { colspan: "4" } }, [
+          _vm._v("Infection account Darkcember 0000-0 2812-7")
+        ])
+      ])
+    ])
+  },
   function() {
     var _vm = this
     var _h = _vm.$createElement

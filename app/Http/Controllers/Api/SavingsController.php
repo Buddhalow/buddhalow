@@ -24,7 +24,7 @@ class SavingsController extends Controller
         $deposited = (int)Saving::where('reservation', 0)->sum('amount');
         $reserved = (int)Saving::where('reservation', 1)->sum('amount');
         if (!empty($keyword)) {
-            $savings = Saving::where('name', 'LIKE', "%$keyword%")
+            $transactions = Saving::where('name', 'LIKE', "%$keyword%")
                 ->where('reservation', '0')
                 ->orWhere('description', 'LIKE', "%$keyword%")
                 ->orWhere('amount', 'LIKE', "%$keyword%")
@@ -39,11 +39,11 @@ class SavingsController extends Controller
                 
                 ->paginate($perPage);
         } else {
-            $savings = Saving::orderBy('time', 'DESC')->paginate($perPage)->where('reservation', 0);
+            $transactions = Saving::orderBy('time', 'DESC')->paginate($perPage)->where('reservation', 0);
             $reservations = Saving::orderBy('time', 'DESC')->paginate($perPage)->where('reservation', 1);
         }
 
-        return response()->json(compact('savings', 'total', 'escalation_point', 'reservations', 'reserved', 'deposited'), 200);
+        return response()->json(compact('transactions', 'total', 'escalation_point', 'reservations', 'reserved', 'deposited'), 200);
     }
 
     /**
