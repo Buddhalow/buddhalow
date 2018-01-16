@@ -92011,8 +92011,8 @@ module.exports = function(Chart) {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__components_Savings___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_6__components_Savings__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__components_Roaming__ = __webpack_require__(351);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__components_Roaming___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_7__components_Roaming__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__components_CravingStats__ = __webpack_require__(354);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__components_CravingStats___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_8__components_CravingStats__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__components_Cravity__ = __webpack_require__(407);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__components_Cravity___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_8__components_Cravity__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__components_Cleaning__ = __webpack_require__(357);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__components_Cleaning___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_9__components_Cleaning__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__components_MusicStreams__ = __webpack_require__(395);
@@ -92062,7 +92062,7 @@ __WEBPACK_IMPORTED_MODULE_0_vue___default.a.use(__WEBPACK_IMPORTED_MODULE_1_vue_
     }, {
         path: '/dashboard/stats/cravings',
         name: 'cravingStats',
-        component: __WEBPACK_IMPORTED_MODULE_8__components_CravingStats___default.a
+        component: __WEBPACK_IMPORTED_MODULE_8__components_Cravity___default.a
     }, {
         path: '/dashboard/music/streams',
         name: 'musicStreams',
@@ -95187,454 +95187,9 @@ if (false) {
 }
 
 /***/ }),
-/* 354 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var disposed = false
-var normalizeComponent = __webpack_require__(7)
-/* script */
-var __vue_script__ = __webpack_require__(355)
-/* template */
-var __vue_template__ = __webpack_require__(356)
-/* template functional */
-var __vue_template_functional__ = false
-/* styles */
-var __vue_styles__ = null
-/* scopeId */
-var __vue_scopeId__ = null
-/* moduleIdentifier (server only) */
-var __vue_module_identifier__ = null
-var Component = normalizeComponent(
-  __vue_script__,
-  __vue_template__,
-  __vue_template_functional__,
-  __vue_styles__,
-  __vue_scopeId__,
-  __vue_module_identifier__
-)
-Component.options.__file = "resources/assets/js/components/CravingStats.vue"
-
-/* hot reload */
-if (false) {(function () {
-  var hotAPI = require("vue-hot-reload-api")
-  hotAPI.install(require("vue"), false)
-  if (!hotAPI.compatible) return
-  module.hot.accept()
-  if (!module.hot.data) {
-    hotAPI.createRecord("data-v-321037f8", Component.options)
-  } else {
-    hotAPI.reload("data-v-321037f8", Component.options)
-  }
-  module.hot.dispose(function (data) {
-    disposed = true
-  })
-})()}
-
-module.exports = Component.exports
-
-
-/***/ }),
-/* 355 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_moment__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_moment___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_moment__);
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-
-
-/* harmony default export */ __webpack_exports__["default"] = ({
-    data: function data() {
-        return {
-            cravings: {},
-            statuses: {},
-            actions: {},
-            foods: {},
-
-            character: 2,
-            weekdays: {},
-            progress: 0,
-            weekdaysHandler: new Vue()
-        };
-    },
-
-    props: {
-        start: {
-            type: String,
-            required: false,
-            default: function _default() {
-                return this.$route.query.start || __WEBPACK_IMPORTED_MODULE_0_moment___default()(new Date(new Date().getTime() - 28 * 60 * 60 * 23 * 1000)).format('YYYY-MM-DD');
-            }
-        },
-        end: {
-            type: String,
-            required: false,
-            default: function _default() {
-                return this.$route.query.end || __WEBPACK_IMPORTED_MODULE_0_moment___default()().format('YYYY-MM-DD');
-            }
-        },
-        group_by: {
-            type: String,
-            required: false,
-            default: function _default() {
-                return this.$route.query.group_by || 'date';
-            }
-        }
-    },
-    watch: {
-        '$route': function $route(to, from) {
-            // react to route changes...
-            this.retrieveStats(this.start, this.end);
-        }
-    },
-    mounted: function mounted() {
-        this.retrieveStats(this.start, this.end);
-    },
-
-    methods: {
-        retrieveStats: function retrieveStats(start, end) {
-            var _this = this;
-
-            console.log(start, end);
-            axios.get('/api/stats/cravings?start=' + this.start + '&end=' + this.end + '&group_by=' + this.group_by).then(function (response) {
-                var res = {};
-                var keys = _this.group_by.split(/,/);
-                var craving_data = response.data.result;
-                _this.cravings = {
-                    type: 'line',
-                    data: {
-                        labels: craving_data.map(function (o) {
-                            return o.time;
-                        }),
-                        datasets: [{
-                            label: 'Cravings',
-                            data: craving_data.map(function (o) {
-                                return -o.qty;
-                            })
-                        }]
-                    }
-                };
-
-                console.log(_this.cravings);
-            });
-            axios.get('/api/stats/cravings?start=' + this.start + '&end=' + this.end + '&group_by=weekday,date').then(function (response) {
-                var res = {};
-                var keys = _this.group_by.split(/,/);
-                _this.weekdays = {
-                    type: 'line',
-                    data: {
-                        labels: response.data.result.map(function (o) {
-                            return o.name;
-                        }),
-                        datasets: [{
-                            label: 'Cravings',
-                            data: response.data.result.map(function (o) {
-                                return o.qty;
-                            })
-                        }]
-                    }
-                };
-            });
-            axios.get('/api/stats/cravings?start=' + this.start + '&end=' + this.end + '&group_by=food,date').then(function (response) {
-                var res = {};
-                var keys = _this.group_by.split(/,/);
-                _this.foods = {
-                    type: 'line',
-                    data: {
-                        labels: response.data.result.map(function (o) {
-                            return o.name;
-                        }),
-                        datasets: [{
-                            label: 'Cravings',
-                            data: response.data.result.map(function (o) {
-                                return o.qty;
-                            })
-                        }]
-                    }
-                };
-            });
-        },
-        onProgress: function onProgress(p) {
-            console.log(p);
-            this.progress = p;
-        },
-        startUpload: function startUpload() {
-            this.$refs.active = true;
-        }
-    }
-});
-
-/***/ }),
-/* 356 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var render = function() {
-  var _vm = this
-  var _h = _vm.$createElement
-  var _c = _vm._self._c || _h
-  return _c("div", [
-    _c("div", { staticClass: "section section-white" }, [
-      _c("div", { staticClass: "container" }, [
-        _c("div", { staticClass: "row" }, [
-          _c("div", { staticClass: "col-md-12" }, [
-            _c("div", {}, [
-              _c(
-                "div",
-                { staticClass: "panel-heading" },
-                [
-                  _c("h3", [_vm._v("Cravings last 28 days")]),
-                  _vm._v(" "),
-                  _c("vue-chart", { attrs: { data: _vm.cravings } })
-                ],
-                1
-              )
-            ])
-          ])
-        ])
-      ])
-    ]),
-    _vm._v(" "),
-    _c("div", { staticClass: "section section-alternative" }, [
-      _c("div", { staticClass: "container" }, [
-        _c("div", { staticClass: "row" }, [
-          _c("div", { staticClass: "col-md-4" }, [
-            _c(
-              "div",
-              {},
-              [
-                _c(
-                  "vue-circle",
-                  {
-                    attrs: {
-                      progress: _vm.character,
-                      size: 300,
-                      reverse: false,
-                      "line-cap": "round",
-                      fill: _vm.fill,
-                      "empty-fill": "rgba(0, 0, 0, .1)",
-                      "animation-start-value": 0.0,
-                      "start-angle": 0,
-                      "insert-mode": "append",
-                      thickness: 5,
-                      "show-percent": true
-                    }
-                  },
-                  [_c("p", [_vm._v("Character")])]
-                )
-              ],
-              1
-            )
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "col-md-4" }, [
-            _c(
-              "div",
-              {},
-              [
-                _c(
-                  "vue-circle",
-                  {
-                    attrs: {
-                      progress: _vm.character,
-                      size: 300,
-                      reverse: false,
-                      "line-cap": "round",
-                      fill: _vm.fill,
-                      "empty-fill": "rgba(0, 0, 0, .1)",
-                      "animation-start-value": 0.0,
-                      "start-angle": 0,
-                      "insert-mode": "append",
-                      thickness: 5,
-                      "show-percent": true
-                    }
-                  },
-                  [_c("p", [_vm._v("Healthy habits")])]
-                )
-              ],
-              1
-            )
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "col-md-4" }, [
-            _c(
-              "div",
-              {},
-              [
-                _c(
-                  "vue-circle",
-                  {
-                    attrs: {
-                      progress: _vm.character,
-                      size: 300,
-                      reverse: false,
-                      "line-cap": "round",
-                      fill: _vm.fill,
-                      "empty-fill": "rgba(0, 0, 0, .1)",
-                      "animation-start-value": 0.0,
-                      "start-angle": 0,
-                      "insert-mode": "append",
-                      thickness: 5,
-                      "show-percent": true
-                    }
-                  },
-                  [_c("p", [_vm._v("Healthy habits")])]
-                )
-              ],
-              1
-            )
-          ])
-        ])
-      ])
-    ]),
-    _vm._v(" "),
-    _c("div", { staticClass: "section" }, [
-      _c("div", { staticClass: "container" }, [
-        _c("div", { staticClass: "col-md-6" }, [
-          _c("div", {}, [
-            _c(
-              "div",
-              { staticClass: "panel-heading" },
-              [
-                _c("h3", [_vm._v("Top weekdays")]),
-                _vm._v(" "),
-                _c("vue-chart", { attrs: { data: _vm.weekdays } })
-              ],
-              1
-            )
-          ])
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "col-md-6" }, [
-          _c("div", {}, [
-            _c(
-              "div",
-              { staticClass: "panel-heading" },
-              [
-                _c("h3", [_vm._v("Top foods")]),
-                _vm._v(" "),
-                _c("vue-chart", { attrs: { data: _vm.foods } })
-              ],
-              1
-            )
-          ])
-        ])
-      ])
-    ])
-  ])
-}
-var staticRenderFns = []
-render._withStripped = true
-module.exports = { render: render, staticRenderFns: staticRenderFns }
-if (false) {
-  module.hot.accept()
-  if (module.hot.data) {
-    require("vue-hot-reload-api")      .rerender("data-v-321037f8", module.exports)
-  }
-}
-
-/***/ }),
+/* 354 */,
+/* 355 */,
+/* 356 */,
 /* 357 */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -118902,6 +118457,455 @@ if (false) {
   module.hot.accept()
   if (module.hot.data) {
     require("vue-hot-reload-api")      .rerender("data-v-5e8f459c", module.exports)
+  }
+}
+
+/***/ }),
+/* 407 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var disposed = false
+var normalizeComponent = __webpack_require__(7)
+/* script */
+var __vue_script__ = __webpack_require__(408)
+/* template */
+var __vue_template__ = __webpack_require__(409)
+/* template functional */
+var __vue_template_functional__ = false
+/* styles */
+var __vue_styles__ = null
+/* scopeId */
+var __vue_scopeId__ = null
+/* moduleIdentifier (server only) */
+var __vue_module_identifier__ = null
+var Component = normalizeComponent(
+  __vue_script__,
+  __vue_template__,
+  __vue_template_functional__,
+  __vue_styles__,
+  __vue_scopeId__,
+  __vue_module_identifier__
+)
+Component.options.__file = "resources/assets/js/components/Cravity.vue"
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-2d55ec63", Component.options)
+  } else {
+    hotAPI.reload("data-v-2d55ec63", Component.options)
+  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 408 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_moment__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_moment___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_moment__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+    data: function data() {
+        return {
+            cravings: {},
+            statuses: {},
+            actions: {},
+            foods: {},
+
+            character: 2,
+            weekdays: {},
+            progress: 0,
+            weekdaysHandler: new Vue()
+        };
+    },
+
+    props: {
+        start: {
+            type: String,
+            required: false,
+            default: function _default() {
+                return this.$route.query.start || __WEBPACK_IMPORTED_MODULE_0_moment___default()(new Date(new Date().getTime() - 28 * 60 * 60 * 23 * 1000)).format('YYYY-MM-DD');
+            }
+        },
+        end: {
+            type: String,
+            required: false,
+            default: function _default() {
+                return this.$route.query.end || __WEBPACK_IMPORTED_MODULE_0_moment___default()().format('YYYY-MM-DD');
+            }
+        },
+        group_by: {
+            type: String,
+            required: false,
+            default: function _default() {
+                return this.$route.query.group_by || 'date';
+            }
+        }
+    },
+    watch: {
+        '$route': function $route(to, from) {
+            // react to route changes...
+            this.retrieveStats(this.start, this.end);
+        }
+    },
+    mounted: function mounted() {
+        this.retrieveStats(this.start, this.end);
+    },
+
+    methods: {
+        retrieveStats: function retrieveStats(start, end) {
+            var _this = this;
+
+            console.log(start, end);
+            axios.get('/api/stats/cravings?start=' + this.start + '&end=' + this.end + '&group_by=' + this.group_by).then(function (response) {
+                var res = {};
+                var keys = _this.group_by.split(/,/);
+                var craving_data = response.data.result;
+                _this.cravings = {
+                    type: 'line',
+                    data: {
+                        labels: craving_data.map(function (o) {
+                            return o.time;
+                        }),
+                        datasets: [{
+                            label: 'Cravings',
+                            data: craving_data.map(function (o) {
+                                return -o.qty;
+                            })
+                        }]
+                    }
+                };
+
+                console.log(_this.cravings);
+            });
+            axios.get('/api/stats/cravings?start=' + this.start + '&end=' + this.end + '&group_by=weekday,date').then(function (response) {
+                var res = {};
+                var keys = _this.group_by.split(/,/);
+                _this.weekdays = {
+                    type: 'line',
+                    data: {
+                        labels: response.data.result.map(function (o) {
+                            return o.name;
+                        }),
+                        datasets: [{
+                            label: 'Cravings',
+                            data: response.data.result.map(function (o) {
+                                return o.qty;
+                            })
+                        }]
+                    }
+                };
+            });
+            axios.get('/api/stats/cravings?start=' + this.start + '&end=' + this.end + '&group_by=food,date').then(function (response) {
+                var res = {};
+                var keys = _this.group_by.split(/,/);
+                _this.foods = {
+                    type: 'line',
+                    data: {
+                        labels: response.data.result.map(function (o) {
+                            return o.name;
+                        }),
+                        datasets: [{
+                            label: 'Cravings',
+                            data: response.data.result.map(function (o) {
+                                return o.qty;
+                            })
+                        }]
+                    }
+                };
+            });
+        },
+        onProgress: function onProgress(p) {
+            console.log(p);
+            this.progress = p;
+        },
+        startUpload: function startUpload() {
+            this.$refs.active = true;
+        }
+    }
+});
+
+/***/ }),
+/* 409 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("div", [
+    _c("div", { staticClass: "section section-white" }, [
+      _c("div", { staticClass: "container" }, [
+        _c("div", { staticClass: "row" }, [
+          _c("div", { staticClass: "col-md-12" }, [
+            _c("div", {}, [
+              _c(
+                "div",
+                { staticClass: "panel-heading" },
+                [
+                  _c("h3", [_vm._v("Cravings last 28 days")]),
+                  _vm._v(" "),
+                  _c("vue-chart", { attrs: { data: _vm.cravings } })
+                ],
+                1
+              )
+            ])
+          ])
+        ])
+      ])
+    ]),
+    _vm._v(" "),
+    _c("div", { staticClass: "section" }, [
+      _c("div", { staticClass: "container" }, [
+        _c("div", { staticClass: "col-md-6" }, [
+          _c("div", {}, [
+            _c(
+              "div",
+              { staticClass: "panel-heading" },
+              [
+                _c("h3", [_vm._v("Top weekdays")]),
+                _vm._v(" "),
+                _c("vue-chart", { attrs: { data: _vm.weekdays } })
+              ],
+              1
+            )
+          ])
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "col-md-6" }, [
+          _c("div", {}, [
+            _c(
+              "div",
+              { staticClass: "panel-heading" },
+              [
+                _c("h3", [_vm._v("Top foods")]),
+                _vm._v(" "),
+                _c("vue-chart", { attrs: { data: _vm.foods } })
+              ],
+              1
+            )
+          ])
+        ])
+      ])
+    ]),
+    _vm._v(" "),
+    _c("div", { staticClass: "section section-alternative" }, [
+      _c("div", { staticClass: "container" }, [
+        _c("div", { staticClass: "row" }, [
+          _c("div", { staticClass: "col-md-4" }, [
+            _c(
+              "div",
+              {},
+              [
+                _c(
+                  "vue-circle",
+                  {
+                    attrs: {
+                      progress: _vm.character,
+                      size: 300,
+                      reverse: false,
+                      "line-cap": "round",
+                      fill: _vm.fill,
+                      "empty-fill": "rgba(0, 0, 0, .1)",
+                      "animation-start-value": 0.0,
+                      "start-angle": 0,
+                      "insert-mode": "append",
+                      thickness: 5,
+                      "show-percent": true
+                    }
+                  },
+                  [_c("p", [_vm._v("Character")])]
+                )
+              ],
+              1
+            )
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "col-md-4" }, [
+            _c(
+              "div",
+              {},
+              [
+                _c(
+                  "vue-circle",
+                  {
+                    attrs: {
+                      progress: _vm.character,
+                      size: 300,
+                      reverse: false,
+                      "line-cap": "round",
+                      fill: _vm.fill,
+                      "empty-fill": "rgba(0, 0, 0, .1)",
+                      "animation-start-value": 0.0,
+                      "start-angle": 0,
+                      "insert-mode": "append",
+                      thickness: 5,
+                      "show-percent": true
+                    }
+                  },
+                  [_c("p", [_vm._v("Healthy habits")])]
+                )
+              ],
+              1
+            )
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "col-md-4" }, [
+            _c(
+              "div",
+              {},
+              [
+                _c(
+                  "vue-circle",
+                  {
+                    attrs: {
+                      progress: _vm.character,
+                      size: 300,
+                      reverse: false,
+                      "line-cap": "round",
+                      fill: _vm.fill,
+                      "empty-fill": "rgba(0, 0, 0, .1)",
+                      "animation-start-value": 0.0,
+                      "start-angle": 0,
+                      "insert-mode": "append",
+                      thickness: 5,
+                      "show-percent": true
+                    }
+                  },
+                  [_c("p", [_vm._v("Healthy habits")])]
+                )
+              ],
+              1
+            )
+          ])
+        ])
+      ])
+    ])
+  ])
+}
+var staticRenderFns = []
+render._withStripped = true
+module.exports = { render: render, staticRenderFns: staticRenderFns }
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+    require("vue-hot-reload-api")      .rerender("data-v-2d55ec63", module.exports)
   }
 }
 

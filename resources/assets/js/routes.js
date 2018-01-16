@@ -6,7 +6,7 @@ import Craving from './components/Craving'
 import BookSales from './components/BookSales'
 import Savings from './components/Savings'
 import Roamings from './components/Roaming'
-import CravingStats from './components/CravingStats'
+import Cravity from './components/Cravity'
 import Cleaning from './components/Cleaning'
 import MusicStreams from './components/MusicStreams'
 import Opportunify from './components/Opportunify'
@@ -45,7 +45,7 @@ export default new VueRouter({
         {
             path: '/dashboard/stats/cravings',
             name: 'cravingStats',
-            component: CravingStats
+            component: Cravity
         },
         {
             path: '/dashboard/music/streams',

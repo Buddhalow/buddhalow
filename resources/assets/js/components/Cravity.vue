@@ -14,6 +14,27 @@
                 </div>
             </div>
         </div>
+        
+        <div class="section">
+            <div class="container">
+                <div class="col-md-6">
+                    <div class="">
+                        <div class="panel-heading">
+                            <h3>Top weekdays</h3>
+                            <vue-chart :data="weekdays"></vue-chart>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="">
+                        <div class="panel-heading">
+                            <h3>Top foods</h3>
+                            <vue-chart :data="foods"></vue-chart>
+                        </div>
+                    </div>
+                </div>
+             </div>
+        </div>
         <div class="section section-alternative">
             <div class="container">
                 <div class="row">
@@ -76,26 +97,6 @@
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="section">
-            <div class="container">
-                <div class="col-md-6">
-                    <div class="">
-                        <div class="panel-heading">
-                            <h3>Top weekdays</h3>
-                            <vue-chart :data="weekdays"></vue-chart>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6">
-                    <div class="">
-                        <div class="panel-heading">
-                            <h3>Top foods</h3>
-                            <vue-chart :data="foods"></vue-chart>
-                        </div>
-                    </div>
-                </div>
-             </div>
         </div>
     </div>
 </template>
