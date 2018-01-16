@@ -10,8 +10,8 @@
                                 <thead>
                                     <tr>
                                         <th colspan="2">Balance</th>
-                                        <th style="text-align: right">{{formatNumber(infection.balance)}}</th>
-                                        <th style="text-align: right">{{formatNumber(infection.balance)}}</th>
+                                        <th style="text-align: right">{{formatNumber(infection.balance)}} QIH</th>
+                                        <th style="text-align: right">{{formatNumber(infection.balance)}} QIH</th>
                                     </tr>
                                 </thead>
                                 <thead>
@@ -26,8 +26,8 @@
                                     <tr  v-for="(o, index) in transactions">
                                         <td>{{o.time}}</td>
                                         <td>{{o.name}}</td>
-                                        <td style="text-align: right">{{formatNumber(o.amount)}}</td>
-                                        <td style="text-align: right">{{formatNumber(o.balance)}}</td>
+                                        <td style="text-align: right">{{formatNumber(o.amount)}} QIH</td>
+                                        <td style="text-align: right">{{formatNumber(o.balance)}} QIH</td>
                                     </tr>
                                 </tbody>
                             </table>

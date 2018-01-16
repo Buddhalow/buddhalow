@@ -119074,11 +119074,17 @@ var render = function() {
                       ]),
                       _vm._v(" "),
                       _c("th", { staticStyle: { "text-align": "right" } }, [
-                        _vm._v(_vm._s(_vm.formatNumber(_vm.infection.balance)))
+                        _vm._v(
+                          _vm._s(_vm.formatNumber(_vm.infection.balance)) +
+                            " QIH"
+                        )
                       ]),
                       _vm._v(" "),
                       _c("th", { staticStyle: { "text-align": "right" } }, [
-                        _vm._v(_vm._s(_vm.formatNumber(_vm.infection.balance)))
+                        _vm._v(
+                          _vm._s(_vm.formatNumber(_vm.infection.balance)) +
+                            " QIH"
+                        )
                       ])
                     ])
                   ]),
@@ -119097,13 +119103,21 @@ var render = function() {
                             _c(
                               "td",
                               { staticStyle: { "text-align": "right" } },
-                              [_vm._v(_vm._s(_vm.formatNumber(o.amount)))]
+                              [
+                                _vm._v(
+                                  _vm._s(_vm.formatNumber(o.amount)) + " QIH"
+                                )
+                              ]
                             ),
                             _vm._v(" "),
                             _c(
                               "td",
                               { staticStyle: { "text-align": "right" } },
-                              [_vm._v(_vm._s(_vm.formatNumber(o.balance)))]
+                              [
+                                _vm._v(
+                                  _vm._s(_vm.formatNumber(o.balance)) + " QIH"
+                                )
+                              ]
                             )
                           ])
                         })
