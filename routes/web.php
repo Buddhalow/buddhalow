@@ -28,6 +28,8 @@ Route::get('/dashboard/savings', 'Dashboard\SavingsController@index')->name('sav
 Route::get('/dashboard/sales/books', 'Dashboard\BookSalesController@index')->name('booksales');
 Route::get('/dashboard/music/streams', 'Dashboard\BookSalesController@index')->name('music_streams');
 Route::get('/dashboard/cleaning', 'Dashboard\BookSalesController@index')->name('booksales');
+Route::get('/dashboard/threats', 'Dashboard\BookSalesController@index')->name('booksales');
+Route::get('/dashboard/opportunities', 'Dashboard\BookSalesController@index')->name('booksales');
 
 Route::group(['prefix' => 'admin'], function () {
     Voyager::routes();

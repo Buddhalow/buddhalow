@@ -7,9 +7,9 @@ use App\Http\Controllers\Controller;
 
 use App\Roaming;
 use Illuminate\Http\Request;
-use App\Opportunity;
+use App\Threat;
 
-class OpportunitiesController extends Controller
+class ThreatsController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -19,7 +19,7 @@ class OpportunitiesController extends Controller
     public function index(Request $request)
     {
 
-        return Opportunity::with('Status')->orderBy('time', 'DESC')->paginate(28);
+        return Threat::orderBy('time', 'DESC')->paginate(28);
     }
     
     public function destroy($id)

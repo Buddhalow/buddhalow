@@ -5,22 +5,19 @@
                 <div class="row">
                     <div class="col-md-12">
                         <div>
-                            <h3>Opportunities</h3>
-                            <table class="table table-striped table-responsive" v-if="objects.length > 0">
+                            <h3>Threats</h3>
+                            <table class="table table-bordered table-striped table-responsive" v-if="objects.length > 0">
                                 <thead>
                                     <tr>
                                         <th>Name</th>
-                                        <th>Status</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     <tr v-for="(o, index) in objects">
                                         <td>{{o.name}}</td>
-                                        <td>{{o.status.name}}</td>
                                     </tr>
                                 </tbody>
                             </table>
-                        
                         </div>
                     </div>
                 </div>
@@ -38,18 +35,19 @@
         },
         watch: {
             '$route': function (o, old) {
-                this.load() 
+                this.load();
             }
         },
         mounted() {
-            this.load()
+            this.load();
         },
         methods: {
             load() {
                 axios.get(
-                    '/api/opportunities'    
-                ).then(response => {
-                    this.objects = response.data.data;
+                    '/api/threats'    
+                ).then((result) => {
+                    this.objects = result.data.data;
+                    
                 })
             }
         }

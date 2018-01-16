@@ -92017,6 +92017,12 @@ module.exports = function(Chart) {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__components_Cleaning___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_9__components_Cleaning__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__components_MusicStreams__ = __webpack_require__(395);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__components_MusicStreams___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_10__components_MusicStreams__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__components_Opportunify__ = __webpack_require__(401);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__components_Opportunify___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_11__components_Opportunify__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__components_Threats__ = __webpack_require__(404);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__components_Threats___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_12__components_Threats__);
+
+
 
 
 
@@ -92045,6 +92051,14 @@ __WEBPACK_IMPORTED_MODULE_0_vue___default.a.use(__WEBPACK_IMPORTED_MODULE_1_vue_
         path: '/dashboard/cleaning',
         name: 'cleaning',
         component: __WEBPACK_IMPORTED_MODULE_9__components_Cleaning___default.a
+    }, {
+        path: '/dashboard/threats',
+        name: 'threats',
+        component: __WEBPACK_IMPORTED_MODULE_12__components_Threats___default.a
+    }, {
+        path: '/dashboard/opportunities',
+        name: 'opportunities',
+        component: __WEBPACK_IMPORTED_MODULE_11__components_Opportunify___default.a
     }, {
         path: '/dashboard/stats/cravings',
         name: 'cravingStats',
@@ -95387,30 +95401,59 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             axios.get('/api/stats/cravings?start=' + this.start + '&end=' + this.end + '&group_by=' + this.group_by).then(function (response) {
                 var res = {};
                 var keys = _this.group_by.split(/,/);
-                _this.cravings = response.data.result.reduce(function (r, a) {
+                var craving_data = response.data.result;
+                _this.cravings = {
+                    type: 'line',
+                    data: {
+                        labels: craving_data.map(function (o) {
+                            return o.time;
+                        }),
+                        datasets: [{
+                            label: 'Cravings',
+                            data: craving_data.map(function (o) {
+                                return -o.qty;
+                            })
+                        }]
+                    }
+                };
 
-                    res[a[keys[0]]] = -a["qty"];
-                    return res;
-                });
                 console.log(_this.cravings);
             });
             axios.get('/api/stats/cravings?start=' + this.start + '&end=' + this.end + '&group_by=weekday,date').then(function (response) {
                 var res = {};
                 var keys = _this.group_by.split(/,/);
-                _this.weekdays = response.data.result.reduce(function (r, a) {
-
-                    res[a['weekday']] = a["qty"];
-                    return res;
-                });
+                _this.weekdays = {
+                    type: 'line',
+                    data: {
+                        labels: response.data.result.map(function (o) {
+                            return o.name;
+                        }),
+                        datasets: [{
+                            label: 'Cravings',
+                            data: response.data.result.map(function (o) {
+                                return o.qty;
+                            })
+                        }]
+                    }
+                };
             });
             axios.get('/api/stats/cravings?start=' + this.start + '&end=' + this.end + '&group_by=food,date').then(function (response) {
                 var res = {};
                 var keys = _this.group_by.split(/,/);
-                _this.foods = response.data.result.reduce(function (r, a) {
-
-                    res[a['food']] = a["qty"];
-                    return res;
-                });
+                _this.foods = {
+                    type: 'line',
+                    data: {
+                        labels: response.data.result.map(function (o) {
+                            return o.name;
+                        }),
+                        datasets: [{
+                            label: 'Cravings',
+                            data: response.data.result.map(function (o) {
+                                return o.qty;
+                            })
+                        }]
+                    }
+                };
             });
         },
         onProgress: function onProgress(p) {
@@ -95443,9 +95486,7 @@ var render = function() {
                 [
                   _c("h3", [_vm._v("Cravings last 28 days")]),
                   _vm._v(" "),
-                  _c("line-chart", {
-                    attrs: { library: { fill: true }, data: _vm.cravings }
-                  })
+                  _c("vue-chart", { attrs: { data: _vm.cravings } })
                 ],
                 1
               )
@@ -95558,7 +95599,7 @@ var render = function() {
               [
                 _c("h3", [_vm._v("Top weekdays")]),
                 _vm._v(" "),
-                _c("column-chart", { attrs: { data: _vm.weekdays } })
+                _c("vue-chart", { attrs: { data: _vm.weekdays } })
               ],
               1
             )
@@ -95573,7 +95614,7 @@ var render = function() {
               [
                 _c("h3", [_vm._v("Top foods")]),
                 _vm._v(" "),
-                _c("column-chart", { attrs: { data: _vm.foods } })
+                _c("vue-chart", { attrs: { data: _vm.foods } })
               ],
               1
             )
@@ -96000,6 +96041,27 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     components: {},
@@ -96035,61 +96097,91 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "page" }, [
     _c("aside", [
-      _c("div", { staticClass: "aside-content" }, [
-        _c("div", {
-          staticClass: "round",
-          staticStyle: {
-            "background-image": "url('/images/avatar.jpg')",
-            "background-size": "cover"
-          }
-        }),
-        _vm._v(" "),
-        _c("h3", [_vm._v("Alecca")]),
-        _vm._v(" "),
-        _c("b", [_vm._v("Health")]),
-        _vm._v(" "),
-        _c("ul", [
-          _c(
-            "li",
-            [
-              _c(
-                "router-link",
-                { attrs: { to: "/dashboard/stats/cravings" } },
-                [_vm._v("Cravings")]
-              )
-            ],
-            1
-          )
+      _vm._m(0),
+      _vm._v(" "),
+      _c("div", {}, [
+        _c("section", [
+          _c("label", [_vm._v("Casting")]),
+          _vm._v(" "),
+          _c("ul", [
+            _c(
+              "li",
+              [
+                _c(
+                  "router-link",
+                  { attrs: { to: "/dashboard/opportunities" } },
+                  [_vm._v("Opportunities")]
+                )
+              ],
+              1
+            ),
+            _vm._v(" "),
+            _c(
+              "li",
+              [
+                _c("router-link", { attrs: { to: "/dashboard/threats" } }, [
+                  _vm._v("Threats")
+                ])
+              ],
+              1
+            )
+          ])
         ]),
         _vm._v(" "),
-        _c("b", [_vm._v("Books")]),
-        _vm._v(" "),
-        _c("ul", [
-          _c(
-            "li",
-            [
-              _c("router-link", { attrs: { to: "/dashboard/sales/books" } }, [
-                _vm._v("Sales")
-              ])
-            ],
-            1
-          )
+        _c("section", [
+          _c("label", [_vm._v("Health")]),
+          _vm._v(" "),
+          _c("ul", [
+            _c(
+              "li",
+              [
+                _c(
+                  "router-link",
+                  { attrs: { to: "/dashboard/stats/cravings" } },
+                  [_vm._v("Cravings")]
+                )
+              ],
+              1
+            )
+          ])
         ]),
         _vm._v(" "),
-        _c("b", [_vm._v("Music")]),
+        _c("section", [
+          _c("label", [_vm._v("Books")]),
+          _vm._v(" "),
+          _c("ul", [
+            _c(
+              "li",
+              [
+                _c("router-link", { attrs: { to: "/dashboard/sales/books" } }, [
+                  _vm._v("Sales")
+                ])
+              ],
+              1
+            )
+          ])
+        ]),
         _vm._v(" "),
-        _c("ul", [
-          _c(
-            "li",
-            [
-              _c("router-link", { attrs: { to: "/dashboard/music/streams" } }, [
-                _vm._v("Streams")
-              ])
-            ],
-            1
-          )
+        _c("section", [
+          _c("label", [_vm._v("Music")]),
+          _vm._v(" "),
+          _c("ul", [
+            _c(
+              "li",
+              [
+                _c(
+                  "router-link",
+                  { attrs: { to: "/dashboard/music/streams" } },
+                  [_vm._v("Streams")]
+                )
+              ],
+              1
+            )
+          ])
         ])
-      ])
+      ]),
+      _vm._v(" "),
+      _vm._m(1)
     ]),
     _vm._v(" "),
     _c(
@@ -96108,7 +96200,50 @@ var render = function() {
     )
   ])
 }
-var staticRenderFns = []
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "div",
+      { staticClass: "aside-content", staticStyle: { "text-align": "center" } },
+      [
+        _c("div", {
+          staticClass: "round",
+          staticStyle: {
+            "background-image": "url('/images/avatar.jpg')",
+            "background-size": "cover"
+          }
+        }),
+        _vm._v(" "),
+        _c("h3", [_vm._v("Alecca")])
+      ]
+    )
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticStyle: { position: "absolute", bottom: "3pt" } }, [
+      _c(
+        "div",
+        {
+          staticClass: "aside-content",
+          staticStyle: { "text-align": "center" }
+        },
+        [
+          _c("i", {
+            staticClass: "icon-buddhalow",
+            staticStyle: { "font-size": "60pt" }
+          }),
+          _c("br"),
+          _vm._v("\n           Buddhalow\n           ")
+        ]
+      )
+    ])
+  }
+]
 render._withStripped = true
 module.exports = { render: render, staticRenderFns: staticRenderFns }
 if (false) {
@@ -118421,6 +118556,352 @@ if (false) {
   module.hot.accept()
   if (module.hot.data) {
     require("vue-hot-reload-api")      .rerender("data-v-b4b57d92", module.exports)
+  }
+}
+
+/***/ }),
+/* 401 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var disposed = false
+var normalizeComponent = __webpack_require__(7)
+/* script */
+var __vue_script__ = __webpack_require__(402)
+/* template */
+var __vue_template__ = __webpack_require__(403)
+/* template functional */
+var __vue_template_functional__ = false
+/* styles */
+var __vue_styles__ = null
+/* scopeId */
+var __vue_scopeId__ = null
+/* moduleIdentifier (server only) */
+var __vue_module_identifier__ = null
+var Component = normalizeComponent(
+  __vue_script__,
+  __vue_template__,
+  __vue_template_functional__,
+  __vue_styles__,
+  __vue_scopeId__,
+  __vue_module_identifier__
+)
+Component.options.__file = "resources/assets/js/components/Opportunify.vue"
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-61063f8c", Component.options)
+  } else {
+    hotAPI.reload("data-v-61063f8c", Component.options)
+  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 402 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+    data: function data() {
+        return {
+            objects: []
+        };
+    },
+
+    watch: {
+        '$route': function $route(o, old) {
+            this.load();
+        }
+    },
+    mounted: function mounted() {
+        this.load();
+    },
+
+    methods: {
+        load: function load() {
+            var _this = this;
+
+            axios.get('/api/opportunities').then(function (response) {
+                _this.objects = response.data.data;
+            });
+        }
+    }
+});
+
+/***/ }),
+/* 403 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("div", [
+    _c("div", { staticClass: "section" }, [
+      _c("div", { staticClass: "container" }, [
+        _c("div", { staticClass: "row" }, [
+          _c("div", { staticClass: "col-md-12" }, [
+            _c("div", [
+              _c("h3", [_vm._v("Opportunities")]),
+              _vm._v(" "),
+              _vm.objects.length > 0
+                ? _c(
+                    "table",
+                    { staticClass: "table table-striped table-responsive" },
+                    [
+                      _vm._m(0),
+                      _vm._v(" "),
+                      _c(
+                        "tbody",
+                        _vm._l(_vm.objects, function(o, index) {
+                          return _c("tr", [
+                            _c("td", [_vm._v(_vm._s(o.name))]),
+                            _vm._v(" "),
+                            _c("td", [_vm._v(_vm._s(o.status.name))])
+                          ])
+                        })
+                      )
+                    ]
+                  )
+                : _vm._e()
+            ])
+          ])
+        ])
+      ])
+    ])
+  ])
+}
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("thead", [
+      _c("tr", [
+        _c("th", [_vm._v("Name")]),
+        _vm._v(" "),
+        _c("th", [_vm._v("Status")])
+      ])
+    ])
+  }
+]
+render._withStripped = true
+module.exports = { render: render, staticRenderFns: staticRenderFns }
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+    require("vue-hot-reload-api")      .rerender("data-v-61063f8c", module.exports)
+  }
+}
+
+/***/ }),
+/* 404 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var disposed = false
+var normalizeComponent = __webpack_require__(7)
+/* script */
+var __vue_script__ = __webpack_require__(405)
+/* template */
+var __vue_template__ = __webpack_require__(406)
+/* template functional */
+var __vue_template_functional__ = false
+/* styles */
+var __vue_styles__ = null
+/* scopeId */
+var __vue_scopeId__ = null
+/* moduleIdentifier (server only) */
+var __vue_module_identifier__ = null
+var Component = normalizeComponent(
+  __vue_script__,
+  __vue_template__,
+  __vue_template_functional__,
+  __vue_styles__,
+  __vue_scopeId__,
+  __vue_module_identifier__
+)
+Component.options.__file = "resources/assets/js/components/Threats.vue"
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-5e8f459c", Component.options)
+  } else {
+    hotAPI.reload("data-v-5e8f459c", Component.options)
+  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 405 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+    data: function data() {
+        return {
+            objects: []
+        };
+    },
+
+    watch: {
+        '$route': function $route(o, old) {
+            this.load();
+        }
+    },
+    mounted: function mounted() {
+        this.load();
+    },
+
+    methods: {
+        load: function load() {
+            var _this = this;
+
+            axios.get('/api/threats').then(function (result) {
+                _this.objects = result.data.data;
+            });
+        }
+    }
+});
+
+/***/ }),
+/* 406 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("div", [
+    _c("div", { staticClass: "section" }, [
+      _c("div", { staticClass: "container" }, [
+        _c("div", { staticClass: "row" }, [
+          _c("div", { staticClass: "col-md-12" }, [
+            _c("div", [
+              _c("h3", [_vm._v("Threats")]),
+              _vm._v(" "),
+              _vm.objects.length > 0
+                ? _c(
+                    "table",
+                    {
+                      staticClass:
+                        "table table-bordered table-striped table-responsive"
+                    },
+                    [
+                      _vm._m(0),
+                      _vm._v(" "),
+                      _c(
+                        "tbody",
+                        _vm._l(_vm.objects, function(o, index) {
+                          return _c("tr", [_c("td", [_vm._v(_vm._s(o.name))])])
+                        })
+                      )
+                    ]
+                  )
+                : _vm._e()
+            ])
+          ])
+        ])
+      ])
+    ])
+  ])
+}
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("thead", [_c("tr", [_c("th", [_vm._v("Name")])])])
+  }
+]
+render._withStripped = true
+module.exports = { render: render, staticRenderFns: staticRenderFns }
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+    require("vue-hot-reload-api")      .rerender("data-v-5e8f459c", module.exports)
   }
 }
 

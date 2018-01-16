@@ -9,6 +9,8 @@ import Roamings from './components/Roaming'
 import CravingStats from './components/CravingStats'
 import Cleaning from './components/Cleaning'
 import MusicStreams from './components/MusicStreams'
+import Opportunify from './components/Opportunify'
+import Threats from './components/Threats'
 
 Vue.use(VueRouter);
 
@@ -29,6 +31,16 @@ export default new VueRouter({
             path: '/dashboard/cleaning',
             name: 'cleaning',
             component: Cleaning
+        },
+        {
+            path: '/dashboard/threats',
+            name: 'threats',
+            component: Threats
+        },
+        {
+            path: '/dashboard/opportunities',
+            name: 'opportunities',
+            component: Opportunify
         },
         {
             path: '/dashboard/stats/cravings',

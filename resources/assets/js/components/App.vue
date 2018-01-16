@@ -1,23 +1,44 @@
 <template>
     <div class="page">
         <aside>
-            <div class="aside-content">
-                <div class="round" style="background-image: url('/images/avatar.jpg'); background-size: cover"></div>   
-                
+           <div class="aside-content" style="text-align: center">
+               <div class="round" style="background-image: url('/images/avatar.jpg'); background-size: cover"></div>   
+            
                 <h3>Alecca</h3>
-                <b>Health</b>
+           </div>
+            <div class="">
+               <section>
+                <label>Casting</label>
+                <ul>
+                    <li><router-link to="/dashboard/opportunities">Opportunities</router-link></li>
+                    <li><router-link to="/dashboard/threats">Threats</router-link></li>
+                </ul>
+                </section>
+               <section>
+                <label>Health</label>
                 <ul>
                     <li><router-link to="/dashboard/stats/cravings">Cravings</router-link></li>
                 </ul>
-                <b>Books</b>
+                </section>
+               <section>
+                <label>Books</label>
                 <ul>
                     <li><router-link to="/dashboard/sales/books">Sales</router-link></li>
                </ul>
-               <b>Music</b>
+                </section>
+               <section>
+               <label>Music</label>
                <ul>
                     <li><router-link to="/dashboard/music/streams">Streams</router-link></li>
                </ul>
+                </section>
             </div>
+           <div style="position: absolute; bottom: 3pt;">
+               <div class="aside-content" style="text-align: center">
+               <i style="font-size: 60pt" class="icon-buddhalow"></i><br>
+               Buddhalow
+               </div>
+           </div>
         </aside>
     
         <main>

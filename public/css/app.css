@@ -8458,12 +8458,20 @@ button.close {
   }
 }
 
+a {
+  text-decoration: none;
+}
+
+body {
+  font-family: "Montserrat Bold";
+}
+
 .section-white {
   background: white;
 }
 
 .section {
-  padding: 122pt;
+  padding: 5pt 120pt;
 }
 
 .section-alternative {
@@ -8505,21 +8513,46 @@ aside {
   color: white;
 }
 
-.aside-content {
-  padding: 28pt;
-  padding-right: 40pt;
+aside section {
+  margin: 12pt 0pt;
 }
 
-.aside-content a {
+.aside-content * {
+  margin-top: 12pt;
   color: rgba(255, 255, 255, 0.8);
+  margin-bottom: 6pt;
 }
 
-.router-link-active a {
+.page {
+  margin: 0pt;
+  padding: 0pt;
+}
+
+aside label,
+aside li,
+.aside-content {
+  padding: 1pt 45pt;
+}
+
+a.router-link-active {
   color: white;
 }
 
-aside a {
-  color: white;
+aside label {
+  font-family: "Montserrat Light";
+}
+
+aside a,
+aside label {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+aside label {
+  text-transform: uppercase;
+}
+
+aside {
+  font-size: 10pt;
 }
 
 .round {
@@ -8530,10 +8563,9 @@ aside a {
   height: 48pt;
 }
 
-aside li,
-ul {
+aside ul {
   list-style-type: none;
-  margin-left: 0pt;
-  padding-left: 0pt;
+  margin: 0pt;
+  padding: 0pt;
 }
 

@@ -7,7 +7,7 @@
                         <div class="">
                             <div class="panel-heading">
                                 <h3>Cravings last 28 days</h3>
-                                <line-chart :library="{fill: true}" :data="cravings"></line-chart>
+                                <vue-chart :data="cravings"></vue-chart>
                             </div>
                         </div>
                     </div>
@@ -83,7 +83,7 @@
                     <div class="">
                         <div class="panel-heading">
                             <h3>Top weekdays</h3>
-                            <column-chart :data="weekdays"></column-chart>
+                            <vue-chart :data="weekdays"></vue-chart>
                         </div>
                     </div>
                 </div>
@@ -91,7 +91,7 @@
                     <div class="">
                         <div class="panel-heading">
                             <h3>Top foods</h3>
-                            <column-chart :data="foods"></column-chart>
+                            <vue-chart :data="foods"></vue-chart>
                         </div>
                     </div>
                 </div>
@@ -157,11 +157,18 @@
                 ).then((response) => {
                     var res = {};
                     var keys = this.group_by.split(/,/);
-                    this.cravings = response.data.result.reduce((r, a) => {
-                        
-                       res[a[keys[0]]] = -a["qty"];
-                        return res;
-                    });
+                    var craving_data = response.data.result;
+                    this.cravings = {
+                        type: 'line',
+                        data: {
+                            labels: craving_data.map(o => o.time),
+                            datasets: [{
+                                label: 'Cravings',
+                                data: craving_data.map(o => -o.qty)
+                            }]
+                        }
+                    }
+                    
                     console.log(this.cravings);
                 })
                 axios.get(
@@ -169,22 +176,32 @@
                 ).then((response) => {
                     var res = {};
                     var keys = this.group_by.split(/,/);
-                    this.weekdays = response.data.result.reduce((r, a) => {
-                        
-                       res[a['weekday']] = a["qty"];
-                        return res;
-                    });
+                    this.weekdays = {
+                        type: 'line',
+                        data: {
+                            labels: response.data.result.map(o => o.name),
+                            datasets: [{
+                                label: 'Cravings',
+                                data: response.data.result.map(o => o.qty)
+                            }]
+                        }
+                    }
                 })
                 axios.get(
                     '/api/stats/cravings?start=' + this.start + '&end=' +this.end + '&group_by=food,date'
                 ).then((response) => {
                     var res = {};
                     var keys = this.group_by.split(/,/);
-                    this.foods = response.data.result.reduce((r, a) => {
-                        
-                       res[a['food']] = a["qty"];
-                        return res;
-                    });
+                    this.foods = {
+                        type: 'line',
+                        data: {
+                            labels: response.data.result.map(o => o.name),
+                            datasets: [{
+                                label: 'Cravings',
+                                data: response.data.result.map(o => o.qty)
+                            }]
+                        }
+                    }
                 })
             },
             onProgress(p) {

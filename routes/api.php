@@ -29,5 +29,6 @@ Route::resource('/roamings', 'Api\\RoamingsController');
 Route::resource('/stats/cravings', 'Api\\CravingStatsController');
 Route::resource('/stats', 'Api\\StatsController');
 Route::resource('/opportunities', 'Api\\OpportunitiesController');
+Route::resource('/threats', 'Api\\ThreatsController');
 Route::resource('/rooms', 'Api\\RoomsController');
 Route::resource('/rooms/{id}/snapshots', 'Api\\RoomSnapshotsController');
