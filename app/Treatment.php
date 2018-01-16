@@ -12,7 +12,7 @@ class Treatment extends Model
     
     public static function boot() {
         self::created(function ($model) {
-            $fungal_infection = Infection::where(array('code' => $model->fungal_infection_id))->first();
+            $fungal_infection = Infection::where(array('code' => $model->infection_id))->first();
             $fungal_infection->balance += $model->amount;
             $model->balance = $fungal_infection->balance;
            

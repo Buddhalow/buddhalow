@@ -30,6 +30,8 @@ Route::get('/dashboard/music/streams', 'Dashboard\BookSalesController@index')->n
 Route::get('/dashboard/cleaning', 'Dashboard\BookSalesController@index')->name('booksales');
 Route::get('/dashboard/threats', 'Dashboard\BookSalesController@index')->name('booksales');
 Route::get('/dashboard/opportunities', 'Dashboard\BookSalesController@index')->name('booksales');
+Route::get('/dashboard/fungalify', 'Dashboard\BookSalesController@index')->name('booksales');
+
 
 Route::group(['prefix' => 'admin'], function () {
     Voyager::routes();

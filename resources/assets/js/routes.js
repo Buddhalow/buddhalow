@@ -11,7 +11,7 @@ import Cleaning from './components/Cleaning'
 import MusicStreams from './components/MusicStreams'
 import Opportunify from './components/Opportunify'
 import Threats from './components/Threats'
-import Entity from './components/Entity'
+import Fungalify from './components/Fungalify'
 
 Vue.use(VueRouter);
 
@@ -59,9 +59,9 @@ export default new VueRouter({
             component: Savings
         },
         {
-            path: '/entities/:id',
+            path: '/dashboard/fungalify',
             name: 'entity',
-            component: Entity
+            component: Fungalify
         },
         {
             path: '/dashboard/aqtivity',

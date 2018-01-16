@@ -8,6 +8,7 @@ use App\Http\Controllers\Controller;
 use App\Roaming;
 use Illuminate\Http\Request;
 use App\Infection;
+use App\Treatment;
 
 class InfectionsController extends Controller
 {
@@ -19,11 +20,16 @@ class InfectionsController extends Controller
     public function index(Request $request)
     {
 
-        $entity = Infection::where(array('slug' => $id))->first();
-        $infection = $request->query('start', 'NOW() - INTERVAL 28 DAY');
+    }
+    
+    public function show(Request $request, $id) {
+        
+        $start = $request->query('start', 'NOW() - INTERVAL 28 DAY');
        
         $end = $request->query('end', 'NOW()');
-        $transactions = Treatment::where(array('code' => $entity->slug))->whereBetween('time', array($start, $end))->get();
+        $infection = Infection::where(array('code' => $id))->first();
+    
+        $transactions = Treatment::where(array('infection_id' => $id))->orderBy('time', 'DESC')->get();
         return response()->json(compact('infection', 'transactions'));
     }
     
