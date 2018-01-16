@@ -8,6 +8,7 @@ import Savings from './components/Savings'
 import Roamings from './components/Roaming'
 import CravingStats from './components/CravingStats'
 import Cleaning from './components/Cleaning'
+import MusicStreams from './components/MusicStreams'
 
 Vue.use(VueRouter);
 
@@ -33,6 +34,11 @@ export default new VueRouter({
             path: '/dashboard/stats/cravings',
             name: 'cravingStats',
             component: CravingStats
+        },
+        {
+            path: '/dashboard/music/streams',
+            name: 'musicStreams',
+            component: MusicStreams
         },
         {
             path: '/dashboard/savings',

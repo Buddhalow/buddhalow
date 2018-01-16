@@ -46,3 +46,61 @@
 [23-Dec-2017 21:35:15 UTC] PHP   2. require() /home/ubuntu/workspace/public/index.php:24
 [23-Dec-2017 21:35:15 UTC] PHP   3. ComposerAutoloaderInit045251db4b99ae152e8fa875b9763991::getLoader() /home/ubuntu/workspace/vendor/autoload.php:7
 [23-Dec-2017 21:35:15 UTC] PHP   4. composerRequire045251db4b99ae152e8fa875b9763991() /home/ubuntu/workspace/vendor/composer/autoload_real.php:56
+[14-Jan-2018 20:36:50 UTC] PHP Warning:  require(/home/ubuntu/workspace/buddhalow/public/../vendor/autoload.php): failed to open stream: No such file or directory in /home/ubuntu/workspace/buddhalow/public/index.php on line 27
+[14-Jan-2018 20:36:50 UTC] PHP Fatal error:  require(): Failed opening required '/home/ubuntu/workspace/buddhalow/public/../vendor/autoload.php' (include_path='.:/usr/share/php') in /home/ubuntu/workspace/buddhalow/public/index.php on line 27
+[14-Jan-2018 20:38:35 UTC] PHP Warning:  require(/home/ubuntu/workspace/buddhalow/public/../vendor/autoload.php): failed to open stream: No such file or directory in /home/ubuntu/workspace/buddhalow/public/index.php on line 27
+[14-Jan-2018 20:38:35 UTC] PHP Fatal error:  require(): Failed opening required '/home/ubuntu/workspace/buddhalow/public/../vendor/autoload.php' (include_path='.:/usr/share/php') in /home/ubuntu/workspace/buddhalow/public/index.php on line 27
+[14-Jan-2018 20:38:44 UTC] PHP Warning:  require(/home/ubuntu/workspace/buddhalow/public/../vendor/autoload.php): failed to open stream: No such file or directory in /home/ubuntu/workspace/buddhalow/public/index.php on line 27
+[14-Jan-2018 20:38:44 UTC] PHP Fatal error:  require(): Failed opening required '/home/ubuntu/workspace/buddhalow/public/../vendor/autoload.php' (include_path='.:/usr/share/php') in /home/ubuntu/workspace/buddhalow/public/index.php on line 27
+[14-Jan-2018 22:49:10 UTC] PHP Fatal error:  Uncaught ErrorException: Undefined variable: mimeType in /home/ubuntu/workspace/buddhalow/app/Importers/ElibBookSalesImporter.php:13
+Stack trace:
+#0 /home/ubuntu/workspace/buddhalow/app/Importers/ElibBookSalesImporter.php(13): Illuminate\Foundation\Bootstrap\HandleExceptions->handleError(8, 'Undefined varia...', '/home/ubuntu/wo...', 13, Array)
+#1 /home/ubuntu/workspace/buddhalow/app/Http/Controllers/Api/BookSalesController.php(47): App\Importers\ElibBookSalesImporter->importFile(Object(Illuminate\Http\UploadedFile))
+#2 [internal function]: App\Http\Controllers\Api\BookSalesController->store(Object(Illuminate\Http\Request))
+#3 /home/ubuntu/workspace/buddhalow/vendor/laravel/framework/src/Illuminate/Routing/Controller.php(54): call_user_func_array(Array, Array)
+#4 /home/ubuntu/workspace/buddhalow/vendor/laravel/framework/src/Illuminate/Routing/ControllerDispatcher.php(45): Illuminate\Routing\Controller->callAction('store', Array)
+#5 /home/ubuntu/workspace/buddhalow/vendor/laravel/framework/src/Illuminate/Routi in /home/ubuntu/workspace/buddhalow/app/Importers/ElibBookSalesImporter.php on line 13
+[14-Jan-2018 23:02:50 UTC] PHP Fatal error:  Uncaught ErrorException: Undefined variable: mimeType in /home/ubuntu/workspace/buddhalow/app/Importers/ElibBookSalesImporter.php:13
+Stack trace:
+#0 /home/ubuntu/workspace/buddhalow/app/Importers/ElibBookSalesImporter.php(13): Illuminate\Foundation\Bootstrap\HandleExceptions->handleError(8, 'Undefined varia...', '/home/ubuntu/wo...', 13, Array)
+#1 /home/ubuntu/workspace/buddhalow/app/Http/Controllers/Api/BookSalesController.php(47): App\Importers\ElibBookSalesImporter->importFile(Object(Illuminate\Http\UploadedFile))
+#2 [internal function]: App\Http\Controllers\Api\BookSalesController->store(Object(Illuminate\Http\Request))
+#3 /home/ubuntu/workspace/buddhalow/vendor/laravel/framework/src/Illuminate/Routing/Controller.php(54): call_user_func_array(Array, Array)
+#4 /home/ubuntu/workspace/buddhalow/vendor/laravel/framework/src/Illuminate/Routing/ControllerDispatcher.php(45): Illuminate\Routing\Controller->callAction('store', Array)
+#5 /home/ubuntu/workspace/buddhalow/vendor/laravel/framework/src/Illuminate/Routi in /home/ubuntu/workspace/buddhalow/app/Importers/ElibBookSalesImporter.php on line 13
+[14-Jan-2018 23:03:06 UTC] PHP Fatal error:  Uncaught ErrorException: Undefined variable: mimeType in /home/ubuntu/workspace/buddhalow/app/Importers/ElibBookSalesImporter.php:13
+Stack trace:
+#0 /home/ubuntu/workspace/buddhalow/app/Importers/ElibBookSalesImporter.php(13): Illuminate\Foundation\Bootstrap\HandleExceptions->handleError(8, 'Undefined varia...', '/home/ubuntu/wo...', 13, Array)
+#1 /home/ubuntu/workspace/buddhalow/app/Http/Controllers/Api/BookSalesController.php(47): App\Importers\ElibBookSalesImporter->importFile(Object(Illuminate\Http\UploadedFile))
+#2 [internal function]: App\Http\Controllers\Api\BookSalesController->store(Object(Illuminate\Http\Request))
+#3 /home/ubuntu/workspace/buddhalow/vendor/laravel/framework/src/Illuminate/Routing/Controller.php(54): call_user_func_array(Array, Array)
+#4 /home/ubuntu/workspace/buddhalow/vendor/laravel/framework/src/Illuminate/Routing/ControllerDispatcher.php(45): Illuminate\Routing\Controller->callAction('store', Array)
+#5 /home/ubuntu/workspace/buddhalow/vendor/laravel/framework/src/Illuminate/Routi in /home/ubuntu/workspace/buddhalow/app/Importers/ElibBookSalesImporter.php on line 13
+[14-Jan-2018 23:03:40 UTC] PHP Fatal error:  Uncaught ErrorException: Undefined variable: mimeType in /home/ubuntu/workspace/buddhalow/app/Importers/ElibBookSalesImporter.php:13
+Stack trace:
+#0 /home/ubuntu/workspace/buddhalow/app/Importers/ElibBookSalesImporter.php(13): Illuminate\Foundation\Bootstrap\HandleExceptions->handleError(8, 'Undefined varia...', '/home/ubuntu/wo...', 13, Array)
+#1 /home/ubuntu/workspace/buddhalow/app/Http/Controllers/Api/BookSalesController.php(47): App\Importers\ElibBookSalesImporter->importFile(Object(Illuminate\Http\UploadedFile))
+#2 [internal function]: App\Http\Controllers\Api\BookSalesController->store(Object(Illuminate\Http\Request))
+#3 /home/ubuntu/workspace/buddhalow/vendor/laravel/framework/src/Illuminate/Routing/Controller.php(54): call_user_func_array(Array, Array)
+#4 /home/ubuntu/workspace/buddhalow/vendor/laravel/framework/src/Illuminate/Routing/ControllerDispatcher.php(45): Illuminate\Routing\Controller->callAction('store', Array)
+#5 /home/ubuntu/workspace/buddhalow/vendor/laravel/framework/src/Illuminate/Routi in /home/ubuntu/workspace/buddhalow/app/Importers/ElibBookSalesImporter.php on line 13
+[14-Jan-2018 23:04:23 UTC] PHP Fatal error:  Uncaught ErrorException: Undefined variable: mimeType in /home/ubuntu/workspace/buddhalow/app/Importers/ElibBookSalesImporter.php:12
+Stack trace:
+#0 /home/ubuntu/workspace/buddhalow/app/Importers/ElibBookSalesImporter.php(12): Illuminate\Foundation\Bootstrap\HandleExceptions->handleError(8, 'Undefined varia...', '/home/ubuntu/wo...', 12, Array)
+#1 /home/ubuntu/workspace/buddhalow/app/Http/Controllers/Api/BookSalesController.php(47): App\Importers\ElibBookSalesImporter->importFile(Object(Illuminate\Http\UploadedFile))
+#2 [internal function]: App\Http\Controllers\Api\BookSalesController->store(Object(Illuminate\Http\Request))
+#3 /home/ubuntu/workspace/buddhalow/vendor/laravel/framework/src/Illuminate/Routing/Controller.php(54): call_user_func_array(Array, Array)
+#4 /home/ubuntu/workspace/buddhalow/vendor/laravel/framework/src/Illuminate/Routing/ControllerDispatcher.php(45): Illuminate\Routing\Controller->callAction('store', Array)
+#5 /home/ubuntu/workspace/buddhalow/vendor/laravel/framework/src/Illuminate/Routi in /home/ubuntu/workspace/buddhalow/app/Importers/ElibBookSalesImporter.php on line 12
+[15-Jan-2018 17:46:51 UTC] PHP Fatal error:  Interface 'App\Importers\Importer' not found in /home/ubuntu/workspace/buddhalow/app/Importers/ElibBookSalesImporter.php on line 9
+[15-Jan-2018 17:46:53 UTC] PHP Fatal error:  Interface 'App\Importers\Importer' not found in /home/ubuntu/workspace/buddhalow/app/Importers/ElibBookSalesImporter.php on line 9
+[15-Jan-2018 17:46:54 UTC] PHP Fatal error:  Interface 'App\Importers\Importer' not found in /home/ubuntu/workspace/buddhalow/app/Importers/ElibBookSalesImporter.php on line 9
+[16-Jan-2018 07:08:10 UTC] PHP Fatal error:  Uncaught ErrorException: Array to string conversion in /home/ubuntu/workspace/buddhalow/app/Importers/ElibBookSalesImporter.php:29
+Stack trace:
+#0 /home/ubuntu/workspace/buddhalow/app/Importers/ElibBookSalesImporter.php(29): Illuminate\Foundation\Bootstrap\HandleExceptions->handleError(8, 'Array to string...', '/home/ubuntu/wo...', 29, Array)
+#1 /home/ubuntu/workspace/buddhalow/app/Http/Controllers/Api/BookSalesController.php(34): App\Importers\ElibBookSalesImporter->importFile('/home/ubuntu/wo...')
+#2 [internal function]: App\Http\Controllers\Api\BookSalesController->index(Object(Illuminate\Http\Request))
+#3 /home/ubuntu/workspace/buddhalow/vendor/laravel/framework/src/Illuminate/Routing/Controller.php(54): call_user_func_array(Array, Array)
+#4 /home/ubuntu/workspace/buddhalow/vendor/laravel/framework/src/Illuminate/Routing/ControllerDispatcher.php(45): Illuminate\Routing\Controller->callAction('index', Array)
+#5 /home/ubuntu/workspace/buddhalow/vendor/laravel/framework/src/Illuminate/Routing/Route.php(212): in /home/ubuntu/workspace/buddhalow/app/Importers/ElibBookSalesImporter.php on line 29
+[16-Jan-2018 09:13:27 UTC] PHP Fatal error:  Maximum execution time of 30 seconds exceeded in /home/ubuntu/workspace/buddhalow/app/Http/Controllers/Api/StreamsController.php on line 26

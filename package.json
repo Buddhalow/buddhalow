@@ -24,6 +24,7 @@
     "axios": "^0.16.2",
     "chart.js": "^2.7.1",
     "chartkick": "^2.2.4",
+    "hchs-vue-charts": "^1.2.8",
     "moment": "^2.20.1",
     "numeral": "^2.0.6",
     "v-file-upload": "^3.1.3",

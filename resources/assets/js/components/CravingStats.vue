@@ -159,7 +159,7 @@
                     var keys = this.group_by.split(/,/);
                     this.cravings = response.data.result.reduce((r, a) => {
                         
-                       res[a[keys[0]]] = a["qty"];
+                       res[a[keys[0]]] = -a["qty"];
                         return res;
                     });
                     console.log(this.cravings);

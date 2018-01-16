@@ -7,6 +7,7 @@ use App\Http\Controllers\Controller;
 use DB;
 use App\Roaming;
 use Illuminate\Http\Request;
+use Schema;
 
 class StatsController extends Controller
 {
@@ -29,7 +30,9 @@ class StatsController extends Controller
         if (!in_array($table, ['book_sales'])) {
             return;
         }
-        $allowed_groups = ['date', 'time_of_day', 'food', 'reason', 'action', 'status', 'month', 'date', 'week', 'weekday', 'hour'];
+        $allowed_filters = ['isbn', 'store_id', 'food_id', 'sale_type_id', 'action_id', 'status', 'weekday', 'week'];
+       
+        $allowed_groups = ['date', 'time_of_day', 'food', 'store', 'sale_type', 'reason', 'action', 'format', 'book_type', 'status', 'month', 'date', 'week', 'weekday', 'hour'];
         $select = array($table. '.id AS id');
         $joins = array();
         foreach($groups as $group) {
@@ -79,10 +82,29 @@ class StatsController extends Controller
                 }
             }
         }
-        $sql = "SELECT count(*) AS qty, " . implode(',',$select) . "  FROM " . $table ." ". implode(' ',$joins) . " WHERE time BETWEEN '$start_date' AND '$end_date' GROUP BY " . implode(',', $group_by) . "";
+        $where = " (time BETWEEN '$start_date' AND '$end_date') ";
+         foreach($_GET as $filter) {
+            if (in_array($filter, $allowed_filters) && isset($_GET[$filter])) {
+                $where .= ' AND ' . $table . "." . $filter . ' = "' .  mysql_real_escape_string($_GET['fiter']) . '" ';
+            }
+        }
+        $sql = "SELECT count(*) AS qty, " . implode(', ',$select) . "  FROM " . $table ." ". implode(' ',$joins) . " WHERE $where GROUP BY " . implode(',', $group_by) . " ASC";
         $result = DB::select($sql); 
+        $aggregations = explode(',', $request->query('aggregate'));
+        $aggregation = array();
+        foreach($aggregations as $group) {
+            if (in_array($group, $allowed_groups)) {
+             
+                 if (Schema::hasTable($group . 's')) {
+                    $sql = "SELECT name, (SELECT count(*) FROM $table WHERE $where AND  " . $group . "s.slug = " . $table . '.' . $group . '_id) AS count FROM ' . $group . 's ORDER BY count DESC';
+                    $aggregation[$group . 's'] = DB::select($sql); 
+                 }
+             
+            }
+       
+        }
         
-        return response()->json(compact('result'), 200);
+        return response()->json(compact('result', 'aggregation'), 200);
     }
     
     public function destroy($id)

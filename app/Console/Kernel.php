@@ -41,7 +41,7 @@ class Kernel extends ConsoleKernel
            $craving->food_id = $_craving->get('food');
            $craving->action_id = $_craving->get('action');
            $craving->toothbrush = $_craving->get('toothbrush');
-           var_dump($craving);
+         
            $craving->save();
           
         }

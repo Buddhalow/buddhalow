@@ -3,26 +3,20 @@
         <div class="section">
             <div class="container">
                 <div class="row">
-                    <div class="col-md-4">
-                        <div class="">
-                            <div class="panel-heading">
-                                Upload sales from Elib
-                            </div>
-         
-                            <div class="panel-body">
-                                <file-upload ref="upload" accept=".xlsx,.csv" url="/api/sales/books" @progress="onProgress">
-                                    Upload file from elib
-                                </file-upload>
-                                <button class="button" @click="startUpload">Start upload</button>
-                               
-                            </div>
-                        </div>
-                    </div>
+                    
                     <div class="col-md-12">
                         <div class="">
                             <div class="panel-heading">
                                 <h3>Consumption stats for ''</h3>
-                                <line-chart :data="sales"></line-chart>
+                                <vue-chart :data="sales"></vue-chart>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="">
+                            <div class="panel-heading">
+                                <h3>Top 10 libraries / stores</h3>
+                                <bar-chart :data="stores" :stacked="true"></bar-chart>
                             </div>
                         </div>
                     </div>
@@ -57,6 +51,11 @@
                     return this.$route.query.end || moment().format('YYYY-MM-DD')
                 }
             },
+            isbn: {
+                type: String,
+                required: false,
+                default: ''
+            },
             group_by: {
                 type: String,
                 required: false,
@@ -68,25 +67,57 @@
         watch: {
             '$route' (to, from) {
               // react to route changes...
-               this.retrieveStats(this.start, this.end)
+               this.retrieveStats(this.start, this.end, this.group_by)
             }
         },
         mounted()
         {
-            this.retrieveSales(this.start, this.end)
+            this.retrieveSales(this.start, this.end, this.group_by)
         },
         methods: {
-            retrieveSales(start, end) {
-                console.log(start, end);
+            retrieveSales(start, end, group_by) {
                 axios.get(
-                    '/api/stats?start=' + this.start + '&end=' +this.end + '&table=book_sales&group_by=' + this.group_by
+                    '/api/stats?start=' + start + '&end=' + end + '&table=book_sales&group_by=' + group_by + '&isbn=' + this.isbn + '&aggregate=store,format'
                 ).then((response) => {
-                    var res = {};
                     var keys = this.group_by.split(/,/);
-                    this.sales = response.data.result.reduce((r, a) => {
+                    
+                    var r = {};
+                    this.sales = {
+                        type: 'line',
+                        data: {
+                            
+                            labels: response.data.result.map(o => {
+                                return o.date
+                            }),
+                            datasets: [
+                                {
+                                    label: 'Sales',
+                                    backgroundColor: ['#0077ff33'],
+                                    data: response.data.result.map(o => {
+                                      
+                                        return o.qty
+                                    })
+                                }
+                            ]   
+                        },
+                        options: {
+                            scales: {
+                                xAxes: {
+                                    id: 'time',
+                                    type: 'category'
+                                        
+                                    
+                                }
+                            }
+                        }
+                    };
                         
-                       res[a[keys[0]]] = a["qty"];
-                        return res;
+                    var r = {};
+                    this.stores = response.data.aggregation.stores.slice(0, 10).reduce((t, a) => {
+                       
+                        if (a['count'] > 0)
+                        r[a['name']] = a['count']
+                        return r
                     });
                 })
             },

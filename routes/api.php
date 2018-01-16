@@ -19,12 +19,15 @@ use App\Http\Resources\CravingsResourceCollection;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
+Route::get('/import/streams', 'Api\\StreamsController@import');
 
 Route::resource('cravings', 'Api\\CravingsController');
+Route::resource('streams', 'Api\\StreamsController');
 Route::resource('savings', 'Api\\SavingsController');
 Route::resource('/sales/books', 'Api\\BookSalesController');
 Route::resource('/roamings', 'Api\\RoamingsController');
 Route::resource('/stats/cravings', 'Api\\CravingStatsController');
 Route::resource('/stats', 'Api\\StatsController');
+Route::resource('/opportunities', 'Api\\OpportunitiesController');
 Route::resource('/rooms', 'Api\\RoomsController');
 Route::resource('/rooms/{id}/snapshots', 'Api\\RoomSnapshotsController');
