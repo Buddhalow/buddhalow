@@ -34,4 +34,5 @@ Route::resource('/rooms', 'Api\\RoomsController');
 Route::resource('/rooms/{id}/snapshots', 'Api\\RoomSnapshotsController');
 Route::resource('/entities', 'Api\\EntitiesController');
 Route::resource('/shares', 'Api\\SharesController');
+Route::resource('/ledgers', 'Api\\LedgersController');
 Route::resource('/infections', 'Api\\InfectionsController');

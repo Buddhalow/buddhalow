@@ -12,6 +12,7 @@ import MusicStreams from './components/MusicStreams'
 import Opportunify from './components/Opportunify'
 import Threats from './components/Threats'
 import Fungalify from './components/Fungalify'
+import Account from './components/Account'
 
 Vue.use(VueRouter);
 
@@ -62,6 +63,11 @@ export default new VueRouter({
             path: '/dashboard/fungalify',
             name: 'entity',
             component: Fungalify
+        },
+        {
+            path: '/dashboard/accounts/:id',
+            name: 'account',
+            component: Account
         },
         {
             path: '/dashboard/aqtivity',

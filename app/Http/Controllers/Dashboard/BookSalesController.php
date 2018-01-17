@@ -47,9 +47,7 @@ class BookSalesController extends Controller
      */
     public function show($id)
     {
-        $craving = craving::findOrFail($id);
-
-        return $craving;
+        return view('dashboard.booksales.index', []);
     }
 
     /**
@@ -63,10 +61,7 @@ class BookSalesController extends Controller
     public function update(Request $request, $id)
     {
         
-        $craving = craving::findOrFail($id);
-        $craving->update($request->all());
-
-        return response()->json($craving, 200);
+        return view('dashboard.booksales.index', []);
     }
 
     /**

@@ -31,6 +31,7 @@ Route::get('/dashboard/cleaning', 'Dashboard\BookSalesController@index')->name('
 Route::get('/dashboard/threats', 'Dashboard\BookSalesController@index')->name('booksales');
 Route::get('/dashboard/opportunities', 'Dashboard\BookSalesController@index')->name('booksales');
 Route::get('/dashboard/fungalify', 'Dashboard\BookSalesController@index')->name('booksales');
+Route::resource('/dashboard/accounts', 'Dashboard\BookSalesController');
 
 
 Route::group(['prefix' => 'admin'], function () {

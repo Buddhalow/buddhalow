@@ -92023,6 +92023,9 @@ module.exports = function(Chart) {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__components_Threats___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_12__components_Threats__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__components_Fungalify__ = __webpack_require__(410);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__components_Fungalify___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_13__components_Fungalify__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__components_Account__ = __webpack_require__(413);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__components_Account___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_14__components_Account__);
+
 
 
 
@@ -92078,6 +92081,10 @@ __WEBPACK_IMPORTED_MODULE_0_vue___default.a.use(__WEBPACK_IMPORTED_MODULE_1_vue_
         path: '/dashboard/fungalify',
         name: 'entity',
         component: __WEBPACK_IMPORTED_MODULE_13__components_Fungalify___default.a
+    }, {
+        path: '/dashboard/accounts/:id',
+        name: 'account',
+        component: __WEBPACK_IMPORTED_MODULE_14__components_Account___default.a
     }, {
         path: '/dashboard/aqtivity',
         name: 'aqtivity',
@@ -119230,6 +119237,388 @@ if (false) {
   module.hot.accept()
   if (module.hot.data) {
     require("vue-hot-reload-api")      .rerender("data-v-fcfa16fc", module.exports)
+  }
+}
+
+/***/ }),
+/* 413 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var disposed = false
+var normalizeComponent = __webpack_require__(7)
+/* script */
+var __vue_script__ = __webpack_require__(414)
+/* template */
+var __vue_template__ = __webpack_require__(415)
+/* template functional */
+var __vue_template_functional__ = false
+/* styles */
+var __vue_styles__ = null
+/* scopeId */
+var __vue_scopeId__ = null
+/* moduleIdentifier (server only) */
+var __vue_module_identifier__ = null
+var Component = normalizeComponent(
+  __vue_script__,
+  __vue_template__,
+  __vue_template_functional__,
+  __vue_styles__,
+  __vue_scopeId__,
+  __vue_module_identifier__
+)
+Component.options.__file = "resources/assets/js/components/Account.vue"
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-74e6c7c6", Component.options)
+  } else {
+    hotAPI.reload("data-v-74e6c7c6", Component.options)
+  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 414 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_numeral__ = __webpack_require__(349);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_numeral___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_numeral__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_moment__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_moment___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_moment__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+    data: function data() {
+        return {
+            account: {},
+            transactions: [],
+            reservations: []
+        };
+    },
+    mounted: function mounted() {
+        this.load();
+    },
+
+    watch: {
+        '$route': function $route(_new, _old) {
+            this.load();
+        }
+    },
+    methods: {
+        numeral: function numeral(number) {
+            return __WEBPACK_IMPORTED_MODULE_0_numeral___default()(number);
+        },
+        formatNumber: function formatNumber(number) {
+            return __WEBPACK_IMPORTED_MODULE_0_numeral___default()(-number).format('0,0.00').replace(/,/g, '·').replace(/\./g, ':') + ' QIH';
+        },
+        formatDate: function formatDate(date) {
+            return __WEBPACK_IMPORTED_MODULE_1_moment___default()(date).fromNow();
+        },
+
+        moment: __WEBPACK_IMPORTED_MODULE_1_moment___default.a,
+        load: function load() {
+            var _this = this;
+
+            axios.get('/api/ledgers/' + this.$route.params.id).then(function (response) {
+                _this.account = response.data;
+            });
+        }
+    }
+});
+
+/***/ }),
+/* 415 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("div", [
+    _c("div", { staticClass: "section" }, [
+      _c("div", { staticClass: "container" }, [
+        _c("div", { staticClass: "row" }, [
+          _c("div", { staticClass: "col-md-12" }, [
+            _c("div", [
+              _c("div", {}, [
+                _c(
+                  "table",
+                  {
+                    staticClass:
+                      "table table-responsive table-striped table-responsive swedtable "
+                  },
+                  [
+                    _vm._m(0),
+                    _vm._v(" "),
+                    _c("tbody", [
+                      _c("tr", {}, [
+                        _c("td", { attrs: { colspan: "2" } }, [
+                          _vm._v("Balance")
+                        ]),
+                        _c(
+                          "td",
+                          {
+                            staticStyle: {
+                              "text-align": "right",
+                              "font-size": "10px"
+                            }
+                          },
+                          [
+                            _vm._v(
+                              _vm._s(_vm.formatNumber(_vm.account.balance))
+                            )
+                          ]
+                        )
+                      ]),
+                      _vm._v(" "),
+                      _vm.account.reserved_debits > 0
+                        ? _c("tr", [
+                            _c("td", { attrs: { colspan: "2" } }, [
+                              _vm._v("Not yet deposited to savings")
+                            ]),
+                            _c(
+                              "td",
+                              { staticStyle: { "text-align": "right" } },
+                              [
+                                _vm._v(
+                                  "- " +
+                                    _vm._s(
+                                      _vm.formatNumber(
+                                        _vm.account.reserved_debits
+                                      )
+                                    )
+                                )
+                              ]
+                            )
+                          ])
+                        : _vm._e(),
+                      _vm._v(" "),
+                      _vm.account.future_deposits > 0
+                        ? _c("tr", [
+                            _c("td", { attrs: { colspan: "2" } }, [
+                              _vm._v("Not yet deposited to savings")
+                            ]),
+                            _c(
+                              "td",
+                              { staticStyle: { "text-align": "right" } },
+                              [
+                                _vm._v(
+                                  "- " +
+                                    _vm._s(
+                                      _vm.formatNumber(
+                                        _vm.account.future_deposits
+                                      )
+                                    )
+                                )
+                              ]
+                            )
+                          ])
+                        : _vm._e(),
+                      _vm._v(" "),
+                      _c("tr", { staticStyle: { "font-weight": "bold" } }, [
+                        _c("td", { attrs: { colspan: "2" } }, [
+                          _vm._v("Effective Harmony")
+                        ]),
+                        _c(
+                          "td",
+                          {
+                            staticStyle: {
+                              "text-align": "right",
+                              "font-size": "10px"
+                            }
+                          },
+                          [
+                            _vm._v(
+                              _vm._s(
+                                _vm.formatNumber(_vm.account.available_amount)
+                              )
+                            )
+                          ]
+                        )
+                      ])
+                    ]),
+                    _vm._v(" "),
+                    _vm.reservations.length > 0
+                      ? _c("thead", [_vm._m(1)])
+                      : _vm._e(),
+                    _vm._v(" "),
+                    _c(
+                      "tbody",
+                      _vm._l(_vm.reservations, function(item, i) {
+                        return _c("tr", [
+                          _c("td", [_vm._v(_vm._s(_vm.formatDate(item.time)))]),
+                          _vm._v(" "),
+                          _c("td", [_vm._v(_vm._s(item.name))]),
+                          _c("td", { staticStyle: { "text-align": "right" } }, [
+                            _vm._v(
+                              "\n                                         " +
+                                _vm._s(_vm.formatNumber(item.amount)) +
+                                "\n                                         "
+                            )
+                          ])
+                        ])
+                      })
+                    ),
+                    _vm._v(" "),
+                    _vm._m(2),
+                    _vm._v(" "),
+                    _c(
+                      "tbody",
+                      _vm._l(_vm.transactions, function(item, i) {
+                        return _c("tr", [
+                          _c("td", [
+                            _vm._v(
+                              _vm._s(_vm.moment(item.time).format("YY-MM-DD"))
+                            )
+                          ]),
+                          _vm._v(" "),
+                          _c("td", [_vm._v(_vm._s(item.name))]),
+                          _c("td", { staticStyle: { "text-align": "right" } }, [
+                            _vm._v(
+                              "\n                                            " +
+                                _vm._s(
+                                  _vm.formatNumber(item.amount + 1000000)
+                                ) +
+                                "\n                                        "
+                            )
+                          ])
+                        ])
+                      })
+                    )
+                  ]
+                )
+              ])
+            ])
+          ])
+        ])
+      ])
+    ])
+  ])
+}
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("thead", [
+      _c("tr", [
+        _c("th", { attrs: { colspan: "5" } }, [
+          _vm._v("Savings account 0000-0 282 252-1")
+        ])
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("tr", [
+      _c("th", { attrs: { colspan: "5" } }, [_vm._v("Reservations")])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("thead", [
+      _c("tr", [
+        _c("th", { attrs: { colspan: "5" } }, [_vm._v("Latest transactions")])
+      ])
+    ])
+  }
+]
+render._withStripped = true
+module.exports = { render: render, staticRenderFns: staticRenderFns }
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+    require("vue-hot-reload-api")      .rerender("data-v-74e6c7c6", module.exports)
   }
 }
 
