@@ -38,7 +38,7 @@
         <div class="section section-alternative">
             <div class="container">
                 <div class="row">
-                    <div class="col-md-4">
+                    <div class="col-md-4 col-xs-12">
                         <div class="">
                             <vue-circle
                             :progress="character"
@@ -57,7 +57,7 @@
                           </vue-circle>
                         </div>
                     </div>
-                    <div class="col-md-4">
+                    <div class="col-md-4 col-xs-12">
                         <div class="">
                             <vue-circle
                             :progress="character"

@@ -118896,7 +118896,7 @@ var render = function() {
     _c("div", { staticClass: "section section-alternative" }, [
       _c("div", { staticClass: "container" }, [
         _c("div", { staticClass: "row" }, [
-          _c("div", { staticClass: "col-md-4" }, [
+          _c("div", { staticClass: "col-md-4 col-xs-12" }, [
             _c(
               "div",
               {},
@@ -118925,7 +118925,7 @@ var render = function() {
             )
           ]),
           _vm._v(" "),
-          _c("div", { staticClass: "col-md-4" }, [
+          _c("div", { staticClass: "col-md-4 col-xs-12" }, [
             _c(
               "div",
               {},
