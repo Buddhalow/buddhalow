@@ -1,69 +1,37 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container">
-    <div class="row">
-        <div class="col-md-8 col-md-offset-2">
-            <div class="panel panel-default">
-                <div class="panel-heading">Login</div>
-
-                <div class="panel-body">
-                    <form class="form-horizontal" method="POST" action="{{ route('login') }}">
-                        {{ csrf_field() }}
-
-                        <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
-                            <label for="email" class="col-md-4 control-label">E-Mail Address</label>
-
-                            <div class="col-md-6">
-                                <input id="email" type="email" class="form-control" name="email" value="{{ old('email') }}" required autofocus>
-
-                                @if ($errors->has('email'))
-                                    <span class="help-block">
-                                        <strong>{{ $errors->first('email') }}</strong>
-                                    </span>
-                                @endif
-                            </div>
-                        </div>
-
-                        <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
-                            <label for="password" class="col-md-4 control-label">Password</label>
-
-                            <div class="col-md-6">
-                                <input id="password" type="password" class="form-control" name="password" required>
-
-                                @if ($errors->has('password'))
-                                    <span class="help-block">
-                                        <strong>{{ $errors->first('password') }}</strong>
-                                    </span>
-                                @endif
-                            </div>
-                        </div>
-
-                        <div class="form-group">
-                            <div class="col-md-6 col-md-offset-4">
-                                <div class="checkbox">
-                                    <label>
-                                        <input type="checkbox" name="remember" {{ old('remember') ? 'checked' : '' }}> Remember Me
-                                    </label>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="form-group">
-                            <div class="col-md-8 col-md-offset-4">
-                                <button type="submit" class="btn btn-primary">
-                                    Login
-                                </button>
-
-                                <a class="btn btn-link" href="{{ route('password.request') }}">
-                                    Forgot Your Password?
-                                </a>
-                            </div>
-                        </div>
-                    </form>
-                </div>
-            </div>
+<div class="centeric">
+    <div class="box">
+        <div class="logo" style="text-align: center">
+            <img src="/images/logo.svg" style="width: 128pt; height: 128pt">
+            <h3>Buddhalow </h3>
+            <p>Internal Services</p>
         </div>
+        <form  onsubmit="onSubmit" method="POST" action="{{ route('login') }}">
+            {{ csrf_field() }}
+
+            <div id="success" style="display: none" class="alert alert-success">Login succeeed!</div>
+            <div id="errors" style="display: none" class="alert alert-error">Invalid username or password</div>
+            <label>User name</label>
+            <input class="form-control" type="text" name="email">
+            <label>Password</label>
+            <input class="form-control" type="password"  name="password"><br>
+            <button class="btn btn-primary">Log in</button>
+            <br>
+            <p>
+                <i class="fa fa-warning"></i> REMEMBER! Always make sure you are on https://app.buddhalow.com.</p>
+                
+            </p>
+            <p>This resource is only intended for employees of BUDDHALOW.</p>
+        </form>
+        <div style="display: none" class="spinner"></div>
     </div>
+    <script>
+        function onSubmit() {
+            document.querySelector('form').style.display = 'none';
+            document.querySelector('spinner').style.block = 'none';
+        }
+    </script>
 </div>
 @endsection

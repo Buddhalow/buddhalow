@@ -1,19 +1,18 @@
 <template>
-    <div class="container">
-        <div class="row">
-            <div class="col-md-12">
-                <div class="panel panel-default">
-                    <div class="panel-heading">
-                        Dashboard
-                    </div>
- 
-                    <div class="panel-body">
- 
+    <div>
+        <div class="">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="">
+                            <div class="panel-heading">
+                                <h1>Welcome!</h1>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
- 
     </div>
 </template>
  

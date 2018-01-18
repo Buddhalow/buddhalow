@@ -16,23 +16,27 @@ use App\Http\Resources\CravingsResourceCollection;
 |
 */
 
-Route::middleware('auth:api')->get('/user', function (Request $request) {
+Route::middleware('web')->get('/user', function (Request $request) {
     return $request->user();
+    
 });
-Route::get('/import/streams', 'Api\\StreamsController@import');
 
-Route::resource('cravings', 'Api\\CravingsController');
-Route::resource('streams', 'Api\\StreamsController');
-Route::resource('savings', 'Api\\SavingsController');
-Route::resource('/sales/books', 'Api\\BookSalesController');
-Route::resource('/roamings', 'Api\\RoamingsController');
-Route::resource('/stats/cravings', 'Api\\CravingStatsController');
-Route::resource('/stats', 'Api\\StatsController');
-Route::resource('/opportunities', 'Api\\OpportunitiesController');
-Route::resource('/threats', 'Api\\ThreatsController');
-Route::resource('/rooms', 'Api\\RoomsController');
-Route::resource('/rooms/{id}/snapshots', 'Api\\RoomSnapshotsController');
-Route::resource('/entities', 'Api\\EntitiesController');
-Route::resource('/shares', 'Api\\SharesController')->middleware('auth:api');
-Route::resource('/ledgers', 'Api\\LedgersController')->middleware('auth:api');
-Route::resource('/infections', 'Api\\InfectionsController')->middleware('auth:api');
+Route::middleware('web')->group(function () {
+    Route::resource('cravings', 'Api\\CravingsController');
+    Route::resource('streams', 'Api\\StreamsController');
+    Route::resource('savings', 'Api\\SavingsController');
+    Route::resource('/sales/books', 'Api\\BookSalesController');
+    Route::resource('/roamings', 'Api\\RoamingsController');
+    Route::resource('/stats/cravings', 'Api\\CravingStatsController');
+    Route::resource('/stats', 'Api\\StatsController');
+    Route::resource('/opportunities', 'Api\\OpportunitiesController');
+    Route::resource('/threats', 'Api\\ThreatsController');
+    Route::resource('/rooms', 'Api\\RoomsController');
+    Route::resource('/rooms/{id}/snapshots', 'Api\\RoomSnapshotsController');
+    Route::resource('/entities', 'Api\\EntitiesController');
+    Route::resource('/shares', 'Api\\SharesController');
+    Route::resource('/ledgers', 'Api\\LedgersController');
+    Route::resource('/infections', 'Api\\InfectionsController');
+    Route::resource('/me', 'Api\\MeController');
+    Route::resource('/login', 'Api\\LoginController');
+});

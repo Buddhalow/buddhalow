@@ -1,6 +1,6 @@
 <template>
     <div class="page">
-        <aside v-bind:class="{'open': menu.open}" v-if="loggedIn">
+        <aside v-bind:class="{'open': menu.open}">
             <div class="aside-content" style="width:100%;display: flex; flex-direction: row">
                 <div style="width: 100%; text-align: center; position: relative">
                    <div class="round" style="display: inline-block; background-image: url('/images/avatar.jpg'); background-size: cover"></div>   

@@ -40,13 +40,14 @@
     <meta name="apple-mobile-web-app-title" content="Buddhalow">
 </head>
 <body>
+    @section('content')
     <div id="app" class="body" style="display: none">
     </div>
-    
+    <script>var userIsLoggedIn = '{{ Auth::check() }}';</script>
     <div id="spinner" class="spinner" style="position: fixed; left: 50%; top: 50%; transform: translate(-50%, -50%)"></div>
     <!-- Scripts -->
     
     <script defer src="{{ asset('js/app.js') }}"></script>
-    
+    @show
 </body>
 </html>

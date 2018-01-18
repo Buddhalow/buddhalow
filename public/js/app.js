@@ -92434,7 +92434,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     data: function data() {
@@ -92460,15 +92459,17 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "container" }, [
-      _c("div", { staticClass: "row" }, [
-        _c("div", { staticClass: "col-md-12" }, [
-          _c("div", { staticClass: "panel panel-default" }, [
-            _c("div", { staticClass: "panel-heading" }, [
-              _vm._v("\n                    Dashboard\n                ")
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "panel-body" })
+    return _c("div", [
+      _c("div", {}, [
+        _c("div", { staticClass: "container" }, [
+          _c("div", { staticClass: "row" }, [
+            _c("div", { staticClass: "col-md-12" }, [
+              _c("div", {}, [
+                _c("div", { staticClass: "panel-heading" }, [
+                  _c("h1", [_vm._v("Welcome!")])
+                ])
+              ])
+            ])
           ])
         ])
       ])
@@ -95685,142 +95686,138 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "page" }, [
-    _vm.loggedIn
-      ? _c("aside", { class: { open: _vm.menu.open } }, [
+    _c("aside", { class: { open: _vm.menu.open } }, [
+      _c(
+        "div",
+        {
+          staticClass: "aside-content",
+          staticStyle: {
+            width: "100%",
+            display: "flex",
+            "flex-direction": "row"
+          }
+        },
+        [
           _c(
             "div",
             {
-              staticClass: "aside-content",
               staticStyle: {
                 width: "100%",
-                display: "flex",
-                "flex-direction": "row"
+                "text-align": "center",
+                position: "relative"
               }
             },
             [
-              _c(
-                "div",
-                {
-                  staticStyle: {
-                    width: "100%",
-                    "text-align": "center",
-                    position: "relative"
-                  }
+              _c("div", {
+                staticClass: "round",
+                staticStyle: {
+                  display: "inline-block",
+                  "background-image": "url('/images/avatar.jpg')",
+                  "background-size": "cover"
+                }
+              }),
+              _vm._v(" "),
+              _c("h3", [_vm._v("Alecca")]),
+              _vm._v(" "),
+              _c("a", {
+                staticClass: "fa fa-window-close close-button",
+                staticStyle: {
+                  right: "12pt",
+                  top: "12pt",
+                  position: "absolute",
+                  "font-size": "15pt"
                 },
-                [
-                  _c("div", {
-                    staticClass: "round",
-                    staticStyle: {
-                      display: "inline-block",
-                      "background-image": "url('/images/avatar.jpg')",
-                      "background-size": "cover"
-                    }
-                  }),
-                  _vm._v(" "),
-                  _c("h3", [_vm._v("Alecca")]),
-                  _vm._v(" "),
-                  _c("a", {
-                    staticClass: "fa fa-window-close close-button",
-                    staticStyle: {
-                      right: "12pt",
-                      top: "12pt",
-                      position: "absolute",
-                      "font-size": "15pt"
-                    },
-                    on: { click: _vm.closeMenu }
-                  })
-                ]
-              )
+                on: { click: _vm.closeMenu }
+              })
             ]
-          ),
+          )
+        ]
+      ),
+      _vm._v(" "),
+      _c("div", { staticClass: "menu" }, [
+        _c("section", [
+          _c("label", [_vm._v("Casting")]),
           _vm._v(" "),
-          _c("div", { staticClass: "menu" }, [
-            _c("section", [
-              _c("label", [_vm._v("Casting")]),
-              _vm._v(" "),
-              _c("ul", [
+          _c("ul", [
+            _c(
+              "li",
+              [
                 _c(
-                  "li",
-                  [
-                    _c(
-                      "router-link",
-                      { attrs: { to: "/dashboard/opportunities" } },
-                      [_vm._v("Opportunities")]
-                    )
-                  ],
-                  1
-                ),
-                _vm._v(" "),
-                _c(
-                  "li",
-                  [
-                    _c("router-link", { attrs: { to: "/dashboard/threats" } }, [
-                      _vm._v("Threats")
-                    ])
-                  ],
-                  1
+                  "router-link",
+                  { attrs: { to: "/dashboard/opportunities" } },
+                  [_vm._v("Opportunities")]
                 )
-              ])
-            ]),
+              ],
+              1
+            ),
             _vm._v(" "),
-            _c("section", [
-              _c("label", [_vm._v("Health")]),
-              _vm._v(" "),
-              _c("ul", [
-                _c(
-                  "li",
-                  [
-                    _c(
-                      "router-link",
-                      { attrs: { to: "/dashboard/stats/cravings" } },
-                      [_vm._v("Cravings")]
-                    )
-                  ],
-                  1
-                )
-              ])
-            ]),
-            _vm._v(" "),
-            _c("section", [
-              _c("label", [_vm._v("Books")]),
-              _vm._v(" "),
-              _c("ul", [
-                _c(
-                  "li",
-                  [
-                    _c(
-                      "router-link",
-                      { attrs: { to: "/dashboard/sales/books" } },
-                      [_vm._v("Sales")]
-                    )
-                  ],
-                  1
-                )
-              ])
-            ]),
-            _vm._v(" "),
-            _c("section", [
-              _c("label", [_vm._v("Music")]),
-              _vm._v(" "),
-              _c("ul", [
-                _c(
-                  "li",
-                  [
-                    _c(
-                      "router-link",
-                      { attrs: { to: "/dashboard/music/streams" } },
-                      [_vm._v("Streams")]
-                    )
-                  ],
-                  1
-                )
-              ])
-            ])
-          ]),
+            _c(
+              "li",
+              [
+                _c("router-link", { attrs: { to: "/dashboard/threats" } }, [
+                  _vm._v("Threats")
+                ])
+              ],
+              1
+            )
+          ])
+        ]),
+        _vm._v(" "),
+        _c("section", [
+          _c("label", [_vm._v("Health")]),
           _vm._v(" "),
-          _vm._m(0)
+          _c("ul", [
+            _c(
+              "li",
+              [
+                _c(
+                  "router-link",
+                  { attrs: { to: "/dashboard/stats/cravings" } },
+                  [_vm._v("Cravings")]
+                )
+              ],
+              1
+            )
+          ])
+        ]),
+        _vm._v(" "),
+        _c("section", [
+          _c("label", [_vm._v("Books")]),
+          _vm._v(" "),
+          _c("ul", [
+            _c(
+              "li",
+              [
+                _c("router-link", { attrs: { to: "/dashboard/sales/books" } }, [
+                  _vm._v("Sales")
+                ])
+              ],
+              1
+            )
+          ])
+        ]),
+        _vm._v(" "),
+        _c("section", [
+          _c("label", [_vm._v("Music")]),
+          _vm._v(" "),
+          _c("ul", [
+            _c(
+              "li",
+              [
+                _c(
+                  "router-link",
+                  { attrs: { to: "/dashboard/music/streams" } },
+                  [_vm._v("Streams")]
+                )
+              ],
+              1
+            )
+          ])
         ])
-      : _vm._e(),
+      ]),
+      _vm._v(" "),
+      _vm._m(0)
+    ]),
     _vm._v(" "),
     _c("header", [
       _c(
@@ -122238,12 +122235,39 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     data: function data() {
         return {
-            loggedIn: loggedIn
+            success: false,
+            error: false,
+            processing: false,
+            loggedIn: false,
+            form: {
+                username: '',
+                password: ''
+            }
         };
+    },
+
+    methods: {
+        onSubmit: function onSubmit() {
+            var _this = this;
+
+            this.processing = true;
+            axios.post('/api/login', this.form).then(function (response) {
+                _this.loggedIn = true;
+                _this.processing = false;
+                _this.success = true;
+                self.location = '/dashboard';
+            }).catch(function (error) {
+                _this.error = true;
+            });
+        }
     }
 });
 
@@ -122255,64 +122279,135 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _vm._m(0)
+  return _c("div", { staticClass: "centeric" }, [
+    _c("div", { staticClass: "box" }, [
+      _vm._m(0),
+      _vm._v(" "),
+      !_vm.processing
+        ? _c(
+            "form",
+            {
+              on: {
+                submit: function($event) {
+                  $event.preventDefault()
+                  _vm.onSubmit($event)
+                }
+              }
+            },
+            [
+              _vm.success
+                ? _c("div", { staticClass: "alert alert-success" }, [
+                    _vm._v("Login succeeed!")
+                  ])
+                : _vm._e(),
+              _vm._v(" "),
+              _vm.error
+                ? _c("div", { staticClass: "alert alert-error" }, [
+                    _vm._v("Invalid username or password")
+                  ])
+                : _vm._e(),
+              _vm._v(" "),
+              _c("label", [_vm._v("User name")]),
+              _vm._v(" "),
+              _c("input", {
+                directives: [
+                  {
+                    name: "model",
+                    rawName: "v-model",
+                    value: _vm.form.username,
+                    expression: "form.username"
+                  }
+                ],
+                staticClass: "form-control",
+                attrs: { type: "text" },
+                domProps: { value: _vm.form.username },
+                on: {
+                  input: function($event) {
+                    if ($event.target.composing) {
+                      return
+                    }
+                    _vm.$set(_vm.form, "username", $event.target.value)
+                  }
+                }
+              }),
+              _vm._v(" "),
+              _c("label", [_vm._v("Password")]),
+              _vm._v(" "),
+              _c("input", {
+                directives: [
+                  {
+                    name: "model",
+                    rawName: "v-model",
+                    value: _vm.form.password,
+                    expression: "form.password"
+                  }
+                ],
+                staticClass: "form-control",
+                attrs: { type: "password" },
+                domProps: { value: _vm.form.password },
+                on: {
+                  input: function($event) {
+                    if ($event.target.composing) {
+                      return
+                    }
+                    _vm.$set(_vm.form, "password", $event.target.value)
+                  }
+                }
+              }),
+              _c("br"),
+              _vm._v(" "),
+              _c("button", { staticClass: "btn btn-primary" }, [
+                _vm._v("Log in")
+              ]),
+              _vm._v(" "),
+              _c("br"),
+              _vm._v(" "),
+              _vm._m(1),
+              _vm._v(" "),
+              _c("p"),
+              _vm._v(" "),
+              _c("p", [
+                _vm._v(
+                  "This resource is only intended for employees of BUDDHALOW."
+                )
+              ])
+            ]
+          )
+        : _vm._e(),
+      _vm._v(" "),
+      _vm.processing ? _c("div", { staticClass: "spinner" }) : _vm._e()
+    ])
+  ])
 }
 var staticRenderFns = [
   function() {
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "centeric" }, [
-      _c("div", { staticClass: "box" }, [
-        _c(
-          "div",
-          { staticClass: "logo", staticStyle: { "text-align": "center" } },
-          [
-            _c("img", {
-              staticStyle: { width: "128pt", height: "128pt" },
-              attrs: { src: "/images/logo.svg" }
-            }),
-            _vm._v(" "),
-            _c("h3", [_vm._v("Buddhalow ")]),
-            _vm._v(" "),
-            _c("p", [_vm._v("Internal Services")])
-          ]
-        ),
+    return _c(
+      "div",
+      { staticClass: "logo", staticStyle: { "text-align": "center" } },
+      [
+        _c("img", {
+          staticStyle: { width: "128pt", height: "128pt" },
+          attrs: { src: "/images/logo.svg" }
+        }),
         _vm._v(" "),
-        _c("form", [
-          _c("label", [_vm._v("User name")]),
-          _vm._v(" "),
-          _c("input", {
-            staticClass: "form-control",
-            attrs: { type: "text", name: "username" }
-          }),
-          _vm._v(" "),
-          _c("label", [_vm._v("Password")]),
-          _vm._v(" "),
-          _c("input", {
-            staticClass: "form-control",
-            attrs: { type: "password", name: "password" }
-          }),
-          _c("br"),
-          _vm._v(" "),
-          _c("button", { staticClass: "btn btn-primary" }, [_vm._v("Log in")]),
-          _vm._v(" "),
-          _c("br"),
-          _vm._v(" "),
-          _c("p", [
-            _c("i", { staticClass: "fa fa-warning" }),
-            _vm._v(
-              " REMEMBER! Always make sure you are on https://app.buddhalow.com."
-            )
-          ]),
-          _vm._v(" "),
-          _c("p"),
-          _vm._v(" "),
-          _c("p", [
-            _vm._v("This resource is only intended for employees of BUDDHALOW.")
-          ])
-        ])
-      ])
+        _c("h3", [_vm._v("Buddhalow ")]),
+        _vm._v(" "),
+        _c("p", [_vm._v("Internal Services")])
+      ]
+    )
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("p", [
+      _c("i", { staticClass: "fa fa-warning" }),
+      _vm._v(
+        " REMEMBER! Always make sure you are on https://app.buddhalow.com."
+      )
     ])
   }
 ]

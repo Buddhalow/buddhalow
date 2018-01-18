@@ -14,26 +14,16 @@
 use App\Craving;
 use App\Http\Resources\CravingResourceCollection;
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
-Route::get('/dashboard/cravings', 'Dashboard\CravingsController@index')->name('cravings');
-Route::get('/dashboard/aqtivity', 'Dashboard\RoamingsController@index')->name('roamings');
-Route::get('/dashboard/stats/cravings', 'Dashboard\RoamingsController@index')->name('roamings');
-Route::get('/dashboard/savings', 'Dashboard\SavingsController@index')->name('savings');
-Route::get('/dashboard/sales/books', 'Dashboard\BookSalesController@index')->name('booksales');
-Route::get('/dashboard/music/streams', 'Dashboard\BookSalesController@index')->name('music_streams');
-Route::get('/dashboard/cleaning', 'Dashboard\BookSalesController@index')->name('booksales');
-Route::get('/dashboard/threats', 'Dashboard\BookSalesController@index')->name('booksales');
-Route::get('/dashboard/opportunities', 'Dashboard\BookSalesController@index')->name('booksales');
-Route::get('/dashboard/fungalify', 'Dashboard\BookSalesController@index')->name('booksales');
-Route::resource('/dashboard/accounts', 'Dashboard\BookSalesController');
 
+Route::middleware('web')->group(function () {
+Route::get('/dashboard/{q}', 'DashboardController@index')->where('q', '(.*)');
+Route::get('/dashboard', 'DashboardController@index')->name('home');
+
+});
 
 Route::group(['prefix' => 'admin'], function () {
     Voyager::routes();
 });
+Auth::routes();
