@@ -159,17 +159,17 @@
                     this.cravings = {
                         type: 'line',
                         data: {
-                            labels: response.data.unhealthy.map(o => o.time),
+                            labels: response.data.unhealthy.map(o => o.date),
                             datasets: [
                                 {
                                     label: 'Unhealthy',
                                     data: response.data.unhealthy.map(o => -o.qty),
-                                    fillColors: ['#ff000044']
+                                    backgroundColor: ['#ff000044']
                                 },
                                 {
                                     label: 'Healthy',
                                     data: response.data.healthy.map(o => o.qty),
-                                    fillColors: ['#00ff0044']
+                                    backgroundColor: ['#00ff0044']
                                 }
                             ]
                         }

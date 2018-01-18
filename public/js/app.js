@@ -118990,20 +118990,20 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                     type: 'line',
                     data: {
                         labels: response.data.unhealthy.map(function (o) {
-                            return o.time;
+                            return o.date;
                         }),
                         datasets: [{
                             label: 'Unhealthy',
                             data: response.data.unhealthy.map(function (o) {
                                 return -o.qty;
                             }),
-                            fillColors: ['#ff000044']
+                            backgroundColor: ['#ff000044']
                         }, {
                             label: 'Healthy',
                             data: response.data.healthy.map(function (o) {
                                 return o.qty;
                             }),
-                            fillColors: ['#00ff0044']
+                            backgroundColor: ['#00ff0044']
                         }]
                     }
                 };
