@@ -13,12 +13,18 @@ import Opportunify from './components/Opportunify'
 import Threats from './components/Threats'
 import Fungalify from './components/Fungalify'
 import Account from './components/Account'
+import Login from './components/Login'
 
 Vue.use(VueRouter);
 
 export default new VueRouter({
     mode: 'history',
     routes: [
+        {
+            path: '/login',
+            name: 'Login',
+            component: Login
+        },
         {
             path: '/dashboard',
             name: 'Dashboard',

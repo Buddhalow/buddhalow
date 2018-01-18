@@ -5,7 +5,11 @@
 
 @mixin button-variant($color, $background, $border) {
   color: $color;
-  @include glowy_fade($background, adjust_hue($background, -28%), $border);
+  //@include glowy_fade($background, adjust_hue($background, -28%), $border);
+  background: $background;
+
+  
+  
   &:focus {
     outline: none;
   }
@@ -19,10 +23,12 @@
     color: $color;
     background-color: darken($background, 10%);
         border-color: darken($border, 12%);
+    transform: scale(1.1);
   }
   &:active,
   &.active,
   .open > &.dropdown-toggle {
+    transform: scale(0.89);
     color: $color;
     background-color: darken($background, 10%);
         border-color: darken($border, 12%);
