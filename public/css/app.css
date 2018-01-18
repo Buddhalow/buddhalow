@@ -8723,3 +8723,16 @@ aside {
   }
 }
 
+.bg-dark {
+  color: white;
+  background-color: #333;
+}
+
+.bg-1xx {
+  background: #1db954;
+}
+
+.bg-5xx {
+  background: #bf5329;
+}
+

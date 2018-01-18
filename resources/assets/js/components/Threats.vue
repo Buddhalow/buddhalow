@@ -5,11 +5,11 @@
                 <div class="row">
                     <div class="col-md-12">
                         <div>
-                            <h3>Threats</h3>
+                            <h3>{{ 'Threats' | translate }}</h3>
                             <table class="table table-bordered table-striped table-responsive" v-if="objects.length > 0">
                                 <thead>
                                     <tr>
-                                        <th>Name</th>
+                                        <th>{{ 'Name' | translate }}</th>
                                     </tr>
                                 </thead>
                                 <tbody>

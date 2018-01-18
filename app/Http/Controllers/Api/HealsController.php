@@ -17,7 +17,7 @@ class CravingsController extends Controller
      */
     public function index(Request $request)
     {
-        $cravings = craving::orderBy('id', 'DESC')->whereBetween('status', '200 AND 299')->whereNot('food_id', 'vegetables')->paginate(25);
+        $cravings = craving::orderBy('id', 'DESC')->whereBetween('status', '200 AND 299')->where('food_id', 'vegetables')->paginate(25);
 
         return $cravings;
     }

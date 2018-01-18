@@ -5,16 +5,16 @@
             <div class="logo" style="text-align: center">
                 <img src="/images/logo.svg" style="width: 128pt; height: 128pt">
                 <h3>Buddhalow </h3>
-                <p>Internal Services</p>
+                <p>{{ 'Internal Services' || translate }}</p>
             </div>
             <form v-if="!processing" v-on:submit.prevent="onSubmit">
-                <div v-if="success" class="alert alert-success">Login succeeed!</div>
-                <div v-if="error" class="alert alert-error">Invalid username or password</div>
-                <label>User name</label>
+                <div v-if="success" class="alert alert-success">{{'Login succeeed!' | translate}}</div>
+                <div v-if="error" class="alert alert-error">{{'Invalid username or password' | translate }}</div>
+                <label>{{ 'User name' | translate}}</label>
                 <input class="form-control" type="text" v-model="form.username">
-                <label>Password</label>
+                <label>{{ 'Password' | translate}}</label>
                 <input class="form-control" type="password" v-model="form.password"><br>
-                <button class="btn btn-primary">Log in</button>
+                <button class="btn btn-primary">{{ 'Log in' | translate}}</button>
                 <br>
                 <p>
                     <i class="fa fa-warning"></i> REMEMBER! Always make sure you are on https://app.buddhalow.com.</p>

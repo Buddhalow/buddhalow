@@ -110,7 +110,6 @@
                 statuses: {},
                 actions: {},
                 foods: {},
-                
                 character: 2,
                 weekdays: {},
                 progress: 0,
@@ -157,16 +156,22 @@
                     '/api/stats/cravings?start=' + this.start + '&end=' +this.end + '&group_by=' + this.group_by   
                 ).then((response) => {
                     var res = {};
-                    var keys = this.group_by.split(/,/);
-                    var craving_data = response.data.result;
                     this.cravings = {
                         type: 'line',
                         data: {
-                            labels: craving_data.map(o => o.time),
-                            datasets: [{
-                                label: 'Cravings',
-                                data: craving_data.map(o => -o.qty)
-                            }]
+                            labels: response.data.unhealthy.map(o => o.time),
+                            datasets: [
+                                {
+                                    label: 'Unhealthy',
+                                    data: response.data.unhealthy.map(o => -o.qty),
+                                    fillColors: ['#ff000044']
+                                },
+                                {
+                                    label: 'Healthy',
+                                    data: response.data.healthy.map(o => o.qty),
+                                    fillColors: ['#00ff0044']
+                                }
+                            ]
                         }
                     }
                     
@@ -180,7 +185,7 @@
                     this.weekdays = {
                         type: 'line',
                         data: {
-                            labels: response.data.result.map(o => o.name),
+                            labels: response.data.healthy.map(o => o.name),
                             datasets: [{
                                 label: 'Cravings',
                                 data: response.data.result.map(o => o.qty)
@@ -196,10 +201,10 @@
                     this.foods = {
                         type: 'line',
                         data: {
-                            labels: response.data.result.map(o => o.name),
+                            labels: response.data.unhealthy.map(o => o.name),
                             datasets: [{
-                                label: 'Cravings',
-                                data: response.data.result.map(o => o.qty)
+                                label: 'Unhealthy foods',
+                                data: response.data.unhealthy.map(o => o.qty)
                             }]
                         }
                     }

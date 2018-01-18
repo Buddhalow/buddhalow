@@ -13,30 +13,30 @@
             <div class="menu">
                <section>
                    <ul>
-                    <li><router-link to="/dashboard">Dashboard</router-link></li>
+                    <li><router-link to="/dashboard">{{ 'Dashboard' | translate }}</router-link></li>
                 </ul><br>
-                <label>Casting</label>
+                <label>{{ 'Casting' | translate }}</label>
                 <ul>
-                    <li><router-link to="/dashboard/opportunities">Opportunities</router-link></li>
-                    <li><router-link to="/dashboard/threats">Threats</router-link></li>
+                    <li><router-link to="/dashboard/opportunities">{{ 'Opportunities' | translate }}</router-link></li>
+                    <li><router-link to="/dashboard/threats">{{ 'Threats' | translate }}</router-link></li>
                 </ul>
                 </section>
                <section>
-                <label>Health</label>
+                <label>{{ 'Health' | translate }}</label>
                 <ul>
-                    <li><router-link to="/dashboard/stats/cravings">Cravings</router-link></li>
+                    <li><router-link to="/dashboard/stats/cravings">{{ 'Cravings' | translate }}</router-link></li>
                 </ul>
                 </section>
                <section>
                 <label>Books</label>
                 <ul>
-                    <li><router-link to="/dashboard/sales/books">Sales</router-link></li>
+                    <li><router-link to="/dashboard/sales/books">{{ 'Sales' | translate }}</router-link></li>
                </ul>
                 </section>
                <section>
-               <label>Music</label>
+               <label>{{ 'Music' | translate }}</label>
                <ul>
-                    <li><router-link to="/dashboard/music/streams">Streams</router-link></li>
+                    <li><router-link to="/dashboard/music/streams">{{ 'Streams' | translate }}</router-link></li>
                </ul>
                 </section>
             </div>

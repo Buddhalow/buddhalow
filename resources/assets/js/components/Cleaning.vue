@@ -6,7 +6,7 @@
                     <div class="col-md-12">
                         <div class="">
                             <div class="panel-heading">
-                                <h3>Room integrity history</h3>
+                                <h3>{{ 'Room integrity history' | translate }}</h3>
                                 <line-chart :library="{fill:true}" :data="stats"></line-chart>
                             </div>
                         </div>
@@ -31,7 +31,7 @@
                           <p>Clean</p>
                            <div v-if="room.balance < -0.5">
                             <i class="fa fa-warning"></i>
-                            <h3>Needs cleaning</h3>
+                            <h3>{{ 'Needs cleaning' | translate }}</h3>
                             </div>
                           </vue-circle>
                         <h3>{{room.name}}</h3>

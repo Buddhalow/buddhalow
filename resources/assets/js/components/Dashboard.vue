@@ -6,7 +6,7 @@
                     <div class="col-md-12">
                         <div class="">
                             <div class="panel-heading">
-                                <h1>Welcome!</h1>
+                                <h1>{{ 'Welcome!' | translate}}</h1>
                             </div>
                         </div>
                     </div>

@@ -65,11 +65,12 @@ class CravingStatsController extends Controller
                 }
             }
         }
-        $sql = "SELECT count(*) AS qty, " . implode(',',$select) . " FROM cravings WHERE time BETWEEN '$start_date' AND '$end_date' GROUP BY " . implode(',', $group_by) . "";
-   
-        $result = DB::select($sql); 
+        $sql = "SELECT count(*) FROM cravings WHERE status BETWEEN 200 AND 299 AND food_id <> 'vegetables' AND DAY(time) = DAY(db_date) ";
+        $unhealthy = DB::select("SELECT ($sql) AS qty, db_date AS date FROM time_dimension WHERE db_date BETWEEN '$start_date' AND '$end_date'"); 
+        $sql = "SELECT count(*) FROM cravings WHERE status BETWEEN 200 AND 299 AND food_id = 'vegetables' AND DAY(time) = DAY(db_date) ";
         
-        return response()->json(compact('result'), 200);
+        $healthy = DB::select("SELECT ($sql) AS qty, db_date AS date FROM time_dimension WHERE db_date BETWEEN '$start_date' AND '$end_date'");
+        return response()->json(compact('healthy', 'unhealthy'), 200);
     }
     
     public function destroy($id)

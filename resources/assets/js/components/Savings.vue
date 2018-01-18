@@ -10,35 +10,35 @@
                                 <table class="table table-responsive table-striped table-responsive swedtable ">
                                     <thead>
                                         <tr>
-                                        <th colspan="5">Savings account 0000-0 282 252-1</th>
+                                        <th colspan="5">{{ 'Savings account' | translate}} 0000-0 282 252-1</th>
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <tr><td colspan="2">Planned acumulated savings</td><td style="text-align: right; opacity: 0.5">~ {{ formatNumber(escalation_point)}}</td></tr>
-                                        <tr><td colspan="2">Lost savings</td><td style="text-align: right">- {{ formatNumber(escalation_point - (total + reserved))}}</td></tr>
+                                        <tr><td colspan="2">Planned acumulated savings</td><td style="text-align: right; opacity: 0.5">~ {{ escalation_point | formatLongNumber}}</td></tr>
+                                        <tr><td colspan="2">Lost savings</td><td style="text-align: right">- {{ escalation_point - (total + reserved) | formatLongNumber}}</td></tr>
                                         <tr>
-                                            <td colspan="2">Saved</td><td style="text-align: right">{{ formatNumber(total + 1000000).substr(1)}}</td>
+                                            <td colspan="2">Saved</td><td style="text-align: right">{{ total | formatLongNumber}}</td>
                                         </tr>
                                         <tr v-if="reserved > 0">
-                                            <td colspan="2">Not yet deposited to savings</td><td style="text-align: right">- {{ formatNumber(reserved + 1000000).substr(1)}}</td></tr>
+                                            <td colspan="2">Not yet deposited to savings</td><td style="text-align: right">- {{ reserved | formatLongNumber}}</td></tr>
                                         
                                         <tr style="font-weight: bold; ">
-                                            <td colspan="2">Balance</td><td style="text-align: right; font-size: 10px">{{ formatNumber((total - reserved) + 1000000).substr(1)}}</td>
+                                            <td colspan="2">Balance</td><td style="text-align: right; font-size: 10px">{{ (total - reserved) | formatLongNumber}}</td>
                                             
                                         </tr>
                                        
                                     </tbody>
                                     <thead v-if="reservations.length > 0">
                                         <tr>
-                                        <th colspan="5">Reservations</th>
+                                        <th colspan="5">{{'Reservations' | translate}}</th>
                                         </tr>
                                     </thead>
                                     <tbody>
                                         
                                         <tr v-for="(item, i) in reservations">
-                                            <td>{{formatDate(item.time)}}</td>
+                                            <td>{{item.time | formatDate}}</td>
                                             <td>{{ item.name }}</td><td style="text-align: right">
-                                             {{ formatNumber(item.amount) }}
+                                             {{ item.amount | formatNumber }}
                                              </td>
                                             
                                         </tr>
@@ -53,9 +53,9 @@
                                     
                             
                                        <tr v-for="(item, i) in transactions">
-                                            <td>{{moment(item.time).format('YY-MM-DD')}}</td>
+                                            <td>{{item.time | formatDate}}</td>
                                             <td>{{ item.name }}</td><td style="text-align: right">
-                                                {{ formatNumber(item.amount + 1000000) }}
+                                                {{ item.amount | formatLongNumber }}
                                             </td>
                                             
                                         </tr>

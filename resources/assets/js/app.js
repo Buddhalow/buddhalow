@@ -7,7 +7,35 @@
 require('./bootstrap');
 
 import moment from 'moment'
+import numeral from 'numeral'
+
+numeral.register('locale', 'qi', {
+    delimiters: {
+        thousands: ' ',
+        decimal: ':'
+    },
+    abbreviations: {
+        thousand: 'k',
+        million: 'm',
+        billion: 'b',
+        trillion: 't'
+    },
+    ordinal : function (number) {
+        return number === 1 ? 'one' : 'two';
+    },
+    currency: {
+        symbol: '☯'
+    }
+});
+
 import Chart from 'chart.js'
+
+var windowLocale = require('browser-locale')()
+
+var locale = windowLocale.split('-')[0]
+
+import vuexI18n from 'vuex-i18n'
+import Vuex from 'vuex'
 
 import ChartComponent from './components/Chart'
 
@@ -31,6 +59,22 @@ window.Vue.use(VueChartkick, { Chartkick })
 window.Vue.use(VueIntercom, { appId: 'mvl0jasu' });
 
 window.Vue.component('file-upload', FileUpload)
+
+const store = new Vuex.Store()
+
+window.Vue.use(vuexI18n.plugin, store)
+
+const langEn = require('./lang/en.json')
+const langSV = require('./lang/sv.json')
+
+
+window.Vue.i18n.add('en', langEn)
+window.Vue.i18n.add('sv', langSV)
+
+window.Vue.i18n.set(locale)
+
+numeral.locale('qi') // Buddhalow uses our own locale, QI (Qiland)
+
 window.Vue.use(FileUpload);
 window.Vue.use(VueRouter)
 
@@ -43,6 +87,25 @@ window.Vue.component(
     'passport-clients',
     require('./components/passport/Clients.vue')
 );
+
+window.Vue.filter("formatNumber", function (value) {
+  return numeral(parseFloat(value)).format("0,0.00"); // displaying other groupings/separators is possible, look at the docs
+});
+
+window.Vue.filter("formatLongNumber", function (value) {
+
+  let val = value >= 0 ? value + 1000000 : value - 1000000
+  console.log("Val", val)
+  return numeral(val).format("0,0.00").substr(3); // displaying other groupings/separators is possible, look at the docs
+});
+
+window.Vue.filter("fromNow", function (value) {
+  return moment(value).fromNow(); // displaying other groupings/separators is possible, look at the docs
+});
+
+window.Vue.filter("formatDate", function (value) {
+  return moment(value).format('YY-MM-DD'); // displaying other groupings/separators is possible, look at the docs
+});
 
 window.Vue.component(
     'passport-authorized-clients',

@@ -48029,29 +48029,33 @@ module.exports = __webpack_require__(384);
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_moment__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_moment___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_moment__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_chart_js__ = __webpack_require__(6);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_chart_js___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_chart_js__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__components_Chart__ = __webpack_require__(398);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__components_Chart___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2__components_Chart__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__routes__ = __webpack_require__(332);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_vue_router__ = __webpack_require__(258);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__components_App_vue__ = __webpack_require__(360);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__components_App_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5__components_App_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_v_file_upload__ = __webpack_require__(363);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_v_file_upload___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_6_v_file_upload__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_hchs_vue_charts__ = __webpack_require__(364);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_hchs_vue_charts___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_7_hchs_vue_charts__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8_chartkick__ = __webpack_require__(365);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8_chartkick___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_8_chartkick__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9_vue_chartkick__ = __webpack_require__(366);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9_vue_chartkick___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_9_vue_chartkick__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10_vue2_circle_progress__ = __webpack_require__(367);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10_vue2_circle_progress___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_10_vue2_circle_progress__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11_vue_chartjs__ = __webpack_require__(368);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12_vue_intercom__ = __webpack_require__(382);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12_vue_intercom___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_12_vue_intercom__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13_vue_c3__ = __webpack_require__(383);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13_vue_c3___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_13_vue_c3__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_numeral__ = __webpack_require__(349);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_numeral___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_numeral__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_chart_js__ = __webpack_require__(6);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_chart_js___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_chart_js__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_vuex_i18n__ = __webpack_require__(436);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_vuex__ = __webpack_require__(438);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__components_Chart__ = __webpack_require__(398);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__components_Chart___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5__components_Chart__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__routes__ = __webpack_require__(332);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_vue_router__ = __webpack_require__(258);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__components_App_vue__ = __webpack_require__(360);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__components_App_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_8__components_App_vue__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9_v_file_upload__ = __webpack_require__(363);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9_v_file_upload___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_9_v_file_upload__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10_hchs_vue_charts__ = __webpack_require__(364);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10_hchs_vue_charts___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_10_hchs_vue_charts__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11_chartkick__ = __webpack_require__(365);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11_chartkick___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_11_chartkick__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12_vue_chartkick__ = __webpack_require__(366);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12_vue_chartkick___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_12_vue_chartkick__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13_vue2_circle_progress__ = __webpack_require__(367);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13_vue2_circle_progress___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_13_vue2_circle_progress__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14_vue_chartjs__ = __webpack_require__(368);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15_vue_intercom__ = __webpack_require__(382);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15_vue_intercom___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_15_vue_intercom__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16_vue_c3__ = __webpack_require__(383);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16_vue_c3___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_16_vue_c3__);
 /**
  * First we will load all of this project's JavaScript dependencies which
  * includes Vue and other libraries. It is a great starting point when
@@ -48059,6 +48063,34 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
  */
 
 __webpack_require__(261);
+
+
+
+
+__WEBPACK_IMPORTED_MODULE_1_numeral___default.a.register('locale', 'qi', {
+    delimiters: {
+        thousands: ' ',
+        decimal: ':'
+    },
+    abbreviations: {
+        thousand: 'k',
+        million: 'm',
+        billion: 'b',
+        trillion: 't'
+    },
+    ordinal: function ordinal(number) {
+        return number === 1 ? 'one' : 'two';
+    },
+    currency: {
+        symbol: '☯'
+    }
+});
+
+
+
+var windowLocale = __webpack_require__(439)();
+
+var locale = windowLocale.split('-')[0];
 
 
 
@@ -48081,19 +48113,53 @@ __webpack_require__(261);
 
 
 window.Vue = __webpack_require__(257);
-window.Vue.use(__WEBPACK_IMPORTED_MODULE_9_vue_chartkick___default.a, { Chartkick: __WEBPACK_IMPORTED_MODULE_8_chartkick___default.a });
-window.Vue.use(__WEBPACK_IMPORTED_MODULE_12_vue_intercom___default.a, { appId: 'mvl0jasu' });
+window.Vue.use(__WEBPACK_IMPORTED_MODULE_12_vue_chartkick___default.a, { Chartkick: __WEBPACK_IMPORTED_MODULE_11_chartkick___default.a });
+window.Vue.use(__WEBPACK_IMPORTED_MODULE_15_vue_intercom___default.a, { appId: 'mvl0jasu' });
 
-window.Vue.component('file-upload', __WEBPACK_IMPORTED_MODULE_6_v_file_upload___default.a);
-window.Vue.use(__WEBPACK_IMPORTED_MODULE_6_v_file_upload___default.a);
-window.Vue.use(__WEBPACK_IMPORTED_MODULE_4_vue_router__["a" /* default */]);
+window.Vue.component('file-upload', __WEBPACK_IMPORTED_MODULE_9_v_file_upload___default.a);
 
-window.Vue.component('buddhalow-fileupload', __WEBPACK_IMPORTED_MODULE_6_v_file_upload___default.a);
-window.Vue.component('vue-circle', __WEBPACK_IMPORTED_MODULE_10_vue2_circle_progress___default.a);
-window.Vue.component('vue-c3', __WEBPACK_IMPORTED_MODULE_13_vue_c3___default.a);
-window.Vue.component('vue-chart', __WEBPACK_IMPORTED_MODULE_2__components_Chart___default.a);
+var store = new __WEBPACK_IMPORTED_MODULE_4_vuex__["a" /* default */].Store();
+
+window.Vue.use(__WEBPACK_IMPORTED_MODULE_3_vuex_i18n__["a" /* default */].plugin, store);
+
+var langEn = __webpack_require__(440);
+var langSV = __webpack_require__(437);
+
+window.Vue.i18n.add('en', langEn);
+window.Vue.i18n.add('sv', langSV);
+
+window.Vue.i18n.set(locale);
+
+__WEBPACK_IMPORTED_MODULE_1_numeral___default.a.locale('qi'); // Buddhalow uses our own locale, QI (Qiland)
+
+window.Vue.use(__WEBPACK_IMPORTED_MODULE_9_v_file_upload___default.a);
+window.Vue.use(__WEBPACK_IMPORTED_MODULE_7_vue_router__["a" /* default */]);
+
+window.Vue.component('buddhalow-fileupload', __WEBPACK_IMPORTED_MODULE_9_v_file_upload___default.a);
+window.Vue.component('vue-circle', __WEBPACK_IMPORTED_MODULE_13_vue2_circle_progress___default.a);
+window.Vue.component('vue-c3', __WEBPACK_IMPORTED_MODULE_16_vue_c3___default.a);
+window.Vue.component('vue-chart', __WEBPACK_IMPORTED_MODULE_5__components_Chart___default.a);
 
 window.Vue.component('passport-clients', __webpack_require__(417));
+
+window.Vue.filter("formatNumber", function (value) {
+    return __WEBPACK_IMPORTED_MODULE_1_numeral___default()(parseFloat(value)).format("0,0.00"); // displaying other groupings/separators is possible, look at the docs
+});
+
+window.Vue.filter("formatLongNumber", function (value) {
+
+    var val = value >= 0 ? value + 1000000 : value - 1000000;
+    console.log("Val", val);
+    return __WEBPACK_IMPORTED_MODULE_1_numeral___default()(val).format("0,0.00").substr(3); // displaying other groupings/separators is possible, look at the docs
+});
+
+window.Vue.filter("fromNow", function (value) {
+    return __WEBPACK_IMPORTED_MODULE_0_moment___default()(value).fromNow(); // displaying other groupings/separators is possible, look at the docs
+});
+
+window.Vue.filter("formatDate", function (value) {
+    return __WEBPACK_IMPORTED_MODULE_0_moment___default()(value).format('YY-MM-DD'); // displaying other groupings/separators is possible, look at the docs
+});
 
 window.Vue.component('passport-authorized-clients', __webpack_require__(423));
 
@@ -48109,9 +48175,9 @@ spinner.parentNode.removeChild(spinner);
 
 var app = new Vue({
     el: '#app',
-    router: __WEBPACK_IMPORTED_MODULE_3__routes__["a" /* default */],
+    router: __WEBPACK_IMPORTED_MODULE_6__routes__["a" /* default */],
     components: {
-        VueC3: __WEBPACK_IMPORTED_MODULE_13_vue_c3___default.a
+        VueC3: __WEBPACK_IMPORTED_MODULE_16_vue_c3___default.a
     },
     mounted: function mounted() {
         /*     this.$intercom.boot({
@@ -48128,7 +48194,7 @@ var app = new Vue({
         }
     },
     render: function render(h) {
-        return h(__WEBPACK_IMPORTED_MODULE_5__components_App_vue___default.a);
+        return h(__WEBPACK_IMPORTED_MODULE_8__components_App_vue___default.a);
     }
 });
 
@@ -92452,30 +92518,23 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _vm._m(0)
-}
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", [
-      _c("div", {}, [
-        _c("div", { staticClass: "container" }, [
-          _c("div", { staticClass: "row" }, [
-            _c("div", { staticClass: "col-md-12" }, [
-              _c("div", {}, [
-                _c("div", { staticClass: "panel-heading" }, [
-                  _c("h1", [_vm._v("Welcome!")])
-                ])
+  return _c("div", [
+    _c("div", {}, [
+      _c("div", { staticClass: "container" }, [
+        _c("div", { staticClass: "row" }, [
+          _c("div", { staticClass: "col-md-12" }, [
+            _c("div", {}, [
+              _c("div", { staticClass: "panel-heading" }, [
+                _c("h1", [_vm._v(_vm._s(_vm._f("translate")("Welcome!")))])
               ])
             ])
           ])
         ])
       ])
     ])
-  }
-]
+  ])
+}
+var staticRenderFns = []
 render._withStripped = true
 module.exports = { render: render, staticRenderFns: staticRenderFns }
 if (false) {
@@ -93281,7 +93340,12 @@ var render = function() {
                 "div",
                 { staticClass: "panel-heading" },
                 [
-                  _c("h3", [_vm._v("Consumption stats for ''")]),
+                  _c("h3", [
+                    _vm._v(
+                      _vm._s(_vm._f("translate")("Consumption stats for")) +
+                        " ''"
+                    )
+                  ]),
                   _vm._v(" "),
                   _c("vue-chart", { attrs: { data: _vm.sales } })
                 ],
@@ -93296,7 +93360,11 @@ var render = function() {
                 "div",
                 { staticClass: "panel-heading" },
                 [
-                  _c("h3", [_vm._v("Top 10 libraries / stores")]),
+                  _c("h3", [
+                    _vm._v(
+                      _vm._s(_vm._f("translate")("Top 10 libraries / stores"))
+                    )
+                  ]),
                   _vm._v(" "),
                   _c("bar-chart", {
                     attrs: { data: _vm.stores, stacked: true }
@@ -94539,7 +94607,16 @@ var render = function() {
                       "table table-responsive table-striped table-responsive swedtable "
                   },
                   [
-                    _vm._m(0),
+                    _c("thead", [
+                      _c("tr", [
+                        _c("th", { attrs: { colspan: "5" } }, [
+                          _vm._v(
+                            _vm._s(_vm._f("translate")("Savings account")) +
+                              " 0000-0 282 252-1"
+                          )
+                        ])
+                      ])
+                    ]),
                     _vm._v(" "),
                     _c("tbody", [
                       _c("tr", [
@@ -94557,7 +94634,11 @@ var render = function() {
                           [
                             _vm._v(
                               "~ " +
-                                _vm._s(_vm.formatNumber(_vm.escalation_point))
+                                _vm._s(
+                                  _vm._f("formatLongNumber")(
+                                    _vm.escalation_point
+                                  )
+                                )
                             )
                           ]
                         )
@@ -94571,7 +94652,7 @@ var render = function() {
                           _vm._v(
                             "- " +
                               _vm._s(
-                                _vm.formatNumber(
+                                _vm._f("formatLongNumber")(
                                   _vm.escalation_point -
                                     (_vm.total + _vm.reserved)
                                 )
@@ -94585,11 +94666,7 @@ var render = function() {
                           _vm._v("Saved")
                         ]),
                         _c("td", { staticStyle: { "text-align": "right" } }, [
-                          _vm._v(
-                            _vm._s(
-                              _vm.formatNumber(_vm.total + 1000000).substr(1)
-                            )
-                          )
+                          _vm._v(_vm._s(_vm._f("formatLongNumber")(_vm.total)))
                         ])
                       ]),
                       _vm._v(" "),
@@ -94605,9 +94682,7 @@ var render = function() {
                                 _vm._v(
                                   "- " +
                                     _vm._s(
-                                      _vm
-                                        .formatNumber(_vm.reserved + 1000000)
-                                        .substr(1)
+                                      _vm._f("formatLongNumber")(_vm.reserved)
                                     )
                                 )
                               ]
@@ -94630,11 +94705,9 @@ var render = function() {
                           [
                             _vm._v(
                               _vm._s(
-                                _vm
-                                  .formatNumber(
-                                    _vm.total - _vm.reserved + 1000000
-                                  )
-                                  .substr(1)
+                                _vm._f("formatLongNumber")(
+                                  _vm.total - _vm.reserved
+                                )
                               )
                             )
                           ]
@@ -94643,20 +94716,30 @@ var render = function() {
                     ]),
                     _vm._v(" "),
                     _vm.reservations.length > 0
-                      ? _c("thead", [_vm._m(1)])
+                      ? _c("thead", [
+                          _c("tr", [
+                            _c("th", { attrs: { colspan: "5" } }, [
+                              _vm._v(
+                                _vm._s(_vm._f("translate")("Reservations"))
+                              )
+                            ])
+                          ])
+                        ])
                       : _vm._e(),
                     _vm._v(" "),
                     _c(
                       "tbody",
                       _vm._l(_vm.reservations, function(item, i) {
                         return _c("tr", [
-                          _c("td", [_vm._v(_vm._s(_vm.formatDate(item.time)))]),
+                          _c("td", [
+                            _vm._v(_vm._s(_vm._f("formatDate")(item.time)))
+                          ]),
                           _vm._v(" "),
                           _c("td", [_vm._v(_vm._s(item.name))]),
                           _c("td", { staticStyle: { "text-align": "right" } }, [
                             _vm._v(
                               "\n                                         " +
-                                _vm._s(_vm.formatNumber(item.amount)) +
+                                _vm._s(_vm._f("formatNumber")(item.amount)) +
                                 "\n                                         "
                             )
                           ])
@@ -94664,16 +94747,14 @@ var render = function() {
                       })
                     ),
                     _vm._v(" "),
-                    _vm._m(2),
+                    _vm._m(0),
                     _vm._v(" "),
                     _c(
                       "tbody",
                       _vm._l(_vm.transactions, function(item, i) {
                         return _c("tr", [
                           _c("td", [
-                            _vm._v(
-                              _vm._s(_vm.moment(item.time).format("YY-MM-DD"))
-                            )
+                            _vm._v(_vm._s(_vm._f("formatDate")(item.time)))
                           ]),
                           _vm._v(" "),
                           _c("td", [_vm._v(_vm._s(item.name))]),
@@ -94681,7 +94762,7 @@ var render = function() {
                             _vm._v(
                               "\n                                            " +
                                 _vm._s(
-                                  _vm.formatNumber(item.amount + 1000000)
+                                  _vm._f("formatLongNumber")(item.amount)
                                 ) +
                                 "\n                                        "
                             )
@@ -94700,26 +94781,6 @@ var render = function() {
   ])
 }
 var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("thead", [
-      _c("tr", [
-        _c("th", { attrs: { colspan: "5" } }, [
-          _vm._v("Savings account 0000-0 282 252-1")
-        ])
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("tr", [
-      _c("th", { attrs: { colspan: "5" } }, [_vm._v("Reservations")])
-    ])
-  },
   function() {
     var _vm = this
     var _h = _vm.$createElement
@@ -94793,6 +94854,8 @@ module.exports = Component.exports
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_moment__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_moment___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_moment__);
 //
 //
 //
@@ -94872,6 +94935,12 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     data: function data() {
@@ -94884,59 +94953,25 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         };
     },
     mounted: function mounted() {
-        this.readRoamings();
+        this.load();
     },
 
+    watch: {
+        '$route': function $route() {
+            this.load();
+        }
+    },
     methods: {
-        initAddRoaming: function initAddRoaming() {
-            this.errors = [];
-            $("#edit_roaming_model").modal("show");
+        moment: function moment(time) {
+            return __WEBPACK_IMPORTED_MODULE_0_moment___default()(time);
         },
-        saveRoaming: function saveRoaming() {
+        load: function load() {
             var _this = this;
 
-            var savePromise = null;
-
-            var id = this.roaming != null && this.roaming.id != null ? this.roaming.id : null;
-            if (id) {
-                savePromise = axios.put('/api/roamings/' + id, this.roaming);
-            } else {
-                savePromise = axios.post('/api/roamings', this.roaming);
-            }
-            savePromise.then(function (response) {
-
-                _this.reset();
-
-                $("#edit_roaming_model").modal("hide");
-            }).catch(function (error) {
-                _this.errors = [];
-                if (error.response.data.errors.name) {
-                    _this.errors.push(error.response.data.errors.name[0]);
-                }
-
-                if (error.response.data.errors.description) {
-                    _this.errors.push(error.response.data.errors.description[0]);
-                }
-            });
-        },
-        readRoamings: function readRoamings() {
-            var _this2 = this;
-
             axios.get('/api/roamings').then(function (response) {
-                _this2.roamings = response.data.roamings.data;
+
+                _this.roamings = response.data.roamings.data;
             });
-        },
-        deleteRoaming: function deleteRoaming(index) {
-            var _this3 = this;
-
-            var conf = confirm("Do you ready want to delete this roaming?");
-            if (conf === true) {
-
-                axios.delete('/roamings/' + this.roamings[index].id).then(function (response) {
-
-                    _this3.roamings.splice(index, 1);
-                }).catch(function (error) {});
-            }
         },
         initUpdate: function initUpdate(index) {
             this.errors = [];
@@ -94957,62 +94992,119 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "container" }, [
-    _c("div", { staticClass: "row" }, [
-      _c("div", { staticClass: "col-md-12" }, [
-        _c("div", { staticClass: "panel panel-default" }, [
-          _c("div", { staticClass: "panel-heading" }, [
-            _vm._v(
-              "\n                        \n                       Aqtivities\n                    "
-            )
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "panel-body" }, [
-            _vm.roamings.length > 0
-              ? _c(
-                  "table",
-                  {
-                    staticClass:
-                      "table table-bordered table-striped table-responsive"
-                  },
-                  [
-                    _vm._m(0),
-                    _vm._v(" "),
-                    _c(
-                      "tbody",
-                      _vm._l(_vm.roamings, function(roaming, index) {
-                        return _c("tr", [
-                          _c("td", { attrs: { colspan: "4" } }, [
-                            _c("details", [
-                              _c("summary", [_vm._v("roaming.time")]),
-                              _vm._v(" "),
-                              _c(
-                                "table",
-                                { attrs: { width: "100%" } },
-                                _vm._l(roaming.aqtivities, function(aqtivity) {
-                                  return _c("tr", [
-                                    _c("td", [
-                                      _vm._v(_vm._s(aqtivity.sport_id))
-                                    ]),
-                                    _vm._v(" "),
-                                    _c("td", [
-                                      _vm._v(_vm._s(aqtivity.facility_id))
-                                    ]),
-                                    _vm._v(" "),
-                                    _c("td", [
-                                      _vm._v(_vm._s(aqtivity.dimension_id))
-                                    ])
-                                  ])
-                                })
-                              )
-                            ])
+  return _c("div", [
+    _c("div", { staticClass: "section" }, [
+      _c("div", { staticClass: "container" }, [
+        _c("div", { staticClass: "row" }, [
+          _c("div", { staticClass: "col-md-12" }, [
+            _c("div", [
+              _vm.roamings.length > 0
+                ? _c(
+                    "table",
+                    {
+                      staticClass:
+                        "table table-bordered table-striped table-responsive swedtable"
+                    },
+                    [
+                      _c("thead", [
+                        _c("tr", [
+                          _c("th", { attrs: { colspan: "2" } }, [
+                            _vm._v(_vm._s(_vm._f("translate")("Aqtivity log")))
                           ])
                         ])
-                      })
-                    )
-                  ]
-                )
-              : _vm._e()
+                      ]),
+                      _vm._v(" "),
+                      _c(
+                        "tbody",
+                        _vm._l(_vm.roamings, function(roaming, index) {
+                          return _c("tr", [
+                            _c(
+                              "td",
+                              {
+                                class: [
+                                  "bg-dark",
+                                  "bg-" +
+                                    Math.floor(roaming.status / 100) +
+                                    "xx"
+                                ],
+                                attrs: { width: "10pt" }
+                              },
+                              [
+                                Math.floor(roaming.status / 100) != 2
+                                  ? _c("i", { staticClass: "fa fa-warning" })
+                                  : _vm._e()
+                              ]
+                            ),
+                            _vm._v(" "),
+                            _c("td", { attrs: { colspan: "4" } }, [
+                              _c("span", { staticStyle: { float: "left" } }, [
+                                _vm._v(
+                                  _vm._s(roaming.aqtivities[0].sport) +
+                                    ", " +
+                                    _vm._s(roaming.aqtivities[0].facility)
+                                )
+                              ]),
+                              _vm._v(" "),
+                              _c("span", { staticStyle: { float: "right" } }, [
+                                _vm._v(_vm._s(_vm._f("fromNow")(roaming.time)))
+                              ]),
+                              _vm._v(" "),
+                              _c("br"),
+                              _vm._v(" "),
+                              _c("details", [
+                                _c("summary", [
+                                  _vm._v(_vm._s(_vm._f("translate")("Details")))
+                                ]),
+                                _vm._v(" "),
+                                _c("table", { attrs: { width: "100%" } }, [
+                                  _c(
+                                    "tbody",
+                                    _vm._l(roaming.aqtivities, function(
+                                      aqtivity
+                                    ) {
+                                      return _c("tr", [
+                                        _c("td", [
+                                          _vm._v(
+                                            _vm._s(
+                                              _vm._f("translate")(
+                                                aqtivity.sport
+                                              )
+                                            )
+                                          )
+                                        ]),
+                                        _vm._v(" "),
+                                        _c("td", [
+                                          _vm._v(
+                                            _vm._s(
+                                              _vm._f("translate")(
+                                                aqtivity.facility
+                                              )
+                                            )
+                                          )
+                                        ]),
+                                        _vm._v(" "),
+                                        _c("td", [
+                                          _vm._v(
+                                            _vm._s(
+                                              _vm._f("translate")(
+                                                aqtivity.dimension
+                                              )
+                                            )
+                                          )
+                                        ])
+                                      ])
+                                    })
+                                  )
+                                ])
+                              ])
+                            ])
+                          ])
+                        })
+                      )
+                    ]
+                  )
+                : _vm._e()
+            ])
           ])
         ])
       ])
@@ -95030,7 +95122,13 @@ var render = function() {
           { staticClass: "modal-dialog", attrs: { role: "document" } },
           [
             _c("div", { staticClass: "modal-content" }, [
-              _vm._m(1),
+              _c("div", { staticClass: "modal-header" }, [
+                _vm._m(0),
+                _vm._v(" "),
+                _c("h4", { staticClass: "modal-title" }, [
+                  _vm._v(_vm._s(_vm._f("translate")("Roaming")))
+                ])
+              ]),
               _vm._v(" "),
               _c("div", { staticClass: "modal-body" }, [
                 _vm.errors.length > 0
@@ -95133,7 +95231,7 @@ var render = function() {
                     staticClass: "btn btn-default",
                     attrs: { type: "button", "data-dismiss": "modal" }
                   },
-                  [_vm._v("Close")]
+                  [_vm._v(_vm._s(_vm._f("translate")("Close")))]
                 ),
                 _vm._v(" "),
                 _c(
@@ -95143,7 +95241,7 @@ var render = function() {
                     attrs: { type: "button" },
                     on: { click: _vm.saveRoaming }
                   },
-                  [_vm._v("Submit")]
+                  [_vm._v(_vm._s(_vm._f("translate")("Submit")))]
                 )
               ])
             ])
@@ -95158,34 +95256,18 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("thead", [
-      _c("tr", [
-        _c("th", [_vm._v("time")]),
-        _c("th", [_vm._v("status")]),
-        _c("th", [_vm._v("Actions")])
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "modal-header" }, [
-      _c(
-        "button",
-        {
-          staticClass: "close",
-          attrs: {
-            type: "button",
-            "data-dismiss": "modal",
-            "aria-label": "Close"
-          }
-        },
-        [_c("span", { attrs: { "aria-hidden": "true" } }, [_vm._v("×")])]
-      ),
-      _vm._v(" "),
-      _c("h4", { staticClass: "modal-title" }, [_vm._v("Roaming")])
-    ])
+    return _c(
+      "button",
+      {
+        staticClass: "close",
+        attrs: {
+          type: "button",
+          "data-dismiss": "modal",
+          "aria-label": "Close"
+        }
+      },
+      [_c("span", { attrs: { "aria-hidden": "true" } }, [_vm._v("×")])]
+    )
   }
 ]
 render._withStripped = true
@@ -95448,7 +95530,11 @@ var render = function() {
                 "div",
                 { staticClass: "panel-heading" },
                 [
-                  _c("h3", [_vm._v("Room integrity history")]),
+                  _c("h3", [
+                    _vm._v(
+                      _vm._s(_vm._f("translate")("Room integrity history"))
+                    )
+                  ]),
                   _vm._v(" "),
                   _c("line-chart", {
                     attrs: { library: { fill: true }, data: _vm.stats }
@@ -95494,7 +95580,11 @@ var render = function() {
                         ? _c("div", [
                             _c("i", { staticClass: "fa fa-warning" }),
                             _vm._v(" "),
-                            _c("h3", [_vm._v("Needs cleaning")])
+                            _c("h3", [
+                              _vm._v(
+                                _vm._s(_vm._f("translate")("Needs cleaning"))
+                              )
+                            ])
                           ])
                         : _vm._e()
                     ]
@@ -95744,7 +95834,7 @@ var render = function() {
               "li",
               [
                 _c("router-link", { attrs: { to: "/dashboard" } }, [
-                  _vm._v("Dashboard")
+                  _vm._v(_vm._s(_vm._f("translate")("Dashboard")))
                 ])
               ],
               1
@@ -95752,7 +95842,7 @@ var render = function() {
           ]),
           _c("br"),
           _vm._v(" "),
-          _c("label", [_vm._v("Casting")]),
+          _c("label", [_vm._v(_vm._s(_vm._f("translate")("Casting")))]),
           _vm._v(" "),
           _c("ul", [
             _c(
@@ -95761,7 +95851,7 @@ var render = function() {
                 _c(
                   "router-link",
                   { attrs: { to: "/dashboard/opportunities" } },
-                  [_vm._v("Opportunities")]
+                  [_vm._v(_vm._s(_vm._f("translate")("Opportunities")))]
                 )
               ],
               1
@@ -95771,7 +95861,7 @@ var render = function() {
               "li",
               [
                 _c("router-link", { attrs: { to: "/dashboard/threats" } }, [
-                  _vm._v("Threats")
+                  _vm._v(_vm._s(_vm._f("translate")("Threats")))
                 ])
               ],
               1
@@ -95780,7 +95870,7 @@ var render = function() {
         ]),
         _vm._v(" "),
         _c("section", [
-          _c("label", [_vm._v("Health")]),
+          _c("label", [_vm._v(_vm._s(_vm._f("translate")("Health")))]),
           _vm._v(" "),
           _c("ul", [
             _c(
@@ -95789,7 +95879,7 @@ var render = function() {
                 _c(
                   "router-link",
                   { attrs: { to: "/dashboard/stats/cravings" } },
-                  [_vm._v("Cravings")]
+                  [_vm._v(_vm._s(_vm._f("translate")("Cravings")))]
                 )
               ],
               1
@@ -95805,7 +95895,7 @@ var render = function() {
               "li",
               [
                 _c("router-link", { attrs: { to: "/dashboard/sales/books" } }, [
-                  _vm._v("Sales")
+                  _vm._v(_vm._s(_vm._f("translate")("Sales")))
                 ])
               ],
               1
@@ -95814,7 +95904,7 @@ var render = function() {
         ]),
         _vm._v(" "),
         _c("section", [
-          _c("label", [_vm._v("Music")]),
+          _c("label", [_vm._v(_vm._s(_vm._f("translate")("Music")))]),
           _vm._v(" "),
           _c("ul", [
             _c(
@@ -95823,7 +95913,7 @@ var render = function() {
                 _c(
                   "router-link",
                   { attrs: { to: "/dashboard/music/streams" } },
-                  [_vm._v("Streams")]
+                  [_vm._v(_vm._s(_vm._f("translate")("Streams")))]
                 )
               ],
               1
@@ -118158,7 +118248,7 @@ var render = function() {
                 "div",
                 { staticClass: "panel-heading" },
                 [
-                  _c("h3", [_vm._v("Streams")]),
+                  _c("h3", [_vm._v(_vm._s(_vm._f("translate")("Streams")))]),
                   _vm._v(" "),
                   _c("vue-chart", { attrs: { data: _vm.streams } })
                 ],
@@ -118372,6 +118462,10 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -118418,7 +118512,7 @@ var render = function() {
         _c("div", { staticClass: "row" }, [
           _c("div", { staticClass: "col-md-12" }, [
             _c("div", [
-              _c("h3", [_vm._v("Opportunities")]),
+              _c("h3", [_vm._v(_vm._s(_vm._f("translate")("Opportunities")))]),
               _vm._v(" "),
               _vm.objects.length > 0
                 ? _c(
@@ -118428,16 +118522,50 @@ var render = function() {
                         "table table-striped table-responsive swedtable"
                     },
                     [
-                      _vm._m(0),
+                      _c("thead", [
+                        _c("tr", [
+                          _c("th"),
+                          _vm._v(" "),
+                          _c("th", [
+                            _vm._v(_vm._s(_vm._f("translate")("Date")))
+                          ]),
+                          _vm._v(" "),
+                          _c("th", [
+                            _vm._v(_vm._s(_vm._f("translate")("Name")))
+                          ]),
+                          _vm._v(" "),
+                          _c("th", [
+                            _vm._v(_vm._s(_vm._f("translate")("Probability")))
+                          ]),
+                          _vm._v(" "),
+                          _c("th", [
+                            _vm._v(_vm._s(_vm._f("translate")("Status")))
+                          ])
+                        ])
+                      ]),
                       _vm._v(" "),
                       _c(
                         "tbody",
                         _vm._l(_vm.objects, function(o, index) {
                           return _c("tr", [
+                            _c(
+                              "td",
+                              {
+                                class: [
+                                  "bg-dark",
+                                  "bg-" + Math.floor(o.status.code / 100) + "xx"
+                                ],
+                                attrs: { width: "10pt" }
+                              },
+                              [
+                                Math.floor(o.status.code / 100) != 2
+                                  ? _c("i", { staticClass: "fa fa-warning" })
+                                  : _vm._e()
+                              ]
+                            ),
+                            _vm._v(" "),
                             _c("td", [
-                              _vm._v(
-                                _vm._s(_vm.moment(o.time).format("YY-MM-DD"))
-                              )
+                              _vm._v(_vm._s(_vm._f("formatDate")(o.time)))
                             ]),
                             _vm._v(" "),
                             _c("td", [_vm._v(_vm._s(o.name))]),
@@ -118467,24 +118595,7 @@ var render = function() {
     ])
   ])
 }
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("thead", [
-      _c("tr", [
-        _c("th", [_vm._v("Date")]),
-        _vm._v(" "),
-        _c("th", [_vm._v("Name")]),
-        _vm._v(" "),
-        _c("th"),
-        _vm._v(" "),
-        _c("th", [_vm._v("Status")])
-      ])
-    ])
-  }
-]
+var staticRenderFns = []
 render._withStripped = true
 module.exports = { render: render, staticRenderFns: staticRenderFns }
 if (false) {
@@ -118617,7 +118728,7 @@ var render = function() {
         _c("div", { staticClass: "row" }, [
           _c("div", { staticClass: "col-md-12" }, [
             _c("div", [
-              _c("h3", [_vm._v("Threats")]),
+              _c("h3", [_vm._v(_vm._s(_vm._f("translate")("Threats")))]),
               _vm._v(" "),
               _vm.objects.length > 0
                 ? _c(
@@ -118627,7 +118738,13 @@ var render = function() {
                         "table table-bordered table-striped table-responsive"
                     },
                     [
-                      _vm._m(0),
+                      _c("thead", [
+                        _c("tr", [
+                          _c("th", [
+                            _vm._v(_vm._s(_vm._f("translate")("Name")))
+                          ])
+                        ])
+                      ]),
                       _vm._v(" "),
                       _c(
                         "tbody",
@@ -118645,14 +118762,7 @@ var render = function() {
     ])
   ])
 }
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("thead", [_c("tr", [_c("th", [_vm._v("Name")])])])
-  }
-]
+var staticRenderFns = []
 render._withStripped = true
 module.exports = { render: render, staticRenderFns: staticRenderFns }
 if (false) {
@@ -118829,7 +118939,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             statuses: {},
             actions: {},
             foods: {},
-
             character: 2,
             weekdays: {},
             progress: 0,
@@ -118877,19 +118986,24 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             console.log(start, end);
             axios.get('/api/stats/cravings?start=' + this.start + '&end=' + this.end + '&group_by=' + this.group_by).then(function (response) {
                 var res = {};
-                var keys = _this.group_by.split(/,/);
-                var craving_data = response.data.result;
                 _this.cravings = {
                     type: 'line',
                     data: {
-                        labels: craving_data.map(function (o) {
+                        labels: response.data.unhealthy.map(function (o) {
                             return o.time;
                         }),
                         datasets: [{
-                            label: 'Cravings',
-                            data: craving_data.map(function (o) {
+                            label: 'Unhealthy',
+                            data: response.data.unhealthy.map(function (o) {
                                 return -o.qty;
-                            })
+                            }),
+                            fillColors: ['#ff000044']
+                        }, {
+                            label: 'Healthy',
+                            data: response.data.healthy.map(function (o) {
+                                return o.qty;
+                            }),
+                            fillColors: ['#00ff0044']
                         }]
                     }
                 };
@@ -118902,7 +119016,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                 _this.weekdays = {
                     type: 'line',
                     data: {
-                        labels: response.data.result.map(function (o) {
+                        labels: response.data.healthy.map(function (o) {
                             return o.name;
                         }),
                         datasets: [{
@@ -118920,12 +119034,12 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                 _this.foods = {
                     type: 'line',
                     data: {
-                        labels: response.data.result.map(function (o) {
+                        labels: response.data.unhealthy.map(function (o) {
                             return o.name;
                         }),
                         datasets: [{
-                            label: 'Cravings',
-                            data: response.data.result.map(function (o) {
+                            label: 'Unhealthy foods',
+                            data: response.data.unhealthy.map(function (o) {
                                 return o.qty;
                             })
                         }]
@@ -119245,9 +119359,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         moment: function moment(a) {
             return __WEBPACK_IMPORTED_MODULE_1_moment___default()(a);
         },
-        formatNumber: function formatNumber(str) {
-            return __WEBPACK_IMPORTED_MODULE_0_numeral___default()(str).format('0,0.00').replace(/,/g, ' • ').replace(/\./g, ' : ');
-        },
         load: function load() {
             var _this = this;
 
@@ -119273,7 +119384,9 @@ var render = function() {
         _c("div", { staticClass: "row" }, [
           _c("div", { staticClass: "col-md-12" }, [
             _c("div", [
-              _c("h3", [_vm._v("Fungal infection")]),
+              _c("h3", [
+                _vm._v(_vm._s(_vm._f("translate")("Fungal infection")))
+              ]),
               _vm._v(" "),
               _c(
                 "table",
@@ -119293,8 +119406,9 @@ var render = function() {
                         _vm._v("Balance "),
                         _c("span", { staticStyle: { float: "right" } }, [
                           _vm._v(
-                            _vm._s(_vm.formatNumber(_vm.infection.balance)) +
-                              " QIH"
+                            _vm._s(
+                              _vm._f("formatNumber")(_vm.infection.balance)
+                            ) + " QIH"
                           )
                         ])
                       ])
@@ -119318,8 +119432,9 @@ var render = function() {
                           },
                           [
                             _vm._v(
-                              _vm._s(_vm.formatNumber(_vm.infection.balance)) +
-                                " QIH"
+                              _vm._s(
+                                _vm._f("formatNumber")(_vm.infection.balance)
+                              ) + " QIH"
                             )
                           ]
                         )
@@ -119338,9 +119453,7 @@ var render = function() {
                         ) {
                           return _c("tr", { staticStyle: { opacity: "0.8" } }, [
                             _c("td", [
-                              _vm._v(
-                                _vm._s(_vm.moment(o.time).format("YY-MM-DD"))
-                              )
+                              _vm._v(_vm._s(_vm._f("formatTime")(o.time)))
                             ]),
                             _vm._v(" "),
                             _c("td", [_vm._v(_vm._s(o.name))]),
@@ -119350,7 +119463,8 @@ var render = function() {
                               { staticStyle: { "text-align": "right" } },
                               [
                                 _vm._v(
-                                  _vm._s(_vm.formatNumber(o.amount)) + " QIH"
+                                  _vm._s(_vm._f("formatNumber")(o.amount)) +
+                                    " QIH"
                                 )
                               ]
                             ),
@@ -119360,7 +119474,8 @@ var render = function() {
                               { staticStyle: { "text-align": "right" } },
                               [
                                 _vm._v(
-                                  _vm._s(_vm.formatNumber(o.balance)) + " QIH"
+                                  _vm._s(_vm._f("formatNumber")(o.balance)) +
+                                    " QIH"
                                 )
                               ]
                             )
@@ -119610,76 +119725,21 @@ var render = function() {
                       "table table-responsive table-striped table-responsive swedtable "
                   },
                   [
-                    _vm._m(0),
+                    _c("thead", [
+                      _c("tr", [
+                        _c("th", { attrs: { colspan: "5" } }, [
+                          _vm._v(
+                            _vm._s(_vm._f("translate")("Karma account")) +
+                              " 0000-0 282 252-1"
+                          )
+                        ])
+                      ])
+                    ]),
                     _vm._v(" "),
                     _c("tbody", [
                       _c("tr", {}, [
                         _c("td", { attrs: { colspan: "2" } }, [
-                          _vm._v("Balance")
-                        ]),
-                        _c(
-                          "td",
-                          {
-                            staticStyle: {
-                              "text-align": "right",
-                              "font-size": "10px"
-                            }
-                          },
-                          [
-                            _vm._v(
-                              _vm._s(_vm.formatNumber(_vm.account.balance))
-                            )
-                          ]
-                        )
-                      ]),
-                      _vm._v(" "),
-                      _vm.account.reserved_debits > 0
-                        ? _c("tr", [
-                            _c("td", { attrs: { colspan: "2" } }, [
-                              _vm._v("Not yet deposited to savings")
-                            ]),
-                            _c(
-                              "td",
-                              { staticStyle: { "text-align": "right" } },
-                              [
-                                _vm._v(
-                                  "- " +
-                                    _vm._s(
-                                      _vm.formatNumber(
-                                        _vm.account.reserved_debits
-                                      )
-                                    )
-                                )
-                              ]
-                            )
-                          ])
-                        : _vm._e(),
-                      _vm._v(" "),
-                      _vm.account.future_deposits > 0
-                        ? _c("tr", [
-                            _c("td", { attrs: { colspan: "2" } }, [
-                              _vm._v("Not yet deposited to savings")
-                            ]),
-                            _c(
-                              "td",
-                              { staticStyle: { "text-align": "right" } },
-                              [
-                                _vm._v(
-                                  "- " +
-                                    _vm._s(
-                                      _vm.formatNumber(
-                                        _vm.account.future_deposits
-                                      )
-                                    )
-                                )
-                              ]
-                            )
-                          ])
-                        : _vm._e(),
-                      _vm._v(" "),
-                      _c("tr", { staticStyle: { "font-weight": "bold" } }, [
-                        _c("td", { attrs: { colspan: "2" } }, [
-                          _vm._v("Effective Harmony")
+                          _vm._v(_vm._s(_vm._f("translate")("Balance")))
                         ]),
                         _c(
                           "td",
@@ -119692,7 +119752,78 @@ var render = function() {
                           [
                             _vm._v(
                               _vm._s(
-                                _vm.formatNumber(_vm.account.available_amount)
+                                _vm._f("formatLongNumber")(_vm.account.balance)
+                              )
+                            )
+                          ]
+                        )
+                      ]),
+                      _vm._v(" "),
+                      _vm.account.reserved_debits > 0
+                        ? _c("tr", [
+                            _c("td", { attrs: { colspan: "2" } }, [
+                              _vm._v(_vm._s(_vm._f("translate")("On hold")))
+                            ]),
+                            _c(
+                              "td",
+                              { staticStyle: { "text-align": "right" } },
+                              [
+                                _vm._v(
+                                  _vm._s(
+                                    _vm._f("formatLongNumber")(
+                                      -_vm.account.reserved_debits
+                                    )
+                                  )
+                                )
+                              ]
+                            )
+                          ])
+                        : _vm._e(),
+                      _vm._v(" "),
+                      _vm.account.future_deposits > 0
+                        ? _c("tr", [
+                            _c("td", { attrs: { colspan: "2" } }, [
+                              _vm._v(
+                                _vm._s(_vm._f("translate")("Future deposit"))
+                              )
+                            ]),
+                            _c(
+                              "td",
+                              { staticStyle: { "text-align": "right" } },
+                              [
+                                _vm._v(
+                                  " " +
+                                    _vm._s(
+                                      _vm._f("formatLongNumber")(
+                                        -_vm.account.future_deposits
+                                      )
+                                    )
+                                )
+                              ]
+                            )
+                          ])
+                        : _vm._e(),
+                      _vm._v(" "),
+                      _c("tr", { staticStyle: { "font-weight": "bold" } }, [
+                        _c("td", { attrs: { colspan: "2" } }, [
+                          _vm._v(
+                            _vm._s(_vm._f("translate")("Effective Harmony"))
+                          )
+                        ]),
+                        _c(
+                          "td",
+                          {
+                            staticStyle: {
+                              "text-align": "right",
+                              "font-size": "10px"
+                            }
+                          },
+                          [
+                            _vm._v(
+                              _vm._s(
+                                _vm._f("formatLongNumber")(
+                                  _vm.account.available_amount
+                                )
                               )
                             )
                           ]
@@ -119701,20 +119832,30 @@ var render = function() {
                     ]),
                     _vm._v(" "),
                     _vm.reservations.length > 0
-                      ? _c("thead", [_vm._m(1)])
+                      ? _c("thead", [
+                          _c("tr", [
+                            _c("th", { attrs: { colspan: "5" } }, [
+                              _vm._v(
+                                _vm._s(_vm._f("translate")("Reservations"))
+                              )
+                            ])
+                          ])
+                        ])
                       : _vm._e(),
                     _vm._v(" "),
                     _c(
                       "tbody",
                       _vm._l(_vm.reservations, function(item, i) {
                         return _c("tr", [
-                          _c("td", [_vm._v(_vm._s(_vm.formatDate(item.time)))]),
+                          _c("td", [
+                            _vm._v(_vm._s(_vm._f("formatDate")(item.time)))
+                          ]),
                           _vm._v(" "),
                           _c("td", [_vm._v(_vm._s(item.name))]),
                           _c("td", { staticStyle: { "text-align": "right" } }, [
                             _vm._v(
                               "\n                                         " +
-                                _vm._s(_vm.formatNumber(item.amount)) +
+                                _vm._s(_vm._f("formatNumber")(item.amount)) +
                                 "\n                                         "
                             )
                           ])
@@ -119722,7 +119863,15 @@ var render = function() {
                       })
                     ),
                     _vm._v(" "),
-                    _vm._m(2),
+                    _c("thead", [
+                      _c("tr", [
+                        _c("th", { attrs: { colspan: "5" } }, [
+                          _vm._v(
+                            _vm._s(_vm._f("translate")("Latest transactions"))
+                          )
+                        ])
+                      ])
+                    ]),
                     _vm._v(" "),
                     _c(
                       "tbody",
@@ -119730,24 +119879,28 @@ var render = function() {
                         item,
                         i
                       ) {
-                        return _c("tr", [
-                          _c("td", [
-                            _vm._v(
-                              _vm._s(_vm.moment(item.time).format("YY-MM-DD"))
-                            )
-                          ]),
-                          _vm._v(" "),
-                          _c("td", [_vm._v(_vm._s(item.name))]),
-                          _c("td", { staticStyle: { "text-align": "right" } }, [
-                            _vm._v(
-                              "\n                                            " +
-                                _vm._s(
-                                  _vm.formatNumber(item.amount + 1000000)
-                                ) +
-                                "\n                                        "
-                            )
-                          ])
-                        ])
+                        return !!_vm.account.transactions
+                          ? _c("tr", [
+                              _c("td", [
+                                _vm._v(_vm._s(_vm._f("formatDate")(item.time)))
+                              ]),
+                              _vm._v(" "),
+                              _c("td", [_vm._v(_vm._s(item.name))]),
+                              _c(
+                                "td",
+                                { staticStyle: { "text-align": "right" } },
+                                [
+                                  _vm._v(
+                                    "\n                                            " +
+                                      _vm._s(
+                                        _vm._f("formatNumber")(item.amount)
+                                      ) +
+                                      "\n                                        "
+                                  )
+                                ]
+                              )
+                            ])
+                          : _vm._e()
                       })
                     )
                   ]
@@ -119760,38 +119913,7 @@ var render = function() {
     ])
   ])
 }
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("thead", [
-      _c("tr", [
-        _c("th", { attrs: { colspan: "5" } }, [
-          _vm._v("Karma account 0000-0 282 252-1")
-        ])
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("tr", [
-      _c("th", { attrs: { colspan: "5" } }, [_vm._v("Reservations")])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("thead", [
-      _c("tr", [
-        _c("th", { attrs: { colspan: "5" } }, [_vm._v("Latest transactions")])
-      ])
-    ])
-  }
-]
+var staticRenderFns = []
 render._withStripped = true
 module.exports = { render: render, staticRenderFns: staticRenderFns }
 if (false) {
@@ -122297,7 +122419,20 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "centeric" }, [
     _c("div", { staticClass: "box" }, [
-      _vm._m(0),
+      _c(
+        "div",
+        { staticClass: "logo", staticStyle: { "text-align": "center" } },
+        [
+          _c("img", {
+            staticStyle: { width: "128pt", height: "128pt" },
+            attrs: { src: "/images/logo.svg" }
+          }),
+          _vm._v(" "),
+          _c("h3", [_vm._v("Buddhalow ")]),
+          _vm._v(" "),
+          _c("p", [_vm._v(_vm._s("Internal Services" || _vm.translate))])
+        ]
+      ),
       _vm._v(" "),
       !_vm.processing
         ? _c(
@@ -122313,17 +122448,21 @@ var render = function() {
             [
               _vm.success
                 ? _c("div", { staticClass: "alert alert-success" }, [
-                    _vm._v("Login succeeed!")
+                    _vm._v(_vm._s(_vm._f("translate")("Login succeeed!")))
                   ])
                 : _vm._e(),
               _vm._v(" "),
               _vm.error
                 ? _c("div", { staticClass: "alert alert-error" }, [
-                    _vm._v("Invalid username or password")
+                    _vm._v(
+                      _vm._s(
+                        _vm._f("translate")("Invalid username or password")
+                      )
+                    )
                   ])
                 : _vm._e(),
               _vm._v(" "),
-              _c("label", [_vm._v("User name")]),
+              _c("label", [_vm._v(_vm._s(_vm._f("translate")("User name")))]),
               _vm._v(" "),
               _c("input", {
                 directives: [
@@ -122347,7 +122486,7 @@ var render = function() {
                 }
               }),
               _vm._v(" "),
-              _c("label", [_vm._v("Password")]),
+              _c("label", [_vm._v(_vm._s(_vm._f("translate")("Password")))]),
               _vm._v(" "),
               _c("input", {
                 directives: [
@@ -122373,12 +122512,12 @@ var render = function() {
               _c("br"),
               _vm._v(" "),
               _c("button", { staticClass: "btn btn-primary" }, [
-                _vm._v("Log in")
+                _vm._v(_vm._s(_vm._f("translate")("Log in")))
               ]),
               _vm._v(" "),
               _c("br"),
               _vm._v(" "),
-              _vm._m(1),
+              _vm._m(0),
               _vm._v(" "),
               _c("p"),
               _vm._v(" "),
@@ -122400,25 +122539,6 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c(
-      "div",
-      { staticClass: "logo", staticStyle: { "text-align": "center" } },
-      [
-        _c("img", {
-          staticStyle: { width: "128pt", height: "128pt" },
-          attrs: { src: "/images/logo.svg" }
-        }),
-        _vm._v(" "),
-        _c("h3", [_vm._v("Buddhalow ")]),
-        _vm._v(" "),
-        _c("p", [_vm._v("Internal Services")])
-      ]
-    )
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
     return _c("p", [
       _c("i", { staticClass: "fa fa-warning" }),
       _vm._v(
@@ -122435,6 +122555,1790 @@ if (false) {
     require("vue-hot-reload-api")      .rerender("data-v-3e2ac97c", module.exports)
   }
 }
+
+/***/ }),
+/* 436 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) {
+  return typeof obj;
+} : function (obj) {
+  return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj;
+};
+
+/* vuex-i18n-store defines a vuex module to store locale translations. Make sure
+** to also include the file vuex-i18n.js to enable easy access to localized
+** strings in your vue components.
+*/
+
+// define a simple vuex module to handle locale translations
+var i18nVuexModule = {
+	namespaced: true,
+	state: {
+		locale: null,
+		fallback: null,
+		translations: {}
+	},
+	mutations: {
+
+		// set the current locale
+		SET_LOCALE: function SET_LOCALE(state, payload) {
+			state.locale = payload.locale;
+		},
+
+
+		// add a new locale
+		ADD_LOCALE: function ADD_LOCALE(state, payload) {
+
+			// reduce the given translations to a single-depth tree
+			var translations = flattenTranslations(payload.translations);
+
+			if (state.translations.hasOwnProperty(payload.locale)) {
+				// get the existing translations
+				var existingTranslations = state.translations[payload.locale];
+				// merge the translations
+				state.translations[payload.locale] = Object.assign({}, existingTranslations, translations);
+			} else {
+				// just set the locale if it does not yet exist
+				state.translations[payload.locale] = translations;
+			}
+
+			// make sure to notify vue of changes (this might break with new vue versions)
+			try {
+				if (state.translations.__ob__) {
+					state.translations.__ob__.dep.notify();
+				}
+			} catch (ex) {}
+		},
+
+
+		// replace existing locale information with new translations
+		REPLACE_LOCALE: function REPLACE_LOCALE(state, payload) {
+
+			// reduce the given translations to a single-depth tree
+			var translations = flattenTranslations(payload.translations);
+
+			// replace the translations entirely
+			state.translations[payload.locale] = translations;
+
+			// make sure to notify vue of changes (this might break with new vue versions)
+			try {
+				if (state.translations.__ob__) {
+					state.translations.__ob__.dep.notify();
+				}
+			} catch (ex) {}
+		},
+
+
+		// remove a locale from the store
+		REMOVE_LOCALE: function REMOVE_LOCALE(state, payload) {
+
+			// check if the given locale is present in the state
+			if (state.translations.hasOwnProperty(payload.locale)) {
+
+				// check if the current locale is the given locale to remvoe
+				if (state.locale === payload.locale) {
+					// reset the current locale
+					state.locale = null;
+				}
+
+				// create a copy of the translations object
+				var translationCopy = Object.assign({}, state.translations);
+
+				// remove the given locale
+				delete translationCopy[payload.locale];
+
+				// set the state to the new object
+				state.translations = translationCopy;
+			}
+		},
+		SET_FALLBACK_LOCALE: function SET_FALLBACK_LOCALE(state, payload) {
+			state.fallback = payload.locale;
+		}
+	},
+	actions: {
+
+		// set the current locale
+		setLocale: function setLocale(context, payload) {
+			context.commit({
+				type: 'SET_LOCALE',
+				locale: payload.locale
+			});
+		},
+
+
+		// add or extend a locale with translations
+		addLocale: function addLocale(context, payload) {
+			context.commit({
+				type: 'ADD_LOCALE',
+				locale: payload.locale,
+				translations: payload.translations
+			});
+		},
+
+
+		// replace locale information
+		replaceLocale: function replaceLocale(context, payload) {
+			context.commit({
+				type: 'REPLACE_LOCALE',
+				locale: payload.locale,
+				translations: payload.translations
+			});
+		},
+
+
+		// remove the given locale translations
+		removeLocale: function removeLocale(context, payload) {
+			context.commit({
+				type: 'REMOVE_LOCALE',
+				locale: payload.locale,
+				translations: payload.translations
+			});
+		},
+		setFallbackLocale: function setFallbackLocale(context, payload) {
+			context.commit({
+				type: 'SET_FALLBACK_LOCALE',
+				locale: payload.locale
+			});
+		}
+	}
+};
+
+// flattenTranslations will convert object trees for translations into a
+// single-depth object tree
+var flattenTranslations = function flattenTranslations(translations) {
+
+	var toReturn = {};
+
+	for (var i in translations) {
+
+		// check if the property is present
+		if (!translations.hasOwnProperty(i)) {
+			continue;
+		}
+
+		// get the type of the property
+		var objType = _typeof(translations[i]);
+
+		// allow unflattened array of strings
+		if (isArray(translations[i])) {
+
+			var count = translations[i].length;
+
+			for (var index = 0; index < count; index++) {
+				var itemType = _typeof(translations[i][index]);
+
+				if (itemType !== 'string') {
+					console.warn('i18n:', 'currently only arrays of strings are fully supported', translations[i]);
+					break;
+				}
+			}
+
+			toReturn[i] = translations[i];
+		} else if (objType == 'object' && objType !== null) {
+
+			var flatObject = flattenTranslations(translations[i]);
+
+			for (var x in flatObject) {
+				if (!flatObject.hasOwnProperty(x)) continue;
+
+				toReturn[i + '.' + x] = flatObject[x];
+			}
+		} else {
+			toReturn[i] = translations[i];
+		}
+	}
+	return toReturn;
+};
+
+// check if the given object is an array
+function isArray(obj) {
+	return !!obj && Array === obj.constructor;
+}
+
+var plurals = {
+	getTranslationIndex: function getTranslationIndex(languageCode, n) {
+		switch (languageCode) {
+			case 'ay': // Aymará
+			case 'bo': // Tibetan
+			case 'cgg': // Chiga
+			case 'dz': // Dzongkha
+			case 'fa': // Persian
+			case 'id': // Indonesian
+			case 'ja': // Japanese
+			case 'jbo': // Lojban
+			case 'ka': // Georgian
+			case 'kk': // Kazakh
+			case 'km': // Khmer
+			case 'ko': // Korean
+			case 'ky': // Kyrgyz
+			case 'lo': // Lao
+			case 'ms': // Malay
+			case 'my': // Burmese
+			case 'sah': // Yakut
+			case 'su': // Sundanese
+			case 'th': // Thai
+			case 'tt': // Tatar
+			case 'ug': // Uyghur
+			case 'vi': // Vietnamese
+			case 'wo': // Wolof
+			case 'zh':
+				// Chinese
+				// 1 form
+				return 0;
+			case 'is':
+				// Icelandic
+				// 2 forms
+				return n % 10 !== 1 || n % 100 === 11 ? 1 : 0;
+			case 'jv':
+				// Javanese
+				// 2 forms
+				return n !== 0 ? 1 : 0;
+			case 'mk':
+				// Macedonian
+				// 2 forms
+				return n === 1 || n % 10 === 1 ? 0 : 1;
+			case 'ach': // Acholi
+			case 'ak': // Akan
+			case 'am': // Amharic
+			case 'arn': // Mapudungun
+			case 'br': // Breton
+			case 'fil': // Filipino
+			case 'fr': // French
+			case 'gun': // Gun
+			case 'ln': // Lingala
+			case 'mfe': // Mauritian Creole
+			case 'mg': // Malagasy
+			case 'mi': // Maori
+			case 'oc': // Occitan
+			case 'pt_BR': // Brazilian Portuguese
+			case 'tg': // Tajik
+			case 'ti': // Tigrinya
+			case 'tr': // Turkish
+			case 'uz': // Uzbek
+			case 'wa': // Walloon
+			/* eslint-disable */
+			/* Disable "Duplicate case label" because there are 2 forms of Chinese plurals */
+			case 'zh':
+				// Chinese
+				/* eslint-enable */
+				// 2 forms
+				return n > 1 ? 1 : 0;
+			case 'lv':
+				// Latvian
+				// 3 forms
+				return n % 10 === 1 && n % 100 !== 11 ? 0 : n !== 0 ? 1 : 2;
+			case 'lt':
+				// Lithuanian
+				// 3 forms
+				return n % 10 === 1 && n % 100 !== 11 ? 0 : n % 10 >= 2 && (n % 100 < 10 || n % 100 >= 20) ? 1 : 2;
+			case 'be': // Belarusian
+			case 'bs': // Bosnian
+			case 'hr': // Croatian
+			case 'ru': // Russian
+			case 'sr': // Serbian
+			case 'uk':
+				// Ukrainian
+				// 3 forms
+				return n % 10 === 1 && n % 100 !== 11 ? 0 : n % 10 >= 2 && n % 10 <= 4 && (n % 100 < 10 || n % 100 >= 20) ? 1 : 2;
+			case 'mnk':
+				// Mandinka
+				// 3 forms
+				return n === 0 ? 0 : n === 1 ? 1 : 2;
+			case 'ro':
+				// Romanian
+				// 3 forms
+				return n === 1 ? 0 : n === 0 || n % 100 > 0 && n % 100 < 20 ? 1 : 2;
+			case 'pl':
+				// Polish
+				// 3 forms
+				return n === 1 ? 0 : n % 10 >= 2 && n % 10 <= 4 && (n % 100 < 10 || n % 100 >= 20) ? 1 : 2;
+			case 'cs': // Czech
+			case 'sk':
+				// Slovak
+				// 3 forms
+				return n === 1 ? 0 : n >= 2 && n <= 4 ? 1 : 2;
+			case 'csb':
+				// Kashubian
+				// 3 forms
+				return n === 1 ? 0 : n % 10 >= 2 && n % 10 <= 4 && (n % 100 < 10 || n % 100 >= 20) ? 1 : 2;
+			case 'sl':
+				// Slovenian
+				// 4 forms
+				return n % 100 === 1 ? 0 : n % 100 === 2 ? 1 : n % 100 === 3 || n % 100 === 4 ? 2 : 3;
+			case 'mt':
+				// Maltese
+				// 4 forms
+				return n === 1 ? 0 : n === 0 || n % 100 > 1 && n % 100 < 11 ? 1 : n % 100 > 10 && n % 100 < 20 ? 2 : 3;
+			case 'gd':
+				// Scottish Gaelic
+				// 4 forms
+				return n === 1 || n === 11 ? 0 : n === 2 || n === 12 ? 1 : n > 2 && n < 20 ? 2 : 3;
+			case 'cy':
+				// Welsh
+				// 4 forms
+				return n === 1 ? 0 : n === 2 ? 1 : n !== 8 && n !== 11 ? 2 : 3;
+			case 'kw':
+				// Cornish
+				// 4 forms
+				return n === 1 ? 0 : n === 2 ? 1 : n === 3 ? 2 : 3;
+			case 'ga':
+				// Irish
+				// 5 forms
+				return n === 1 ? 0 : n === 2 ? 1 : n > 2 && n < 7 ? 2 : n > 6 && n < 11 ? 3 : 4;
+			case 'ar':
+				// Arabic
+				// 6 forms
+				return n === 0 ? 0 : n === 1 ? 1 : n === 2 ? 2 : n % 100 >= 3 && n % 100 <= 10 ? 3 : n % 100 >= 11 ? 4 : 5;
+			default:
+				// Everything else
+				return n !== 1 ? 1 : 0;
+		}
+	}
+};
+
+/* vuex-i18n defines the Vuexi18nPlugin to enable localization using a vuex
+** module to store the translation information. Make sure to also include the
+** file vuex-i18n-store.js to include a respective vuex module.
+*/
+
+// initialize the plugin object
+var VuexI18nPlugin = {};
+
+// internationalization plugin for vue js using vuex
+VuexI18nPlugin.install = function install(Vue, store, config) {
+
+	// TODO: remove this block for next major update (API break)
+	if (typeof arguments[2] === 'string' || typeof arguments[3] === 'string') {
+		console.warn('i18n: Registering the plugin vuex-i18n with a string for `moduleName` or `identifiers` is deprecated. Use a configuration object instead.', 'https://github.com/dkfbasel/vuex-i18n#setup');
+		config = {
+			moduleName: arguments[2],
+			identifiers: arguments[3]
+		};
+	}
+
+	// merge default options with user supplied options
+	var mergedConfig = Object.assign({
+		moduleName: 'i18n',
+		identifiers: ['{', '}'],
+		preserveState: false,
+		onTranslationNotFound: function onTranslationNotFound() {}
+	}, config);
+
+	// define module name and identifiers as constants to prevent any changes
+	var moduleName = mergedConfig.moduleName;
+	var identifiers = mergedConfig.identifiers;
+
+	// initialize the onTranslationNotFound function and make sure it is actually
+	// a function
+	var onTranslationNotFound = mergedConfig.onTranslationNotFound;
+	if (typeof onTranslationNotFound !== 'function') {
+		console.error('i18n: i18n config option onTranslationNotFound must be a function');
+		onTranslationNotFound = function onTranslationNotFound() {};
+	}
+
+	// register the i18n module in the vuex store
+	// preserveState can be used via configuration if server side rendering is used
+	store.registerModule(moduleName, i18nVuexModule, { preserveState: mergedConfig.preserveState });
+
+	// check if the plugin was correctly initialized
+	if (store.state.hasOwnProperty(moduleName) === false) {
+		console.error('i18n: i18n vuex module is not correctly initialized. Please check the module name:', moduleName);
+
+		// always return the key if module is not initialized correctly
+		Vue.prototype.$i18n = function (key) {
+			return key;
+		};
+
+		Vue.prototype.$getLanguage = function () {
+			return null;
+		};
+
+		Vue.prototype.$setLanguage = function () {
+			console.error('i18n: i18n vuex module is not correctly initialized');
+		};
+
+		return;
+	}
+
+	// initialize the replacement function
+	var render = renderFn(identifiers);
+
+	// get localized string from store. note that we pass the arguments passed
+	// to the function directly to the translateInLanguage function
+	var translate = function $t() {
+
+		// get the current language from the store
+		var locale = store.state[moduleName].locale;
+
+		return translateInLanguage.apply(undefined, [locale].concat(Array.prototype.slice.call(arguments)));
+	};
+
+	// get localized string from store in a given language if available.
+	// there are two possible signatures for the function.
+	// we will check the arguments to make up the options passed.
+	// 1: locale, key, options, pluralization
+	// 2: locale, key, defaultValue, options, pluralization
+	var translateInLanguage = function translateInLanguage(locale) {
+
+		// read the function arguments
+		var args = arguments;
+
+		// initialize options
+		var key = '';
+		var defaultValue = '';
+		var options = {};
+		var pluralization = null;
+
+		var count = args.length;
+
+		// check if a default value was specified and fill options accordingly
+		if (count >= 3 && typeof args[2] === 'string') {
+
+			key = args[1];
+			defaultValue = args[2];
+
+			if (count > 3) {
+				options = args[3];
+			}
+
+			if (count > 4) {
+				pluralization = args[4];
+			}
+		} else {
+
+			key = args[1];
+
+			// default value was not specified and is therefore the same as the key
+			defaultValue = key;
+
+			if (count > 2) {
+				options = args[2];
+			}
+
+			if (count > 3) {
+				pluralization = args[3];
+			}
+		}
+
+		// return the default value if the locale is not set (could happen on initialization)
+		if (!locale) {
+			console.warn('i18n: i18n locale is not set when trying to access translations:', key);
+			return defaultValue;
+		}
+
+		// get the translations from the store
+		var translations = store.state[moduleName].translations;
+
+		// get the last resort fallback from the store
+		var fallback = store.state[moduleName].fallback;
+
+		// split locale by - to support partial fallback for regional locales
+		// like de-CH, en-UK
+		var localeRegional = locale.split('-');
+
+		// flag for translation to exist or not
+		var translationExists = true;
+
+		// check if the language exists in the store. return the key if not
+		if (translations.hasOwnProperty(locale) === false) {
+			translationExists = false;
+
+			// check if the key exists in the store. return the key if not
+		} else if (translations[locale].hasOwnProperty(key) === false) {
+			translationExists = false;
+		}
+
+		// return the value from the store
+		if (translationExists === true) {
+			return render(locale, translations[locale][key], options, pluralization);
+		}
+
+		// check if a regional locale translation would be available for the key
+		// i.e. de for de-CH
+		if (localeRegional.length > 1 && translations.hasOwnProperty(localeRegional[0]) === true && translations[localeRegional[0]].hasOwnProperty(key) === true) {
+			return render(localeRegional[0], translations[localeRegional[0]][key], options, pluralization);
+		}
+
+		// invoke a method if a translation is not found
+		var asyncTranslation = onTranslationNotFound(locale, key, defaultValue);
+
+		// resolve async translations by updating the store
+		if (asyncTranslation) {
+			Promise.resolve(asyncTranslation).then(function (value) {
+				var additionalTranslations = {};
+				additionalTranslations[key] = value;
+				addLocale(locale, additionalTranslations);
+			});
+		}
+
+		// check if a vaild fallback exists in the store.
+		// return the default value if not
+		if (translations.hasOwnProperty(fallback) === false) {
+			return render(locale, defaultValue, options, pluralization);
+		}
+
+		// check if the key exists in the fallback locale in the store.
+		// return the default value if not
+		if (translations[fallback].hasOwnProperty(key) === false) {
+			return render(fallback, defaultValue, options, pluralization);
+		}
+
+		return render(locale, translations[fallback][key], options, pluralization);
+	};
+
+	// check if the given key exists in the current locale
+	var checkKeyExists = function checkKeyExists(key) {
+		var scope = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 'fallback';
+
+
+		// get the current language from the store
+		var locale = store.state[moduleName].locale;
+		var fallback = store.state[moduleName].fallback;
+		var translations = store.state[moduleName].translations;
+
+		// check the current translation
+		if (translations.hasOwnProperty(locale) && translations[locale].hasOwnProperty(key)) {
+			return true;
+		}
+
+		if (scope == 'strict') {
+			return false;
+		}
+
+		// check any localized translations
+		var localeRegional = locale.split('-');
+
+		if (localeRegional.length > 1 && translations.hasOwnProperty(localeRegional[0]) && translations[localeRegional[0]].hasOwnProperty(key)) {
+			return true;
+		}
+
+		if (scope == 'locale') {
+			return false;
+		}
+
+		// check if a fallback locale exists
+		if (translations.hasOwnProperty(fallback) && translations[fallback].hasOwnProperty(key)) {
+			return true;
+		}
+
+		// key does not exist in the store
+		return false;
+	};
+
+	// set fallback locale
+	var setFallbackLocale = function setFallbackLocale(locale) {
+		store.dispatch({
+			type: moduleName + '/setFallbackLocale',
+			locale: locale
+		});
+	};
+
+	// set the current locale
+	var setLocale = function setLocale(locale) {
+		store.dispatch({
+			type: moduleName + '/setLocale',
+			locale: locale
+		});
+	};
+
+	// get the current locale
+	var getLocale = function getLocale() {
+		return store.state[moduleName].locale;
+	};
+
+	// add predefined translations to the store (keeping existing information)
+	var addLocale = function addLocale(locale, translations) {
+		return store.dispatch({
+			type: moduleName + '/addLocale',
+			locale: locale,
+			translations: translations
+		});
+	};
+
+	// replace all locale information in the store
+	var replaceLocale = function replaceLocale(locale, translations) {
+		return store.dispatch({
+			type: moduleName + '/replaceLocale',
+			locale: locale,
+			translations: translations
+		});
+	};
+
+	// remove the givne locale from the store
+	var removeLocale = function removeLocale(locale) {
+		if (store.state[moduleName].translations.hasOwnProperty(locale)) {
+			store.dispatch({
+				type: moduleName + '/removeLocale',
+				locale: locale
+			});
+		}
+	};
+
+	// we are phasing out the exists function
+	var phaseOutExistsFn = function phaseOutExistsFn(locale) {
+		console.warn('i18n: $i18n.exists is depreceated. Please use $i18n.localeExists instead. It provides exatly the same functionality.');
+		return checkLocaleExists(locale);
+	};
+
+	// check if the given locale is already loaded
+	var checkLocaleExists = function checkLocaleExists(locale) {
+		return store.state[moduleName].translations.hasOwnProperty(locale);
+	};
+
+	// register vue prototype methods
+	Vue.prototype.$i18n = {
+		locale: getLocale,
+		set: setLocale,
+		add: addLocale,
+		replace: replaceLocale,
+		remove: removeLocale,
+		fallback: setFallbackLocale,
+		localeExists: checkLocaleExists,
+		keyExists: checkKeyExists,
+
+		exists: phaseOutExistsFn
+	};
+
+	// register global methods
+	Vue.i18n = {
+		locale: getLocale,
+		set: setLocale,
+		add: addLocale,
+		replace: replaceLocale,
+		remove: removeLocale,
+		fallback: setFallbackLocale,
+		translate: translate,
+		translateIn: translateInLanguage,
+		localeExists: checkLocaleExists,
+		keyExists: checkKeyExists,
+
+		exists: phaseOutExistsFn
+	};
+
+	// register the translation function on the vue instance
+	Vue.prototype.$t = translate;
+
+	// register the specific language translation function on the vue instance
+	Vue.prototype.$tlang = translateInLanguage;
+
+	// register a filter function for translations
+	Vue.filter('translate', translate);
+};
+
+// renderFn will initialize a function to render the variable substitutions in
+// the translation string. identifiers specify the tags will be used to find
+// variable substitutions, i.e. {test} or {{test}}, note that we are using a
+// closure to avoid recompilation of the regular expression to match tags on
+// every render cycle.
+var renderFn = function renderFn(identifiers) {
+
+	if (identifiers == null || identifiers.length != 2) {
+		console.warn('i18n: You must specify the start and end character identifying variable substitutions');
+	}
+
+	// construct a regular expression ot find variable substitutions, i.e. {test}
+	var matcher = new RegExp('' + identifiers[0] + '\\w+' + identifiers[1], 'g');
+
+	// define the replacement function
+	var replace = function replace(translation, replacements) {
+		var warn = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : true;
+
+
+		// check if the object has a replace property
+		if (!translation.replace) {
+			return translation;
+		}
+
+		return translation.replace(matcher, function (placeholder) {
+
+			// remove the identifiers (can be set on the module level)
+			var key = placeholder.replace(identifiers[0], '').replace(identifiers[1], '');
+
+			if (replacements[key] !== undefined) {
+				return replacements[key];
+			}
+
+			// warn user that the placeholder has not been found
+			if (warn === true) {
+				console.group ? console.group('i18n: Not all placeholders found') : console.warn('i18n: Not all placeholders found');
+				console.warn('Text:', translation);
+				console.warn('Placeholder:', placeholder);
+				if (console.groupEnd) {
+					console.groupEnd();
+				}
+			}
+
+			// return the original placeholder
+			return placeholder;
+		});
+	};
+
+	// the render function will replace variable substitutions and prepare the
+	// translations for rendering
+	var render = function render(locale, translation) {
+		var replacements = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : {};
+		var pluralization = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : null;
+
+		// get the type of the property
+		var objType = typeof translation === 'undefined' ? 'undefined' : _typeof(translation);
+		var pluralizationType = typeof pluralization === 'undefined' ? 'undefined' : _typeof(pluralization);
+
+		var resolvePlaceholders = function resolvePlaceholders() {
+
+			if (isArray$1(translation)) {
+
+				// replace the placeholder elements in all sub-items
+				return translation.map(function (item) {
+					return replace(item, replacements, false);
+				});
+			} else if (objType === 'string') {
+				return replace(translation, replacements, true);
+			}
+		};
+
+		// return translation item directly
+		if (pluralization === null) {
+			return resolvePlaceholders();
+		}
+
+		// check if pluralization value is countable
+		if (pluralizationType !== 'number') {
+			console.warn('i18n: pluralization is not a number');
+			return resolvePlaceholders();
+		}
+
+		// --- handle pluralizations ---
+
+		// replace all placeholders
+		var resolvedTranslation = resolvePlaceholders();
+
+		// initialize pluralizations
+		var pluralizations = null;
+
+		// if translations are already an array and have more than one entry,
+		// we will not perform a split operation on :::
+		if (isArray$1(resolvedTranslation) && resolvedTranslation.length > 0) {
+			pluralizations = resolvedTranslation;
+		} else {
+			// split translation strings by ::: to find create the pluralization array
+			pluralizations = resolvedTranslation.split(':::');
+		}
+
+		// determine the pluralization version to use by locale
+		var index = plurals.getTranslationIndex(locale, pluralization);
+
+		// check if the specified index is present in the pluralization
+		if (typeof pluralizations[index] === 'undefined') {
+			console.warn('i18n: pluralization not provided in locale', translation, locale, index);
+
+			// return the first element of the pluralization by default
+			return pluralizations[0].trim();
+		}
+
+		// return the requested item from the pluralizations
+		return pluralizations[index].trim();
+	};
+
+	// return the render function to the caller
+	return render;
+};
+
+// check if the given object is an array
+function isArray$1(obj) {
+	return !!obj && Array === obj.constructor;
+}
+
+// import the vuex module for localization
+// import the corresponding plugin for vue
+// export both modules as one file
+var index = {
+	store: i18nVuexModule,
+	plugin: VuexI18nPlugin
+};
+
+/* harmony default export */ __webpack_exports__["a"] = (index);
+
+
+/***/ }),
+/* 437 */
+/***/ (function(module, exports) {
+
+module.exports = {"Aqtivity log":"Aktivitetslogg","Details":"Detaljer","Dashboard":"Översikt","Casting":"Casting","Opportunities":"Möjligheter","Threats":"Hot","Health":"Hälsa","Cravings":"Cravings","Books":"Böcker","Sales":"Försäljning","Music":"Musik","Streams":"Streams","Date":"Datum","Name":"Namn","Probability":"Sannolikhet","Status":"Status","Pending":"Väntande"}
+
+/***/ }),
+/* 438 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* unused harmony export Store */
+/* unused harmony export install */
+/* unused harmony export mapState */
+/* unused harmony export mapMutations */
+/* unused harmony export mapGetters */
+/* unused harmony export mapActions */
+/* unused harmony export createNamespacedHelpers */
+/**
+ * vuex v3.0.1
+ * (c) 2017 Evan You
+ * @license MIT
+ */
+var applyMixin = function (Vue) {
+  var version = Number(Vue.version.split('.')[0]);
+
+  if (version >= 2) {
+    Vue.mixin({ beforeCreate: vuexInit });
+  } else {
+    // override init and inject vuex init procedure
+    // for 1.x backwards compatibility.
+    var _init = Vue.prototype._init;
+    Vue.prototype._init = function (options) {
+      if ( options === void 0 ) options = {};
+
+      options.init = options.init
+        ? [vuexInit].concat(options.init)
+        : vuexInit;
+      _init.call(this, options);
+    };
+  }
+
+  /**
+   * Vuex init hook, injected into each instances init hooks list.
+   */
+
+  function vuexInit () {
+    var options = this.$options;
+    // store injection
+    if (options.store) {
+      this.$store = typeof options.store === 'function'
+        ? options.store()
+        : options.store;
+    } else if (options.parent && options.parent.$store) {
+      this.$store = options.parent.$store;
+    }
+  }
+};
+
+var devtoolHook =
+  typeof window !== 'undefined' &&
+  window.__VUE_DEVTOOLS_GLOBAL_HOOK__;
+
+function devtoolPlugin (store) {
+  if (!devtoolHook) { return }
+
+  store._devtoolHook = devtoolHook;
+
+  devtoolHook.emit('vuex:init', store);
+
+  devtoolHook.on('vuex:travel-to-state', function (targetState) {
+    store.replaceState(targetState);
+  });
+
+  store.subscribe(function (mutation, state) {
+    devtoolHook.emit('vuex:mutation', mutation, state);
+  });
+}
+
+/**
+ * Get the first item that pass the test
+ * by second argument function
+ *
+ * @param {Array} list
+ * @param {Function} f
+ * @return {*}
+ */
+/**
+ * Deep copy the given object considering circular structure.
+ * This function caches all nested objects and its copies.
+ * If it detects circular structure, use cached copy to avoid infinite loop.
+ *
+ * @param {*} obj
+ * @param {Array<Object>} cache
+ * @return {*}
+ */
+
+
+/**
+ * forEach for object
+ */
+function forEachValue (obj, fn) {
+  Object.keys(obj).forEach(function (key) { return fn(obj[key], key); });
+}
+
+function isObject (obj) {
+  return obj !== null && typeof obj === 'object'
+}
+
+function isPromise (val) {
+  return val && typeof val.then === 'function'
+}
+
+function assert (condition, msg) {
+  if (!condition) { throw new Error(("[vuex] " + msg)) }
+}
+
+var Module = function Module (rawModule, runtime) {
+  this.runtime = runtime;
+  this._children = Object.create(null);
+  this._rawModule = rawModule;
+  var rawState = rawModule.state;
+  this.state = (typeof rawState === 'function' ? rawState() : rawState) || {};
+};
+
+var prototypeAccessors$1 = { namespaced: { configurable: true } };
+
+prototypeAccessors$1.namespaced.get = function () {
+  return !!this._rawModule.namespaced
+};
+
+Module.prototype.addChild = function addChild (key, module) {
+  this._children[key] = module;
+};
+
+Module.prototype.removeChild = function removeChild (key) {
+  delete this._children[key];
+};
+
+Module.prototype.getChild = function getChild (key) {
+  return this._children[key]
+};
+
+Module.prototype.update = function update (rawModule) {
+  this._rawModule.namespaced = rawModule.namespaced;
+  if (rawModule.actions) {
+    this._rawModule.actions = rawModule.actions;
+  }
+  if (rawModule.mutations) {
+    this._rawModule.mutations = rawModule.mutations;
+  }
+  if (rawModule.getters) {
+    this._rawModule.getters = rawModule.getters;
+  }
+};
+
+Module.prototype.forEachChild = function forEachChild (fn) {
+  forEachValue(this._children, fn);
+};
+
+Module.prototype.forEachGetter = function forEachGetter (fn) {
+  if (this._rawModule.getters) {
+    forEachValue(this._rawModule.getters, fn);
+  }
+};
+
+Module.prototype.forEachAction = function forEachAction (fn) {
+  if (this._rawModule.actions) {
+    forEachValue(this._rawModule.actions, fn);
+  }
+};
+
+Module.prototype.forEachMutation = function forEachMutation (fn) {
+  if (this._rawModule.mutations) {
+    forEachValue(this._rawModule.mutations, fn);
+  }
+};
+
+Object.defineProperties( Module.prototype, prototypeAccessors$1 );
+
+var ModuleCollection = function ModuleCollection (rawRootModule) {
+  // register root module (Vuex.Store options)
+  this.register([], rawRootModule, false);
+};
+
+ModuleCollection.prototype.get = function get (path) {
+  return path.reduce(function (module, key) {
+    return module.getChild(key)
+  }, this.root)
+};
+
+ModuleCollection.prototype.getNamespace = function getNamespace (path) {
+  var module = this.root;
+  return path.reduce(function (namespace, key) {
+    module = module.getChild(key);
+    return namespace + (module.namespaced ? key + '/' : '')
+  }, '')
+};
+
+ModuleCollection.prototype.update = function update$1 (rawRootModule) {
+  update([], this.root, rawRootModule);
+};
+
+ModuleCollection.prototype.register = function register (path, rawModule, runtime) {
+    var this$1 = this;
+    if ( runtime === void 0 ) runtime = true;
+
+  if (true) {
+    assertRawModule(path, rawModule);
+  }
+
+  var newModule = new Module(rawModule, runtime);
+  if (path.length === 0) {
+    this.root = newModule;
+  } else {
+    var parent = this.get(path.slice(0, -1));
+    parent.addChild(path[path.length - 1], newModule);
+  }
+
+  // register nested modules
+  if (rawModule.modules) {
+    forEachValue(rawModule.modules, function (rawChildModule, key) {
+      this$1.register(path.concat(key), rawChildModule, runtime);
+    });
+  }
+};
+
+ModuleCollection.prototype.unregister = function unregister (path) {
+  var parent = this.get(path.slice(0, -1));
+  var key = path[path.length - 1];
+  if (!parent.getChild(key).runtime) { return }
+
+  parent.removeChild(key);
+};
+
+function update (path, targetModule, newModule) {
+  if (true) {
+    assertRawModule(path, newModule);
+  }
+
+  // update target module
+  targetModule.update(newModule);
+
+  // update nested modules
+  if (newModule.modules) {
+    for (var key in newModule.modules) {
+      if (!targetModule.getChild(key)) {
+        if (true) {
+          console.warn(
+            "[vuex] trying to add a new module '" + key + "' on hot reloading, " +
+            'manual reload is needed'
+          );
+        }
+        return
+      }
+      update(
+        path.concat(key),
+        targetModule.getChild(key),
+        newModule.modules[key]
+      );
+    }
+  }
+}
+
+var functionAssert = {
+  assert: function (value) { return typeof value === 'function'; },
+  expected: 'function'
+};
+
+var objectAssert = {
+  assert: function (value) { return typeof value === 'function' ||
+    (typeof value === 'object' && typeof value.handler === 'function'); },
+  expected: 'function or object with "handler" function'
+};
+
+var assertTypes = {
+  getters: functionAssert,
+  mutations: functionAssert,
+  actions: objectAssert
+};
+
+function assertRawModule (path, rawModule) {
+  Object.keys(assertTypes).forEach(function (key) {
+    if (!rawModule[key]) { return }
+
+    var assertOptions = assertTypes[key];
+
+    forEachValue(rawModule[key], function (value, type) {
+      assert(
+        assertOptions.assert(value),
+        makeAssertionMessage(path, key, type, value, assertOptions.expected)
+      );
+    });
+  });
+}
+
+function makeAssertionMessage (path, key, type, value, expected) {
+  var buf = key + " should be " + expected + " but \"" + key + "." + type + "\"";
+  if (path.length > 0) {
+    buf += " in module \"" + (path.join('.')) + "\"";
+  }
+  buf += " is " + (JSON.stringify(value)) + ".";
+  return buf
+}
+
+var Vue; // bind on install
+
+var Store = function Store (options) {
+  var this$1 = this;
+  if ( options === void 0 ) options = {};
+
+  // Auto install if it is not done yet and `window` has `Vue`.
+  // To allow users to avoid auto-installation in some cases,
+  // this code should be placed here. See #731
+  if (!Vue && typeof window !== 'undefined' && window.Vue) {
+    install(window.Vue);
+  }
+
+  if (true) {
+    assert(Vue, "must call Vue.use(Vuex) before creating a store instance.");
+    assert(typeof Promise !== 'undefined', "vuex requires a Promise polyfill in this browser.");
+    assert(this instanceof Store, "Store must be called with the new operator.");
+  }
+
+  var plugins = options.plugins; if ( plugins === void 0 ) plugins = [];
+  var strict = options.strict; if ( strict === void 0 ) strict = false;
+
+  var state = options.state; if ( state === void 0 ) state = {};
+  if (typeof state === 'function') {
+    state = state() || {};
+  }
+
+  // store internal state
+  this._committing = false;
+  this._actions = Object.create(null);
+  this._actionSubscribers = [];
+  this._mutations = Object.create(null);
+  this._wrappedGetters = Object.create(null);
+  this._modules = new ModuleCollection(options);
+  this._modulesNamespaceMap = Object.create(null);
+  this._subscribers = [];
+  this._watcherVM = new Vue();
+
+  // bind commit and dispatch to self
+  var store = this;
+  var ref = this;
+  var dispatch = ref.dispatch;
+  var commit = ref.commit;
+  this.dispatch = function boundDispatch (type, payload) {
+    return dispatch.call(store, type, payload)
+  };
+  this.commit = function boundCommit (type, payload, options) {
+    return commit.call(store, type, payload, options)
+  };
+
+  // strict mode
+  this.strict = strict;
+
+  // init root module.
+  // this also recursively registers all sub-modules
+  // and collects all module getters inside this._wrappedGetters
+  installModule(this, state, [], this._modules.root);
+
+  // initialize the store vm, which is responsible for the reactivity
+  // (also registers _wrappedGetters as computed properties)
+  resetStoreVM(this, state);
+
+  // apply plugins
+  plugins.forEach(function (plugin) { return plugin(this$1); });
+
+  if (Vue.config.devtools) {
+    devtoolPlugin(this);
+  }
+};
+
+var prototypeAccessors = { state: { configurable: true } };
+
+prototypeAccessors.state.get = function () {
+  return this._vm._data.$$state
+};
+
+prototypeAccessors.state.set = function (v) {
+  if (true) {
+    assert(false, "Use store.replaceState() to explicit replace store state.");
+  }
+};
+
+Store.prototype.commit = function commit (_type, _payload, _options) {
+    var this$1 = this;
+
+  // check object-style commit
+  var ref = unifyObjectStyle(_type, _payload, _options);
+    var type = ref.type;
+    var payload = ref.payload;
+    var options = ref.options;
+
+  var mutation = { type: type, payload: payload };
+  var entry = this._mutations[type];
+  if (!entry) {
+    if (true) {
+      console.error(("[vuex] unknown mutation type: " + type));
+    }
+    return
+  }
+  this._withCommit(function () {
+    entry.forEach(function commitIterator (handler) {
+      handler(payload);
+    });
+  });
+  this._subscribers.forEach(function (sub) { return sub(mutation, this$1.state); });
+
+  if (
+    "development" !== 'production' &&
+    options && options.silent
+  ) {
+    console.warn(
+      "[vuex] mutation type: " + type + ". Silent option has been removed. " +
+      'Use the filter functionality in the vue-devtools'
+    );
+  }
+};
+
+Store.prototype.dispatch = function dispatch (_type, _payload) {
+    var this$1 = this;
+
+  // check object-style dispatch
+  var ref = unifyObjectStyle(_type, _payload);
+    var type = ref.type;
+    var payload = ref.payload;
+
+  var action = { type: type, payload: payload };
+  var entry = this._actions[type];
+  if (!entry) {
+    if (true) {
+      console.error(("[vuex] unknown action type: " + type));
+    }
+    return
+  }
+
+  this._actionSubscribers.forEach(function (sub) { return sub(action, this$1.state); });
+
+  return entry.length > 1
+    ? Promise.all(entry.map(function (handler) { return handler(payload); }))
+    : entry[0](payload)
+};
+
+Store.prototype.subscribe = function subscribe (fn) {
+  return genericSubscribe(fn, this._subscribers)
+};
+
+Store.prototype.subscribeAction = function subscribeAction (fn) {
+  return genericSubscribe(fn, this._actionSubscribers)
+};
+
+Store.prototype.watch = function watch (getter, cb, options) {
+    var this$1 = this;
+
+  if (true) {
+    assert(typeof getter === 'function', "store.watch only accepts a function.");
+  }
+  return this._watcherVM.$watch(function () { return getter(this$1.state, this$1.getters); }, cb, options)
+};
+
+Store.prototype.replaceState = function replaceState (state) {
+    var this$1 = this;
+
+  this._withCommit(function () {
+    this$1._vm._data.$$state = state;
+  });
+};
+
+Store.prototype.registerModule = function registerModule (path, rawModule, options) {
+    if ( options === void 0 ) options = {};
+
+  if (typeof path === 'string') { path = [path]; }
+
+  if (true) {
+    assert(Array.isArray(path), "module path must be a string or an Array.");
+    assert(path.length > 0, 'cannot register the root module by using registerModule.');
+  }
+
+  this._modules.register(path, rawModule);
+  installModule(this, this.state, path, this._modules.get(path), options.preserveState);
+  // reset store to update getters...
+  resetStoreVM(this, this.state);
+};
+
+Store.prototype.unregisterModule = function unregisterModule (path) {
+    var this$1 = this;
+
+  if (typeof path === 'string') { path = [path]; }
+
+  if (true) {
+    assert(Array.isArray(path), "module path must be a string or an Array.");
+  }
+
+  this._modules.unregister(path);
+  this._withCommit(function () {
+    var parentState = getNestedState(this$1.state, path.slice(0, -1));
+    Vue.delete(parentState, path[path.length - 1]);
+  });
+  resetStore(this);
+};
+
+Store.prototype.hotUpdate = function hotUpdate (newOptions) {
+  this._modules.update(newOptions);
+  resetStore(this, true);
+};
+
+Store.prototype._withCommit = function _withCommit (fn) {
+  var committing = this._committing;
+  this._committing = true;
+  fn();
+  this._committing = committing;
+};
+
+Object.defineProperties( Store.prototype, prototypeAccessors );
+
+function genericSubscribe (fn, subs) {
+  if (subs.indexOf(fn) < 0) {
+    subs.push(fn);
+  }
+  return function () {
+    var i = subs.indexOf(fn);
+    if (i > -1) {
+      subs.splice(i, 1);
+    }
+  }
+}
+
+function resetStore (store, hot) {
+  store._actions = Object.create(null);
+  store._mutations = Object.create(null);
+  store._wrappedGetters = Object.create(null);
+  store._modulesNamespaceMap = Object.create(null);
+  var state = store.state;
+  // init all modules
+  installModule(store, state, [], store._modules.root, true);
+  // reset vm
+  resetStoreVM(store, state, hot);
+}
+
+function resetStoreVM (store, state, hot) {
+  var oldVm = store._vm;
+
+  // bind store public getters
+  store.getters = {};
+  var wrappedGetters = store._wrappedGetters;
+  var computed = {};
+  forEachValue(wrappedGetters, function (fn, key) {
+    // use computed to leverage its lazy-caching mechanism
+    computed[key] = function () { return fn(store); };
+    Object.defineProperty(store.getters, key, {
+      get: function () { return store._vm[key]; },
+      enumerable: true // for local getters
+    });
+  });
+
+  // use a Vue instance to store the state tree
+  // suppress warnings just in case the user has added
+  // some funky global mixins
+  var silent = Vue.config.silent;
+  Vue.config.silent = true;
+  store._vm = new Vue({
+    data: {
+      $$state: state
+    },
+    computed: computed
+  });
+  Vue.config.silent = silent;
+
+  // enable strict mode for new vm
+  if (store.strict) {
+    enableStrictMode(store);
+  }
+
+  if (oldVm) {
+    if (hot) {
+      // dispatch changes in all subscribed watchers
+      // to force getter re-evaluation for hot reloading.
+      store._withCommit(function () {
+        oldVm._data.$$state = null;
+      });
+    }
+    Vue.nextTick(function () { return oldVm.$destroy(); });
+  }
+}
+
+function installModule (store, rootState, path, module, hot) {
+  var isRoot = !path.length;
+  var namespace = store._modules.getNamespace(path);
+
+  // register in namespace map
+  if (module.namespaced) {
+    store._modulesNamespaceMap[namespace] = module;
+  }
+
+  // set state
+  if (!isRoot && !hot) {
+    var parentState = getNestedState(rootState, path.slice(0, -1));
+    var moduleName = path[path.length - 1];
+    store._withCommit(function () {
+      Vue.set(parentState, moduleName, module.state);
+    });
+  }
+
+  var local = module.context = makeLocalContext(store, namespace, path);
+
+  module.forEachMutation(function (mutation, key) {
+    var namespacedType = namespace + key;
+    registerMutation(store, namespacedType, mutation, local);
+  });
+
+  module.forEachAction(function (action, key) {
+    var type = action.root ? key : namespace + key;
+    var handler = action.handler || action;
+    registerAction(store, type, handler, local);
+  });
+
+  module.forEachGetter(function (getter, key) {
+    var namespacedType = namespace + key;
+    registerGetter(store, namespacedType, getter, local);
+  });
+
+  module.forEachChild(function (child, key) {
+    installModule(store, rootState, path.concat(key), child, hot);
+  });
+}
+
+/**
+ * make localized dispatch, commit, getters and state
+ * if there is no namespace, just use root ones
+ */
+function makeLocalContext (store, namespace, path) {
+  var noNamespace = namespace === '';
+
+  var local = {
+    dispatch: noNamespace ? store.dispatch : function (_type, _payload, _options) {
+      var args = unifyObjectStyle(_type, _payload, _options);
+      var payload = args.payload;
+      var options = args.options;
+      var type = args.type;
+
+      if (!options || !options.root) {
+        type = namespace + type;
+        if ("development" !== 'production' && !store._actions[type]) {
+          console.error(("[vuex] unknown local action type: " + (args.type) + ", global type: " + type));
+          return
+        }
+      }
+
+      return store.dispatch(type, payload)
+    },
+
+    commit: noNamespace ? store.commit : function (_type, _payload, _options) {
+      var args = unifyObjectStyle(_type, _payload, _options);
+      var payload = args.payload;
+      var options = args.options;
+      var type = args.type;
+
+      if (!options || !options.root) {
+        type = namespace + type;
+        if ("development" !== 'production' && !store._mutations[type]) {
+          console.error(("[vuex] unknown local mutation type: " + (args.type) + ", global type: " + type));
+          return
+        }
+      }
+
+      store.commit(type, payload, options);
+    }
+  };
+
+  // getters and state object must be gotten lazily
+  // because they will be changed by vm update
+  Object.defineProperties(local, {
+    getters: {
+      get: noNamespace
+        ? function () { return store.getters; }
+        : function () { return makeLocalGetters(store, namespace); }
+    },
+    state: {
+      get: function () { return getNestedState(store.state, path); }
+    }
+  });
+
+  return local
+}
+
+function makeLocalGetters (store, namespace) {
+  var gettersProxy = {};
+
+  var splitPos = namespace.length;
+  Object.keys(store.getters).forEach(function (type) {
+    // skip if the target getter is not match this namespace
+    if (type.slice(0, splitPos) !== namespace) { return }
+
+    // extract local getter type
+    var localType = type.slice(splitPos);
+
+    // Add a port to the getters proxy.
+    // Define as getter property because
+    // we do not want to evaluate the getters in this time.
+    Object.defineProperty(gettersProxy, localType, {
+      get: function () { return store.getters[type]; },
+      enumerable: true
+    });
+  });
+
+  return gettersProxy
+}
+
+function registerMutation (store, type, handler, local) {
+  var entry = store._mutations[type] || (store._mutations[type] = []);
+  entry.push(function wrappedMutationHandler (payload) {
+    handler.call(store, local.state, payload);
+  });
+}
+
+function registerAction (store, type, handler, local) {
+  var entry = store._actions[type] || (store._actions[type] = []);
+  entry.push(function wrappedActionHandler (payload, cb) {
+    var res = handler.call(store, {
+      dispatch: local.dispatch,
+      commit: local.commit,
+      getters: local.getters,
+      state: local.state,
+      rootGetters: store.getters,
+      rootState: store.state
+    }, payload, cb);
+    if (!isPromise(res)) {
+      res = Promise.resolve(res);
+    }
+    if (store._devtoolHook) {
+      return res.catch(function (err) {
+        store._devtoolHook.emit('vuex:error', err);
+        throw err
+      })
+    } else {
+      return res
+    }
+  });
+}
+
+function registerGetter (store, type, rawGetter, local) {
+  if (store._wrappedGetters[type]) {
+    if (true) {
+      console.error(("[vuex] duplicate getter key: " + type));
+    }
+    return
+  }
+  store._wrappedGetters[type] = function wrappedGetter (store) {
+    return rawGetter(
+      local.state, // local state
+      local.getters, // local getters
+      store.state, // root state
+      store.getters // root getters
+    )
+  };
+}
+
+function enableStrictMode (store) {
+  store._vm.$watch(function () { return this._data.$$state }, function () {
+    if (true) {
+      assert(store._committing, "Do not mutate vuex store state outside mutation handlers.");
+    }
+  }, { deep: true, sync: true });
+}
+
+function getNestedState (state, path) {
+  return path.length
+    ? path.reduce(function (state, key) { return state[key]; }, state)
+    : state
+}
+
+function unifyObjectStyle (type, payload, options) {
+  if (isObject(type) && type.type) {
+    options = payload;
+    payload = type;
+    type = type.type;
+  }
+
+  if (true) {
+    assert(typeof type === 'string', ("Expects string as the type, but found " + (typeof type) + "."));
+  }
+
+  return { type: type, payload: payload, options: options }
+}
+
+function install (_Vue) {
+  if (Vue && _Vue === Vue) {
+    if (true) {
+      console.error(
+        '[vuex] already installed. Vue.use(Vuex) should be called only once.'
+      );
+    }
+    return
+  }
+  Vue = _Vue;
+  applyMixin(Vue);
+}
+
+var mapState = normalizeNamespace(function (namespace, states) {
+  var res = {};
+  normalizeMap(states).forEach(function (ref) {
+    var key = ref.key;
+    var val = ref.val;
+
+    res[key] = function mappedState () {
+      var state = this.$store.state;
+      var getters = this.$store.getters;
+      if (namespace) {
+        var module = getModuleByNamespace(this.$store, 'mapState', namespace);
+        if (!module) {
+          return
+        }
+        state = module.context.state;
+        getters = module.context.getters;
+      }
+      return typeof val === 'function'
+        ? val.call(this, state, getters)
+        : state[val]
+    };
+    // mark vuex getter for devtools
+    res[key].vuex = true;
+  });
+  return res
+});
+
+var mapMutations = normalizeNamespace(function (namespace, mutations) {
+  var res = {};
+  normalizeMap(mutations).forEach(function (ref) {
+    var key = ref.key;
+    var val = ref.val;
+
+    res[key] = function mappedMutation () {
+      var args = [], len = arguments.length;
+      while ( len-- ) args[ len ] = arguments[ len ];
+
+      var commit = this.$store.commit;
+      if (namespace) {
+        var module = getModuleByNamespace(this.$store, 'mapMutations', namespace);
+        if (!module) {
+          return
+        }
+        commit = module.context.commit;
+      }
+      return typeof val === 'function'
+        ? val.apply(this, [commit].concat(args))
+        : commit.apply(this.$store, [val].concat(args))
+    };
+  });
+  return res
+});
+
+var mapGetters = normalizeNamespace(function (namespace, getters) {
+  var res = {};
+  normalizeMap(getters).forEach(function (ref) {
+    var key = ref.key;
+    var val = ref.val;
+
+    val = namespace + val;
+    res[key] = function mappedGetter () {
+      if (namespace && !getModuleByNamespace(this.$store, 'mapGetters', namespace)) {
+        return
+      }
+      if ("development" !== 'production' && !(val in this.$store.getters)) {
+        console.error(("[vuex] unknown getter: " + val));
+        return
+      }
+      return this.$store.getters[val]
+    };
+    // mark vuex getter for devtools
+    res[key].vuex = true;
+  });
+  return res
+});
+
+var mapActions = normalizeNamespace(function (namespace, actions) {
+  var res = {};
+  normalizeMap(actions).forEach(function (ref) {
+    var key = ref.key;
+    var val = ref.val;
+
+    res[key] = function mappedAction () {
+      var args = [], len = arguments.length;
+      while ( len-- ) args[ len ] = arguments[ len ];
+
+      var dispatch = this.$store.dispatch;
+      if (namespace) {
+        var module = getModuleByNamespace(this.$store, 'mapActions', namespace);
+        if (!module) {
+          return
+        }
+        dispatch = module.context.dispatch;
+      }
+      return typeof val === 'function'
+        ? val.apply(this, [dispatch].concat(args))
+        : dispatch.apply(this.$store, [val].concat(args))
+    };
+  });
+  return res
+});
+
+var createNamespacedHelpers = function (namespace) { return ({
+  mapState: mapState.bind(null, namespace),
+  mapGetters: mapGetters.bind(null, namespace),
+  mapMutations: mapMutations.bind(null, namespace),
+  mapActions: mapActions.bind(null, namespace)
+}); };
+
+function normalizeMap (map) {
+  return Array.isArray(map)
+    ? map.map(function (key) { return ({ key: key, val: key }); })
+    : Object.keys(map).map(function (key) { return ({ key: key, val: map[key] }); })
+}
+
+function normalizeNamespace (fn) {
+  return function (namespace, map) {
+    if (typeof namespace !== 'string') {
+      map = namespace;
+      namespace = '';
+    } else if (namespace.charAt(namespace.length - 1) !== '/') {
+      namespace += '/';
+    }
+    return fn(namespace, map)
+  }
+}
+
+function getModuleByNamespace (store, helper, namespace) {
+  var module = store._modulesNamespaceMap[namespace];
+  if ("development" !== 'production' && !module) {
+    console.error(("[vuex] module namespace not found in " + helper + "(): " + namespace));
+  }
+  return module
+}
+
+var index_esm = {
+  Store: Store,
+  install: install,
+  version: '3.0.1',
+  mapState: mapState,
+  mapMutations: mapMutations,
+  mapGetters: mapGetters,
+  mapActions: mapActions,
+  createNamespacedHelpers: createNamespacedHelpers
+};
+
+
+/* harmony default export */ __webpack_exports__["a"] = (index_esm);
+
+
+/***/ }),
+/* 439 */
+/***/ (function(module, exports) {
+
+module.exports = function browserLocale () {
+  var lang
+
+  if (navigator.languages && navigator.languages.length) {
+    // latest versions of Chrome and Firefox set this correctly
+    lang = navigator.languages[0]
+  } else if (navigator.userLanguage) {
+    // IE only
+    lang = navigator.userLanguage
+  } else {
+    // latest versions of Chrome, Firefox, and Safari set this correctly
+    lang = navigator.language
+  }
+
+  return lang
+}
+
+
+/***/ }),
+/* 440 */
+/***/ (function(module, exports) {
+
+module.exports = {}
 
 /***/ })
 /******/ ]);

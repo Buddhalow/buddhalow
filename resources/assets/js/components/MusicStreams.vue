@@ -6,7 +6,7 @@
                     <div class="col-md-12">
                         <div class="">
                             <div class="panel-heading">
-                                <h3>Streams</h3>
+                                <h3>{{ 'Streams' | translate }}</h3>
                                 <vue-chart :data="streams"></vue-chart>
                             </div>
                         </div>

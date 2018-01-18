@@ -7,7 +7,7 @@
                     <div class="col-md-12">
                         <div class="">
                             <div class="panel-heading">
-                                <h3>Consumption stats for ''</h3>
+                                <h3>{{ 'Consumption stats for' | translate }} ''</h3>
                                 <vue-chart :data="sales"></vue-chart>
                             </div>
                         </div>
@@ -15,7 +15,7 @@
                     <div class="col-md-6">
                         <div class="">
                             <div class="panel-heading">
-                                <h3>Top 10 libraries / stores</h3>
+                                <h3>{{ 'Top 10 libraries / stores' | translate }}</h3>
                                 <bar-chart :data="stores" :stacked="true"></bar-chart>
                             </div>
                         </div>

@@ -5,7 +5,7 @@
                 <div class="row">
                     <div class="col-md-12">
                         <div>
-                            <h3>Fungal infection</h3>
+                            <h3>{{ 'Fungal infection' | translate }}</h3>
                             <table class="table table-striped table-responsive swedtable">
                                 <thead>
                                     <tr>
@@ -16,12 +16,12 @@
                                     <tr>
                                         <td colspan="2"></td>
                                         <td style="text-align: right"></td>
-                                        <td style="">Balance <span style="float: right;">{{formatNumber(infection.balance)}} QIH</span></td>
+                                        <td style="">Balance <span style="float: right;">{{infection.balance | formatNumber}} QIH</span></td>
                                     </tr>
                                     <tr>
                                         <td colspan="2"></td>
                                         <td style="text-align: right"></td>
-                                        <td style="">Debt <span style="float: right; font-weight: bold; font-size:10px">{{formatNumber(infection.balance)}} QIH</span></td>
+                                        <td style="">Debt <span style="float: right; font-weight: bold; font-size:10px">{{infection.balance | formatNumber}} QIH</span></td>
                                     </tr>
                                 </thead>
                                 <thead>
@@ -34,10 +34,10 @@
                                 </thead>
                                 <tbody v-if="account.transactions.objects.length > 0">
                                     <tr  v-for="(o, index) in account.transactions.objects" style="opacity: 0.8">
-                                        <td>{{moment(o.time).format('YY-MM-DD')}}</td>
+                                        <td>{{o.time | formatTime}}</td>
                                         <td>{{o.name}}</td>
-                                        <td style="text-align: right">{{formatNumber(o.amount)}} QIH</td>
-                                        <td style="text-align: right">{{formatNumber(o.balance)}} QIH</td>
+                                        <td style="text-align: right">{{o.amount | formatNumber}} QIH</td>
+                                        <td style="text-align: right">{{o.balance | formatNumber}} QIH</td>
                                     </tr>
                                 </tbody>
                                 
@@ -73,9 +73,6 @@
         methods: {
             moment(a) {
                 return moment(a)
-            },
-            formatNumber(str) {
-                return numeral(str).format('0,0.00').replace(/,/g, ' • ').replace(/\./g, ' : ')
             },
             load() {
                 axios.get(

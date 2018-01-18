@@ -9,54 +9,54 @@
                                 <table class="table table-responsive table-striped table-responsive swedtable ">
                                     <thead>
                                         <tr>
-                                        <th colspan="5">Karma account 0000-0 282 252-1</th>
+                                        <th colspan="5">{{ 'Karma account' | translate }} 0000-0 282 252-1</th>
                                         </tr>
                                     </thead>
                                     <tbody>
                                         <tr style="">
-                                            <td colspan="2">Balance</td><td style="text-align: right; font-size: 10px">{{ formatNumber((account.balance ))}}</td>
+                                            <td colspan="2">{{ 'Balance' | translate }}</td><td style="text-align: right; font-size: 10px">{{ account.balance | formatLongNumber}}</td>
                                             
                                         </tr>
                                         <tr v-if="account.reserved_debits > 0">
-                                            <td colspan="2">Not yet deposited to savings</td><td style="text-align: right">- {{ formatNumber(account.reserved_debits)}}</td>
+                                            <td colspan="2">{{ 'On hold' | translate }}</td><td style="text-align: right">{{ -account.reserved_debits | formatLongNumber}}</td>
                                         </tr>
                                         <tr v-if="account.future_deposits > 0">
-                                            <td colspan="2">Not yet deposited to savings</td><td style="text-align: right">- {{ formatNumber(account.future_deposits )}}</td>
+                                            <td colspan="2">{{ 'Future deposit' | translate }}</td><td style="text-align: right"> {{ -account.future_deposits | formatLongNumber}}</td>
                                         </tr>
                                         <tr style="font-weight: bold; ">
-                                            <td colspan="2">Effective Harmony</td><td style="text-align: right; font-size: 10px">{{ formatNumber(account.available_amount)}}</td>
+                                            <td colspan="2">{{ 'Effective Harmony' | translate}}</td><td style="text-align: right; font-size: 10px">{{ account.available_amount | formatLongNumber}}</td>
                                             
                                         </tr>
                                        
                                     </tbody>
                                     <thead v-if="reservations.length > 0">
                                         <tr>
-                                        <th colspan="5">Reservations</th>
+                                        <th colspan="5">{{ 'Reservations' | translate }}</th>
                                         </tr>
                                     </thead>
                                     <tbody>
                                         
                                         <tr v-for="(item, i) in reservations">
-                                            <td>{{formatDate(item.time)}}</td>
+                                            <td>{{item.time | formatDate}}</td>
                                             <td>{{ item.name }}</td><td style="text-align: right">
-                                             {{ formatNumber(item.amount) }}
+                                             {{ item.amount | formatNumber }}
                                              </td>
                                             
                                         </tr>
                                     </tbody>
                                     <thead>
                                         <tr>
-                                        <th colspan="5">Latest transactions</th>
+                                        <th colspan="5">{{ 'Latest transactions' | translate }}</th>
                                         </tr>
                                     </thead>
                                     <tbody>
                                      
                                     
                             
-                                       <tr v-for="(item, i) in account.transactions.objects">
-                                            <td>{{moment(item.time).format('YY-MM-DD')}}</td>
+                                       <tr v-if="!!account.transactions" v-for="(item, i) in account.transactions.objects">
+                                            <td>{{item.time | formatDate}}</td>
                                             <td>{{ item.name }}</td><td style="text-align: right">
-                                                {{ formatNumber(item.amount + 1000000) }}
+                                                {{ item.amount | formatNumber }}
                                             </td>
                                             
                                         </tr>

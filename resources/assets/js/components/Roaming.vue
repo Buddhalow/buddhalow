@@ -1,37 +1,42 @@
 <template>
-    <div class="container">
-        <div class="row">
-            <div class="col-md-12">
-                <div class="panel panel-default">
-                    <div class="panel-heading">
-                        
-                       Aqtivities
-                    </div>
- 
-                    <div class="panel-body">
-                        <table class="table table-bordered table-striped table-responsive" v-if="roamings.length > 0">
-                            <thead>
-                                <tr>
-                                    <th>time</th><th>status</th><th>Actions</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr v-for="(roaming, index) in roamings">
-                                    <td colspan="4">
-                                        <details>
-                                            <summary>roaming.time</summary>
-                                            <table width="100%">
-                                                <tr v-for="aqtivity in roaming.aqtivities">
-                                                    <td>{{aqtivity.sport_id}}</td>
-                                                    <td>{{aqtivity.facility_id}}</td>
-                                                    <td>{{aqtivity.dimension_id}}</td>
-                                                </tr>
-                                            </table>
-                                        </details>
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
+    <div>
+        <div class="section">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div>
+                            <table class="table table-bordered table-striped table-responsive swedtable" v-if="roamings.length > 0">
+                                <thead>
+                                    <tr>
+                                        <th colspan="2">{{ 'Aqtivity log' | translate }}</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr v-for="(roaming, index) in roamings">
+                                        <td v-bind:class="['bg-dark', 'bg-' + Math.floor(roaming.status / 100) +'xx']" width="10pt">
+                                            <i v-if=" Math.floor(roaming.status / 100) != 2" class="fa fa-warning"></i>
+                                        </td>
+                                        <td colspan="4">
+                                            <span style="float: left">{{roaming.aqtivities[0].sport}}, {{roaming.aqtivities[0].facility}}</span>
+                                            <span style="float: right">{{roaming.time | fromNow}}</span>
+                                            <br>
+                                            <details>
+                                                <summary>{{ 'Details' | translate }}</summary>
+                                                <table width="100%">
+                                                    <tbody>
+                                                    <tr v-for="aqtivity in roaming.aqtivities">
+                                                        <td>{{aqtivity.sport | translate}}</td>
+                                                        <td>{{aqtivity.facility | translate}}</td>
+                                                        <td>{{aqtivity.dimension | translate}}</td>
+                                                    </tr>
+                                                    </tbody>
+                                                </table>
+                                            </details>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -43,7 +48,7 @@
                     <div class="modal-header">
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
                                 aria-hidden="true">&times;</span></button>
-                        <h4 class="modal-title">Roaming</h4>
+                        <h4 class="modal-title">{{ 'Roaming' | translate }}</h4>
                     </div>
                     <div class="modal-body">
  
@@ -67,8 +72,8 @@
 </div>
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                        <button type="button" @click="saveRoaming" class="btn btn-primary">Submit</button>
+                        <button type="button" class="btn btn-default" data-dismiss="modal">{{ 'Close' | translate }}</button>
+                        <button type="button" @click="saveRoaming" class="btn btn-primary">{{ 'Submit' | translate }}</button>
                     </div>
                 </div><!-- /.modal-content -->
             </div><!-- /.modal-dialog -->
@@ -78,6 +83,7 @@
 </template>
  
 <script>
+    import moment from 'moment'
     export default {
         data(){
             return {
@@ -89,67 +95,24 @@
             }
         },
         mounted() {
-            this.readRoamings();
+            this.load();
+        },
+        watch: {
+            '$route'() {
+                this.load()
+            }
         },
         methods: {
-            initAddRoaming()
-            {
-                this.errors = [];
-                $("#edit_roaming_model").modal("show");
+            moment(time) {
+                return moment(time)
             },
-            saveRoaming()
-            {
-                var savePromise = null;
-              
-                var id = this.roaming != null && this.roaming.id != null ? this.roaming.id : null;
-                if (id) {
-                    savePromise = axios.put('/api/roamings/' + id, this.roaming);
-                  
-                  
-                } else {
-                    savePromise = axios.post('/api/roamings', this.roaming);
-                }
-                savePromise.then(response => {
-     
-                    this.reset();
-
-                    $("#edit_roaming_model").modal("hide");
-
-                })
-                .catch(error => {
-                    this.errors = [];
-                    if (error.response.data.errors.name) {
-                        this.errors.push(error.response.data.errors.name[0]);
-                    }
-
-                    if (error.response.data.errors.description) {
-                        this.errors.push(error.response.data.errors.description[0]);
-                    }
-                });
-                
-            },
-            readRoamings()
+            load()
             {
                 axios.get('/api/roamings')
                     .then(response => {
+                        
                         this.roamings = response.data.roamings.data;
                     });
-            },
-            deleteRoaming(index)
-            {
-                let conf = confirm("Do you ready want to delete this roaming?");
-                if (conf === true) {
-
-                    axios.delete('/roamings/' + this.roamings[index].id)
-                        .then(response => {
-
-                            this.roamings.splice(index, 1);
-
-                        })
-                        .catch(error => {
-
-                        });
-                }
             },
             initUpdate(index)
             {
