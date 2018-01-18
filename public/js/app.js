@@ -95703,7 +95703,7 @@ var render = function() {
               _c("h3", [_vm._v("Alecca")]),
               _vm._v(" "),
               _c("a", {
-                staticClass: "fa fa-window-close",
+                staticClass: "fa fa-window-close close-button",
                 staticStyle: {
                   right: "12pt",
                   top: "12pt",
@@ -95813,7 +95813,7 @@ var render = function() {
     _c("main", [
       _c(
         "div",
-        { staticClass: "main" },
+        { staticClass: "main", staticStyle: { width: "100%" } },
         [
           _c("router-view", {
             staticClass: "view",

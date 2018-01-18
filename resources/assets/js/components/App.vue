@@ -6,7 +6,7 @@
                    <div class="round" style="display: inline-block; background-image: url('/images/avatar.jpg'); background-size: cover"></div>   
                 
                     <h3>Alecca</h3>
-                <a class="fa fa-window-close" @click="closeMenu" style="right: 12pt; top: 12pt; position: absolute; font-size: 15pt"></a>
+                <a class="fa fa-window-close close-button" @click="closeMenu" style="right: 12pt; top: 12pt; position: absolute; font-size: 15pt"></a>
                 </div>
             </div> 
            
@@ -49,7 +49,7 @@
             <button class="menu-toggler" @click="toggleMenu"><i class="fa fa-bars"></i></button>
         </header>
         <main>
-             <div class="main">
+             <div class="main" style="width: 100%">
                
                 <router-view
                     class="view"

@@ -130,8 +130,14 @@ aside {
     transition: left 0.5s, box-shadow 0.5s;
     
 }
-@media screen and (max-width: 720pt) {
-        
+.close-button {
+    display: none;
+}
+    @media screen and (max-width: 720pt) {
+            
+    .close-button {
+        display: block;
+    }
     .menu-toggler {
         display: block;
     }
