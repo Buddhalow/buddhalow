@@ -95612,6 +95612,16 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     components: {},
@@ -95619,14 +95629,27 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     ready: function ready() {},
     data: function data() {
         return {
+            menu: {
+                open: false
+            },
             breadcrumbs: [],
             modalIsOpen: false,
             user: {}
         };
     },
 
-
+    watch: {
+        '$route': function $route() {
+            this.menu.open = false;
+        }
+    },
     methods: {
+        closeMenu: function closeMenu() {
+            this.menu.open = false;
+        },
+        toggleMenu: function toggleMenu() {
+            this.menu.open = !this.menu.open;
+        },
         showModal: function showModal() {
             this.modalIsOpen = true;
         },
@@ -95646,10 +95669,55 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "page" }, [
-    _c("aside", [
-      _vm._m(0),
+    _c("aside", { class: { open: _vm.menu.open } }, [
+      _c(
+        "div",
+        {
+          staticClass: "aside-content",
+          staticStyle: {
+            width: "100%",
+            display: "flex",
+            "flex-direction": "row"
+          }
+        },
+        [
+          _c(
+            "div",
+            {
+              staticStyle: {
+                width: "100%",
+                "text-align": "center",
+                position: "relative"
+              }
+            },
+            [
+              _c("div", {
+                staticClass: "round",
+                staticStyle: {
+                  display: "inline-block",
+                  "background-image": "url('/images/avatar.jpg')",
+                  "background-size": "cover"
+                }
+              }),
+              _vm._v(" "),
+              _c("h3", [_vm._v("Alecca")]),
+              _vm._v(" "),
+              _c("a", {
+                staticClass: "fa fa-window-close",
+                staticStyle: {
+                  right: "12pt",
+                  top: "12pt",
+                  position: "absolute",
+                  "font-size": "15pt"
+                },
+                on: { click: _vm.closeMenu }
+              })
+            ]
+          )
+        ]
+      ),
       _vm._v(" "),
-      _c("div", {}, [
+      _c("div", { staticClass: "menu" }, [
         _c("section", [
           _c("label", [_vm._v("Casting")]),
           _vm._v(" "),
@@ -95731,23 +95799,34 @@ var render = function() {
         ])
       ]),
       _vm._v(" "),
-      _vm._m(1)
+      _vm._m(0)
     ]),
     _vm._v(" "),
-    _c(
-      "main",
-      [
-        _c("router-view", {
-          staticClass: "view",
-          attrs: {
-            "keep-alive": "",
-            transition: "",
-            "transition-mode": "out-in"
-          }
-        })
-      ],
-      1
-    )
+    _c("header", [
+      _c(
+        "button",
+        { staticClass: "menu-toggler", on: { click: _vm.toggleMenu } },
+        [_c("i", { staticClass: "fa fa-bars" })]
+      )
+    ]),
+    _vm._v(" "),
+    _c("main", [
+      _c(
+        "div",
+        { staticClass: "main" },
+        [
+          _c("router-view", {
+            staticClass: "view",
+            attrs: {
+              "keep-alive": "",
+              transition: "",
+              "transition-mode": "out-in"
+            }
+          })
+        ],
+        1
+      )
+    ])
   ])
 }
 var staticRenderFns = [
@@ -95755,27 +95834,7 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c(
-      "div",
-      { staticClass: "aside-content", staticStyle: { "text-align": "center" } },
-      [
-        _c("div", {
-          staticClass: "round",
-          staticStyle: {
-            "background-image": "url('/images/avatar.jpg')",
-            "background-size": "cover"
-          }
-        }),
-        _vm._v(" "),
-        _c("h3", [_vm._v("Alecca")])
-      ]
-    )
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticStyle: { position: "absolute", bottom: "3pt" } }, [
+    return _c("div", { staticClass: "buddhalow-section" }, [
       _c(
         "div",
         {
@@ -119156,10 +119215,13 @@ var render = function() {
                   _vm._v(" "),
                   _vm._m(1),
                   _vm._v(" "),
-                  _vm.transactions.length > 0
+                  _vm.account.transactions.objects.length > 0
                     ? _c(
                         "tbody",
-                        _vm._l(_vm.transactions, function(o, index) {
+                        _vm._l(_vm.account.transactions.objects, function(
+                          o,
+                          index
+                        ) {
                           return _c("tr", { staticStyle: { opacity: "0.8" } }, [
                             _c("td", [
                               _vm._v(
@@ -119395,7 +119457,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             return __WEBPACK_IMPORTED_MODULE_0_numeral___default()(number);
         },
         formatNumber: function formatNumber(number) {
-            return __WEBPACK_IMPORTED_MODULE_0_numeral___default()(-number).format('0,0.00').replace(/,/g, '·').replace(/\./g, ':') + ' QIH';
+            return __WEBPACK_IMPORTED_MODULE_0_numeral___default()(-number).format('0,0.00').replace(/,/g, '•').replace(/\./g, ':') + ' QIH';
         },
         formatDate: function formatDate(date) {
             return __WEBPACK_IMPORTED_MODULE_1_moment___default()(date).fromNow();
@@ -119550,7 +119612,10 @@ var render = function() {
                     _vm._v(" "),
                     _c(
                       "tbody",
-                      _vm._l(_vm.transactions, function(item, i) {
+                      _vm._l(_vm.account.transactions.objects, function(
+                        item,
+                        i
+                      ) {
                         return _c("tr", [
                           _c("td", [
                             _vm._v(
@@ -119589,7 +119654,7 @@ var staticRenderFns = [
     return _c("thead", [
       _c("tr", [
         _c("th", { attrs: { colspan: "5" } }, [
-          _vm._v("Savings account 0000-0 282 252-1")
+          _vm._v("Karma account 0000-0 282 252-1")
         ])
       ])
     ])

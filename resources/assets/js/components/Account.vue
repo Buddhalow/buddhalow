@@ -9,7 +9,7 @@
                                 <table class="table table-responsive table-striped table-responsive swedtable ">
                                     <thead>
                                         <tr>
-                                        <th colspan="5">Savings account 0000-0 282 252-1</th>
+                                        <th colspan="5">Karma account 0000-0 282 252-1</th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -53,7 +53,7 @@
                                      
                                     
                             
-                                       <tr v-for="(item, i) in transactions">
+                                       <tr v-for="(item, i) in account.transactions.objects">
                                             <td>{{moment(item.time).format('YY-MM-DD')}}</td>
                                             <td>{{ item.name }}</td><td style="text-align: right">
                                                 {{ formatNumber(item.amount + 1000000) }}
@@ -96,7 +96,7 @@
                 return numeral(number)
             },
             formatNumber(number) {
-                return numeral(-number).format('0,0.00').replace(/,/g, '·').replace(/\./g, ':') + ' QIH'
+                return numeral(-number).format('0,0.00').replace(/,/g, '•').replace(/\./g, ':') + ' QIH'
             },
             formatDate(date) {
                 return moment(date).fromNow()

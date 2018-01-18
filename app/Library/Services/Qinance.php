@@ -72,7 +72,7 @@ class Qinance implements QinanceInterface {
      * @returns {Array} Account history
      **/
     public function getEntriesInLedgerById($id, $offset=0, $limit = 28) {
-        return $this->request('GET', '/api.php?resource=transactions&resource_id=' . $id . '&sub_resource=entryitems');
+        return $this->request('GET', '/api.php?resource=accounts&resource_id=' . $id . '&sub_resource=entryitems');
     }
     
     /**

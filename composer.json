@@ -17,6 +17,7 @@
         "tcg/voyager": "^1.0"
     },
     "require-dev": {
+        "php-console/laravel-service-provider": "~5.0",
         "appzcoder/crud-generator": "^3.0",
         "filp/whoops": "~2.0",
         "fzaninotto/faker": "~1.4",

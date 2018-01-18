@@ -65,7 +65,7 @@ body, html, .page {
 main {
     flex: 3;
     overflow: scroll;
-    display: block;
+    display: flex;
     height: 100%;
 }
 aside {
@@ -122,4 +122,59 @@ aside ul {
     list-style-type: none;
     margin: 0pt;
     padding: 0pt;
+}
+.menu-toggler {
+    display: none;
+}
+aside {
+    transition: left 0.5s, box-shadow 0.5s;
+    
+}
+@media screen and (max-width: 720pt) {
+        
+    .menu-toggler {
+        display: block;
+    }
+    .buddhalow-section {
+    
+    }
+    
+    .page {
+        header {
+            flex: 0 0 12pt;
+        }
+        
+        flex-direction: column;
+        aside {
+            display: flex;
+            flex-direction: column;
+            z-index: 10000;
+            position: fixed;
+            left: 0pt;
+            top: 0pt;
+            height: 100%;
+            left: -100%;
+            .menu {
+                flex: 5;
+                overflow: scroll;
+            }
+        }
+        
+    }
+    .section {
+        padding: 2pt 2pt;
+    }
+    header {
+        padding: 12pt;
+        width: 100%;
+        height: auto;
+        background-color: black;
+    }
+    aside.open {
+        left: 0%;
+        box-shadow: 5pt 0pt 125pt rgba(0, 0, 0, .5);
+    }
+    .aside-content {
+        padding: 1pt 2pt;
+    }
 }

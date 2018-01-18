@@ -1,12 +1,16 @@
 <template>
     <div class="page">
-        <aside>
-           <div class="aside-content" style="text-align: center">
-               <div class="round" style="background-image: url('/images/avatar.jpg'); background-size: cover"></div>   
-            
-                <h3>Alecca</h3>
-           </div>
-            <div class="">
+        <aside v-bind:class="{'open': menu.open}">
+            <div class="aside-content" style="width:100%;display: flex; flex-direction: row">
+                <div style="width: 100%; text-align: center; position: relative">
+                   <div class="round" style="display: inline-block; background-image: url('/images/avatar.jpg'); background-size: cover"></div>   
+                
+                    <h3>Alecca</h3>
+                <a class="fa fa-window-close" @click="closeMenu" style="right: 12pt; top: 12pt; position: absolute; font-size: 15pt"></a>
+                </div>
+            </div> 
+           
+            <div class="menu">
                <section>
                 <label>Casting</label>
                 <ul>
@@ -33,21 +37,27 @@
                </ul>
                 </section>
             </div>
-           <div style="position: absolute; bottom: 3pt;">
+           <div class="buddhalow-section" style="">
                <div class="aside-content" style="text-align: center">
                <i style="font-size: 60pt" class="icon-buddhalow"></i><br>
                Buddhalow
                </div>
            </div>
         </aside>
-    
+       
+        <header>
+            <button class="menu-toggler" @click="toggleMenu"><i class="fa fa-bars"></i></button>
+        </header>
         <main>
-            <router-view
-                class="view"
-                keep-alive
-                transition
-                transition-mode="out-in">
-            </router-view>
+             <div class="main">
+               
+                <router-view
+                    class="view"
+                    keep-alive
+                    transition
+                    transition-mode="out-in">
+                </router-view>
+            </div>
         </main>
     </div>
 </template>
@@ -61,13 +71,26 @@
             
         data () {
             return {
-              breadcrumbs: [],
-              modalIsOpen: false,
-              user: {}
+                menu: {
+                    open: false
+                },
+                breadcrumbs: [],
+                modalIsOpen: false,
+                user: {}
             }
         },
-            
+        watch: {
+            '$route'() {
+                this.menu.open = false
+            }
+        },
         methods: {
+            closeMenu() {
+                this.menu.open = false
+            },  
+            toggleMenu() {
+                this.menu.open = !this.menu.open
+            },
             showModal () {
                   this.modalIsOpen = true;
             },

@@ -32,8 +32,8 @@
                                         <th>Balance</th>
                                     </tr>
                                 </thead>
-                                <tbody v-if="transactions.length > 0">
-                                    <tr  v-for="(o, index) in transactions" style="opacity: 0.8">
+                                <tbody v-if="account.transactions.objects.length > 0">
+                                    <tr  v-for="(o, index) in account.transactions.objects" style="opacity: 0.8">
                                         <td>{{moment(o.time).format('YY-MM-DD')}}</td>
                                         <td>{{o.name}}</td>
                                         <td style="text-align: right">{{formatNumber(o.amount)}} QIH</td>

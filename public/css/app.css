@@ -8538,7 +8538,9 @@ main {
       -ms-flex: 3;
           flex: 3;
   overflow: scroll;
-  display: block;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   height: 100%;
 }
 
@@ -8606,5 +8608,79 @@ aside ul {
   list-style-type: none;
   margin: 0pt;
   padding: 0pt;
+}
+
+.menu-toggler {
+  display: none;
+}
+
+aside {
+  -webkit-transition: left 0.5s, -webkit-box-shadow 0.5s;
+  transition: left 0.5s, -webkit-box-shadow 0.5s;
+  transition: left 0.5s, box-shadow 0.5s;
+  transition: left 0.5s, box-shadow 0.5s, -webkit-box-shadow 0.5s;
+}
+
+@media screen and (max-width: 720pt) {
+  .menu-toggler {
+    display: block;
+  }
+
+  .page {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+
+  .page header {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 12pt;
+            flex: 0 0 12pt;
+  }
+
+  .page aside {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    z-index: 10000;
+    position: fixed;
+    left: 0pt;
+    top: 0pt;
+    height: 100%;
+    left: -100%;
+  }
+
+  .page aside .menu {
+    -webkit-box-flex: 5;
+        -ms-flex: 5;
+            flex: 5;
+    overflow: scroll;
+  }
+
+  .section {
+    padding: 2pt 2pt;
+  }
+
+  header {
+    padding: 12pt;
+    width: 100%;
+    height: auto;
+    background-color: black;
+  }
+
+  aside.open {
+    left: 0%;
+    -webkit-box-shadow: 5pt 0pt 125pt rgba(0, 0, 0, 0.5);
+            box-shadow: 5pt 0pt 125pt rgba(0, 0, 0, 0.5);
+  }
+
+  .aside-content {
+    padding: 1pt 2pt;
+  }
 }
 

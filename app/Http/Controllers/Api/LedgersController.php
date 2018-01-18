@@ -19,8 +19,7 @@ class LedgersController extends Controller
     public function show(Request $request, $id)
     {
         $result = $this->qinance->getLedgerById($id);
-        $result->objects = $this->qinance->getEntriesInLedgerById($id); 
-        
+        $result->transactions = $this->qinance->getEntriesInLedgerById($id); 
         return response()->json($result);
     }
 }
