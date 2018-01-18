@@ -12,6 +12,9 @@
            
             <div class="menu">
                <section>
+                   <ul>
+                    <li><router-link to="/dashboard">Dashboard</router-link></li>
+                </ul><br>
                 <label>Casting</label>
                 <ul>
                     <li><router-link to="/dashboard/opportunities">Opportunities</router-link></li>

@@ -95638,6 +95638,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     components: {},
@@ -95736,6 +95739,19 @@ var render = function() {
       _vm._v(" "),
       _c("div", { staticClass: "menu" }, [
         _c("section", [
+          _c("ul", [
+            _c(
+              "li",
+              [
+                _c("router-link", { attrs: { to: "/dashboard" } }, [
+                  _vm._v("Dashboard")
+                ])
+              ],
+              1
+            )
+          ]),
+          _c("br"),
+          _vm._v(" "),
           _c("label", [_vm._v("Casting")]),
           _vm._v(" "),
           _c("ul", [
