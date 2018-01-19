@@ -20,7 +20,9 @@ Auth::routes();
 Route::middleware('web')->group(function () {
 Route::get('/dashboard/{q}', 'DashboardController@index')->where('q', '(.*)');
 Route::get('/dashboard', 'DashboardController@index')->name('home');
-
+Route::get('/', function () {
+    return redirect('/dashboard');
+});
 });
 
 Route::group(['prefix' => 'admin'], function () {

@@ -118,3 +118,12 @@ Stack trace:
 [18-Jan-2018 17:05:05 UTC] PHP Fatal error:  Cannot declare class MyApp\Http\Middleware\Ensure2HttpsProtocol, because the name is already in use in /home/ubuntu/workspace/buddhalow/app/Http/Middleware/EnsureHttpsProtocol.php on line 6
 [18-Jan-2018 17:06:48 UTC] PHP Fatal error:  Cannot declare class MyApp\Http\Middleware\ForceHttpsProtocol, because the name is already in use in /home/ubuntu/workspace/buddhalow/app/Http/Middleware/ForceHttpsProtocol.php on line 6
 [18-Jan-2018 17:06:54 UTC] PHP Fatal error:  Cannot declare class MyApp\Http\Middleware\ForceHttpsProtocol, because the name is already in use in /home/ubuntu/workspace/buddhalow/app/Http/Middleware/ForceHttpsProtocol.php on line 6
+[19-Jan-2018 15:45:14 UTC] PHP Fatal error:  Cannot declare class App\ChallengeState because the name is already in use in /home/ubuntu/workspace/buddhalow/app/ChallengeState.php on line 8
+[19-Jan-2018 16:04:44 UTC] PHP Fatal error:  Uncaught ErrorException: Array to string conversion in /home/ubuntu/workspace/buddhalow/app/Http/Controllers/Api/ChallengesController.php:57
+Stack trace:
+#0 /home/ubuntu/workspace/buddhalow/app/Http/Controllers/Api/ChallengesController.php(57): Illuminate\Foundation\Bootstrap\HandleExceptions->handleError(8, 'Array to string...', '/home/ubuntu/wo...', 57, Array)
+#1 [internal function]: App\Http\Controllers\Api\ChallengesController->show('1')
+#2 /home/ubuntu/workspace/buddhalow/vendor/laravel/framework/src/Illuminate/Routing/Controller.php(54): call_user_func_array(Array, Array)
+#3 /home/ubuntu/workspace/buddhalow/vendor/laravel/framework/src/Illuminate/Routing/ControllerDispatcher.php(45): Illuminate\Routing\Controller->callAction('show', Array)
+#4 /home/ubuntu/workspace/buddhalow/vendor/laravel/framework/src/Illuminate/Routing/Route.php(212): Illuminate\Routing\ControllerDispatcher->dispatch(Object(Illuminate\Routing\Route), Object(App\Http\Controllers\Api\ChallengesController), 'show')
+#5 /home/ubuntu/works in /home/ubuntu/workspace/buddhalow/app/Http/Controllers/Api/ChallengesController.php on line 57

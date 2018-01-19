@@ -11,7 +11,7 @@ import numeral from 'numeral'
 
 numeral.register('locale', 'qi', {
     delimiters: {
-        thousands: ' ',
+        thousands: '•',
         decimal: ':'
     },
     abbreviations: {

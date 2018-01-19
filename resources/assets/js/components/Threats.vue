@@ -6,7 +6,7 @@
                     <div class="col-md-12">
                         <div>
                             <h3>{{ 'Threats' | translate }}</h3>
-                            <table class="table table-bordered table-striped table-responsive" v-if="objects.length > 0">
+                            <table class="table table-bordered table-striped table-responsive swedtable" v-if="objects.length > 0">
                                 <thead>
                                     <tr>
                                         <th>{{ 'Name' | translate }}</th>

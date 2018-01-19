@@ -15,5 +15,10 @@
     "Name": "Namn",
     "Probability": "Sannolikhet",
     "Status": "Status",
-    "Pending": "Väntande"
+    "Pending": "Väntande",
+    "Balance": "Saldo",
+    "On hold": "Skyddat belopp",
+    "Effective harmony": "Harmoni",
+    "Reservations": "Reservade belopp",
+    "Latest transactions": "Senaste transaktioner"
 }

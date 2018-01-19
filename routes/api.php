@@ -39,4 +39,5 @@ Route::middleware('web')->group(function () {
     Route::resource('infections', 'Api\\InfectionsController');
     Route::resource('me', 'Api\\MeController');
     Route::resource('login', 'Api\\LoginController');
+    Route::resource('challenges', 'Api\\ChallengesController');
 });

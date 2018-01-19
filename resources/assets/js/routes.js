@@ -14,6 +14,7 @@ import Threats from './components/Threats'
 import Fungalify from './components/Fungalify'
 import Account from './components/Account'
 import Login from './components/Login'
+import Challenge from './components/Challenge'
 
 Vue.use(VueRouter);
 
@@ -64,6 +65,11 @@ export default new VueRouter({
             path: '/dashboard/savings',
             name: 'savings',
             component: Savings
+        },
+        {
+            path: '/dashboard/challenges/:id',
+            name: 'challenges',
+            component: Challenge
         },
         {
             path: '/dashboard/fungalify',
