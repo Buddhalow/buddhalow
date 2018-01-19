@@ -72,7 +72,7 @@ aside {
     flex: 0 0 11pt;
     background: #000;
     color: white;
-    
+    @include glowy-fade(#336677, #446644, #000)
 }
 aside section {
     margin: 12pt 0pt;
@@ -133,8 +133,13 @@ aside {
 .close-button {
     display: none !important;
 }
+.tabbar {
+        display: none !important;
+    }
 @media screen and (max-width: 720pt) {
-            
+    .tabbar {
+        display: flex !important;
+    }
     .close-button {
         display: block !important;
     }
@@ -242,4 +247,22 @@ aside {
 }
 .bg-5xx {
     background: $brand-danger;
+}
+// glowy-fade(#334455, #445544, #000);
+.tabbar, header {
+    @include glowy-fade(#3388aa, #448844, #000);
+}
+.tabbar a {
+    color: white !important;
+    text-decoration: none !important;
+}
+.tabbar .router-link-active {
+    border: none;
+    color: $brand-primary;
+}
+header button {
+    background: none;
+    border: none;
+    color: white;
+    text-shadow: 0pt -1pt 0pt rgba(0, 0, 0, .5);
 }

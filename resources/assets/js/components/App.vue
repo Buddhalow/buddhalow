@@ -40,10 +40,10 @@
                </ul>
                 </section>
             </div>
-           <div class="buddhalow-section" style="">
-               <div class="aside-content" style="text-align: center">
-               <i style="font-size: 60pt" class="icon-buddhalow"></i><br>
-               Buddhalow
+               <div class="buddhalow-section" style="">
+                   <div class="aside-content" style="text-align: center">
+                   <i style="font-size: 60pt" class="icon-buddhalow"></i><br>
+                   Buddhalow
                </div>
            </div>
         </aside>
@@ -61,7 +61,13 @@
                     transition-mode="out-in">
                 </router-view>
             </div>
+            
         </main>
+        <tab-bar>
+            <tabbar-item icon="home" :label="'Dashboard '| translate" to="/dashboard/start"></tabbar-item>
+            <tabbar-item icon="star" :label="'Cravings' | translate" to="/dashboard/cravity"></tabbar-item>
+            <tabbar-item icon="bars" :label="'Account' | translate" to="/dashboard/opportunities"></tabbar-item>
+        </tab-bar>
     </div>
 </template>
 

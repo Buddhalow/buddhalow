@@ -44,6 +44,8 @@ import routes from './routes';
 import VueRouter from 'vue-router'
 
 import App from './components/App.vue'
+import TabBar from './components/TabBar.vue'
+import TabBarItem from './components/TabBarItem.vue'
 import FileUpload from 'v-file-upload'
 import VueCharts from 'hchs-vue-charts'
 import Chartkick from 'chartkick'
@@ -56,7 +58,10 @@ import VueC3 from 'vue-c3'
 
 window.Vue = require('vue');
 window.Vue.use(VueChartkick, { Chartkick })
-window.Vue.use(VueIntercom, { appId: 'mvl0jasu' });
+window.Vue.use(VueIntercom, { appId: 'mvl0jasu' })
+
+window.Vue.component('tab-bar', TabBar)
+window.Vue.component('tabbar-item', TabBarItem)
 
 window.Vue.component('file-upload', FileUpload)
 
